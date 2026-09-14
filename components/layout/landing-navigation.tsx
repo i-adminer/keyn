@@ -264,7 +264,7 @@ export function LandingNavigation() {
                 ))}
 
                 {/* Services Section in Mobile */}
-                <div 
+                <div
                   className="px-4 py-2 animate-in fade-in slide-in-from-left"
                   style={{ animationDelay: `${mainNavigation.length * 50}ms` }}
                 >
@@ -303,15 +303,19 @@ export function LandingNavigation() {
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="px-4 py-3 text-base font-medium text-foreground hover:text-primary hover:bg-accent/50 rounded-md transition-all duration-200 animate-in fade-in slide-in-from-left"
-                    style={{ animationDelay: `${(mainNavigation.length + 1 + index) * 50}ms` }}
+                    style={{
+                      animationDelay: `${(mainNavigation.length + 1 + index) * 50}ms`,
+                    }}
                   >
                     {item.name}
                   </Link>
                 ))}
 
-                <div 
+                <div
                   className="pt-4 px-4 animate-in fade-in slide-in-from-bottom"
-                  style={{ animationDelay: `${(mainNavigation.length + rightNavigation.length + 1) * 50}ms` }}
+                  style={{
+                    animationDelay: `${(mainNavigation.length + rightNavigation.length + 1) * 50}ms`,
+                  }}
                 >
                   <Button
                     asChild

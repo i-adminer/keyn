@@ -115,8 +115,19 @@ export function Hero() {
                 <motion.div
                   key={service}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
+                  animate={{ 
+                    opacity: 1, 
+                    y: [0, -10, 0],
+                  }}
+                  transition={{ 
+                    opacity: { duration: 0.4, delay: 0.6 + index * 0.1 },
+                    y: { 
+                      duration: 2,
+                      delay: 0.8 + index * 0.2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }
+                  }}
                   className="flex items-center gap-2 px-3 md:px-4 py-2 rounded-full bg-card/80 backdrop-blur-sm border border-border"
                 >
                   <div className="w-2 h-2 rounded-full bg-secondary" />
@@ -133,7 +144,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="hidden lg:flex relative h-[600px] items-center justify-center"
+            className="hidden lg:flex relative h-150 items-center justify-center"
           >
             <div className="relative w-full h-full">
               <Image
