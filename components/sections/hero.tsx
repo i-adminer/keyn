@@ -39,8 +39,8 @@ export function Hero() {
         />
       </div>
 
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 " />
+      {/* Overlay for better text readability - Dark overlay on mobile in dark mode */}
+      <div className="absolute inset-0 md:hidden dark:bg-black/50" />
 
       {/* Content Container */}
       <div className="container-premium relative z-10 px-4 md:px-6 lg:px-8">
