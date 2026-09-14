@@ -43,21 +43,21 @@ export function Hero() {
       <div className="absolute inset-0 " />
 
       {/* Content Container */}
-      <div className="container-premium relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="container-premium relative z-10 px-4 md:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Left: Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-2xl"
+            className="max-w-2xl pt-20 md:pt-24 lg:pt-0"
           >
             {/* Main Heading */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-6 font-realce"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.05] mb-4 md:mb-6 font-realce"
             >
               <span className="text-foreground">Your Talent.</span>
               <br />
@@ -73,7 +73,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-lg md:text-xl leading-relaxed text-foreground mb-8 text-justify"
+              className="text-base sm:text-lg md:text-xl leading-relaxed text-foreground mb-6 md:mb-8 text-justify"
             >
               We help organisations attract the right talent, strengthen their
               people practices, and build high-performing teams while helping
@@ -86,30 +86,30 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4 mb-10"
+              className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-6 md:mb-10"
             >
               <Button
                 asChild
-                size="xl"
-                className="rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-primary text-white hover:border hover:bg-transparent hover:text-primary border-primary"
+                size="lg"
+                className="rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-primary text-white hover:border hover:bg-transparent hover:text-primary border-primary w-full sm:w-auto"
               >
                 <Link href="/professionals">Hire Talent</Link>
               </Button>
               <Button
                 asChild
-                size="xl"
-                className="rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-transparent text-primary border hover:text-white border-primary"
+                size="lg"
+                className="rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-transparent text-primary border hover:text-white border-primary w-full sm:w-auto"
               >
                 <Link href="/professionals">Build My CV</Link>
               </Button>
             </motion.div>
 
-            {/* Service Indicators */}
+            {/* Service Indicators - Hidden on mobile, visible on md+ */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex flex-wrap gap-4"
+              className="hidden md:flex flex-wrap gap-3 lg:gap-4"
             >
               {services.map((service, index) => (
                 <motion.div
@@ -117,7 +117,7 @@ export function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-card/80 backdrop-blur-sm border border-border"
+                  className="flex items-center gap-2 px-3 md:px-4 py-2 rounded-full bg-card/80 backdrop-blur-sm border border-border"
                 >
                   <div className="w-2 h-2 rounded-full bg-secondary" />
                   <span className="text-xs md:text-sm font-semibold tracking-wider text-foreground">
