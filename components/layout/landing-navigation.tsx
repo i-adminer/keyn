@@ -68,8 +68,10 @@ export function LandingNavigation() {
     <>
       <nav
         className={cn(
-          "absolute top-0.5 inset-x-0 z-50 transition-all duration-300",
-          " ",
+          "z-50 transition-all duration-300",
+          isScrolled 
+            ? "fixed top-0 inset-x-0" 
+            : "absolute top-0.5 inset-x-0"
         )}
       >
         <div className="container-premium backdrop-blur-md text-foreground shadow-md border-b border-border rounded-b-2xl">
