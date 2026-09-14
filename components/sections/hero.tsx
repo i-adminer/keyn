@@ -122,9 +122,10 @@ export function Hero() {
                   transition={{ 
                     opacity: { duration: 0.4, delay: 0.6 + index * 0.1 },
                     y: { 
-                      duration: 2,
-                      delay: 0.8 + index * 0.2,
+                      duration: 1.5,
+                      delay: index * 0.5,
                       repeat: Infinity,
+                      repeatDelay: (services.length - 1) * 0.5,
                       ease: "easeInOut"
                     }
                   }}
