@@ -23,15 +23,15 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative h-screen w-screen flex items-center overflow-hidden p-4 md:p-6 lg:p-8"
     >
       {/* Background Image using Next.js Image */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-4 md:inset-6 lg:inset-8 bg-green-300">
         <Image
           src={heroImage}
           alt="Hero Background"
           fill
-          className="object-cover"
+          className="object-cover rounded-2xl"
           priority
           quality={100}
         />
