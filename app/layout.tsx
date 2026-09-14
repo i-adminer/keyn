@@ -46,7 +46,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={cn("h-full", "antialiased", inter.variable)}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-sans cursor-none">
+      <body className="min-h-full flex flex-col font-sans cursor-none overflow-x-hidden">
         <ThemeProvider>
           <CustomCursor />
           {children}

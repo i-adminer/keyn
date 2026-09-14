@@ -23,7 +23,7 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen w-screen flex items-center overflow-hidden"
+      className="relative h-screen w-full flex items-center overflow-hidden"
     >
       {/* Background Image using Next.js Image */}
       <div className="absolute inset-1 md:inset-2 lg:inset-4 ">
