@@ -23,26 +23,27 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen w-screen flex items-center overflow-hidden p-4 md:p-6 lg:p-8"
+      className="relative h-screen w-screen flex items-center overflow-hidden"
     >
       {/* Background Image using Next.js Image */}
-      <div className="absolute inset-4 md:inset-6 lg:inset-8 bg-green-300">
+      <div className="absolute inset-1 md:inset-2 lg:inset-4 ">
+        <LandingNavigation />
         <Image
           src={heroImage}
           alt="Hero Background"
           fill
-          className="object-cover rounded-2xl"
+          className="object-cover rounded-2xl border-2 border-secondary"
           priority
           quality={100}
+          suppressHydrationWarning
         />
       </div>
 
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 b" />
+      <div className="absolute inset-0 " />
 
       {/* Content Container */}
-      <div className="container-premium relative z-10 py-32">
-        <LandingNavigation />
+      <div className="container-premium relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Text Content */}
           <motion.div
@@ -56,13 +57,15 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-6"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-6 font-realce"
             >
               <span className="text-foreground">Your Talent.</span>
               <br />
-              <span className="text-primary">Our Expertise.</span>
+              <span className="bg-linear-to-r to-primary from-foreground bg-clip-text text-transparent">
+                Our Expertise.
+              </span>
               <br />
-              <span className="text-foreground">Better Outcomes.</span>
+              <span className="text-outline">Better Outcomes.</span>
             </motion.h1>
 
             {/* Description */}
@@ -70,7 +73,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-lg md:text-xl leading-relaxed text-muted-foreground mb-8"
+              className="text-lg md:text-xl leading-relaxed text-foreground mb-8 text-justify"
             >
               We help organisations attract the right talent, strengthen their
               people practices, and build high-performing teams while helping
@@ -85,13 +88,18 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 mb-10"
             >
-              <Button asChild size="xl" variant="primary">
-                <Link href="/employers">
-                  Hire Talent
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
+              <Button
+                asChild
+                size="xl"
+                className="rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-primary text-white hover:border hover:bg-transparent hover:text-primary border-primary"
+              >
+                <Link href="/professionals">Hire Talent</Link>
               </Button>
-              <Button asChild size="xl" variant="secondary">
+              <Button
+                asChild
+                size="xl"
+                className="rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-transparent text-primary border hover:text-white border-primary"
+              >
                 <Link href="/professionals">Build My CV</Link>
               </Button>
             </motion.div>

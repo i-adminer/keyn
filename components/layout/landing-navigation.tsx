@@ -68,16 +68,16 @@ export function LandingNavigation() {
     <>
       <nav
         className={cn(
-          "absolute top-1 inset-x-0 z-50 transition-all duration-300",
+          "absolute top-0.5 inset-x-0 z-50 transition-all duration-300",
           " ",
         )}
       >
-        <div className="container-premium backdrop-blur-md text-foreground shadow-md border-b border-border rounded-b-4xl">
-          <div className="flex items-center justify-between h-20 lg:h-24">
+        <div className="container-premium backdrop-blur-md text-foreground shadow-md border-b border-border rounded-b-2xl">
+          <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link
               href="/"
-              className="relative h-12 w-48 lg:h-14 lg:w-56 flex-shrink-0"
+              className="relative h-12 w-48 lg:h-14 lg:w-56 shrink-0"
             >
               <Image
                 src={logoSrc}

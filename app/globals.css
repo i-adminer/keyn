@@ -171,12 +171,32 @@
   --shadow-2xl: var(--shadow-2xl);
 }
 
+@font-face {
+  font-family: "Realce";
+  src: url("/fonts/realce-black-v0006.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-realce: "Realce", sans-serif;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .text-outline {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--primary);
+    color: transparent;
   }
 }
 
