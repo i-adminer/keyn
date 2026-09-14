@@ -69,17 +69,17 @@ export function LandingNavigation() {
       <nav
         className={cn(
           "z-50 transition-all duration-300",
-          isScrolled 
-            ? "fixed top-0 inset-x-0" 
-            : "absolute top-0.5 inset-x-0"
+          isScrolled
+            ? "fixed top-0 inset-x-0"
+            : "absolute top-0.5 max-sm:inset-x-0.5 inset-x-0",
         )}
       >
-        <div className="container-premium backdrop-blur-md text-foreground shadow-md border-b border-border rounded-b-2xl">
+        <div className="container-premium backdrop-blur-md text-foreground shadow-md border-b border-border rounded-b-2xl max-sm:rounded-2xl">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link
               href="/"
-              className="relative h-12 w-48 lg:h-14 lg:w-56 shrink-0"
+              className="relative h-14 w-48 lg:h-16 lg:w-56 shrink-0"
             >
               <Image
                 src={logoSrc}
@@ -225,13 +225,13 @@ export function LandingNavigation() {
               <Theme_Switcher />
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 text-foreground hover:text-primary transition-colors"
+                className="p-2 text-foreground hover:text-primary transition-all duration-200"
                 aria-label="Toggle menu"
               >
                 {isMobileMenuOpen ? (
-                  <X className="w-6 h-6" />
+                  <X className="w-6 h-6 animate-in spin-in duration-200" />
                 ) : (
-                  <Menu className="w-6 h-6" />
+                  <Menu className="w-6 h-6 animate-in fade-in duration-200" />
                 )}
               </button>
             </div>
@@ -242,46 +242,53 @@ export function LandingNavigation() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-40 lg:hidden">
+          {/* Backdrop with fade-in animation */}
           <div
-            className="absolute inset-0 bg-background/80 backdrop-blur-sm"
+            className="absolute inset-0 bg-background/80 backdrop-blur-sm animate-in fade-in duration-200"
             onClick={() => setIsMobileMenuOpen(false)}
           />
-          <div className="absolute top-20 left-0 right-0 bg-card border-b border-border shadow-lg max-h-[calc(100vh-5rem)] overflow-y-auto">
+          {/* Menu with slide-down animation */}
+          <div className="absolute top-20 left-0 right-0 bg-card border-b border-border shadow-lg max-h-[calc(100vh-5rem)] overflow-y-auto animate-in slide-in-from-top duration-300">
             <div className="container-premium py-6">
               <div className="flex flex-col space-y-1">
-                {mainNavigation.map((item) => (
+                {mainNavigation.map((item, index) => (
                   <Link
                     key={item.name}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="px-4 py-3 text-base font-medium text-foreground hover:text-primary hover:bg-accent/50 rounded-md transition-colors"
+                    className="px-4 py-3 text-base font-medium text-foreground hover:text-primary hover:bg-accent/50 rounded-md transition-all duration-200 animate-in fade-in slide-in-from-left"
+                    style={{ animationDelay: `${index * 50}ms` }}
                   >
                     {item.name}
                   </Link>
                 ))}
 
                 {/* Services Section in Mobile */}
-                <div className="px-4 py-2">
+                <div 
+                  className="px-4 py-2 animate-in fade-in slide-in-from-left"
+                  style={{ animationDelay: `${mainNavigation.length * 50}ms` }}
+                >
                   <button
                     onClick={() => setIsServicesOpen(!isServicesOpen)}
-                    className="w-full flex items-center justify-between py-3 text-base font-medium text-foreground hover:text-primary transition-colors"
+                    className="w-full flex items-center justify-between py-3 text-base font-medium text-foreground hover:text-primary transition-colors duration-200"
                   >
                     Services
                     <ChevronDown
                       className={cn(
-                        "w-4 h-4 transition-transform duration-200",
+                        "w-4 h-4 transition-transform duration-300 ease-out",
                         isServicesOpen && "rotate-180",
                       )}
                     />
                   </button>
                   {isServicesOpen && (
-                    <div className="ml-4 mt-2 space-y-1">
-                      {servicesDropdown.map((item) => (
+                    <div className="ml-4 mt-2 space-y-1 animate-in fade-in slide-in-from-top duration-200">
+                      {servicesDropdown.map((item, index) => (
                         <Link
                           key={item.name}
                           href={item.href}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-accent/50 rounded-md transition-colors"
+                          className="block px-4 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-accent/50 rounded-md transition-all duration-200 animate-in fade-in"
+                          style={{ animationDelay: `${index * 50}ms` }}
                         >
                           {item.name}
                         </Link>
@@ -290,18 +297,22 @@ export function LandingNavigation() {
                   )}
                 </div>
 
-                {rightNavigation.map((item) => (
+                {rightNavigation.map((item, index) => (
                   <Link
                     key={item.name}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="px-4 py-3 text-base font-medium text-foreground hover:text-primary hover:bg-accent/50 rounded-md transition-colors"
+                    className="px-4 py-3 text-base font-medium text-foreground hover:text-primary hover:bg-accent/50 rounded-md transition-all duration-200 animate-in fade-in slide-in-from-left"
+                    style={{ animationDelay: `${(mainNavigation.length + 1 + index) * 50}ms` }}
                   >
                     {item.name}
                   </Link>
                 ))}
 
-                <div className="pt-4 px-4">
+                <div 
+                  className="pt-4 px-4 animate-in fade-in slide-in-from-bottom"
+                  style={{ animationDelay: `${(mainNavigation.length + rightNavigation.length + 1) * 50}ms` }}
+                >
                   <Button
                     asChild
                     size="lg"
