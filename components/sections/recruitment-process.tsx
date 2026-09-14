@@ -49,7 +49,7 @@ const steps = [
 
 export function RecruitmentProcess() {
   return (
-    <Section background="white" className="section-spacing">
+    <Section background="default" className="section-spacing">
       <SectionHeader
         label="OUR PROCESS"
         title="From Vacancy to Talent."
@@ -80,16 +80,16 @@ export function RecruitmentProcess() {
               className="relative flex flex-col items-center"
             >
               {/* Number Circle */}
-              <div className="relative z-10 w-16 h-16 rounded-full bg-white border-2 border-blue-royal flex items-center justify-center font-bold text-blue-royal mb-6 shadow-sm">
+              <div className="relative z-10 w-16 h-16 rounded-full bg-card border-2 border-primary flex items-center justify-center font-bold text-primary mb-6 shadow-sm">
                 {step.number}
               </div>
 
               {/* Content */}
               <div className="text-center">
-                <h3 className="text-lg font-bold text-navy-deep mb-2">
+                <h3 className="text-lg font-bold text-foreground mb-2">
                   {step.title}
                 </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -111,7 +111,7 @@ export function RecruitmentProcess() {
           >
             {/* Number Circle and Line */}
             <div className="flex flex-col items-center">
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border-2 border-blue-royal flex items-center justify-center font-bold text-blue-royal shadow-sm flex-shrink-0">
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-card border-2 border-primary flex items-center justify-center font-bold text-primary shadow-sm flex-shrink-0">
                 {step.number}
               </div>
               {index < steps.length - 1 && (
@@ -130,10 +130,10 @@ export function RecruitmentProcess() {
 
             {/* Content */}
             <div className="flex-1 pb-8">
-              <h3 className="text-xl md:text-2xl font-bold text-navy-deep mb-2">
+              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">
                 {step.title}
               </h3>
-              <p className="text-neutral-600 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 {step.description}
               </p>
             </div>

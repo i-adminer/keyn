@@ -40,7 +40,7 @@ const programTypes = [
 
 export function Training() {
   return (
-    <Section background="white" className="section-spacing">
+    <Section background="default" className="section-spacing">
       <div className="max-w-5xl mx-auto">
         <SectionHeader
           label="TRAINING & DEVELOPMENT"
@@ -48,7 +48,7 @@ export function Training() {
             <>
               Develop People.
               <br />
-              <span className="text-blue-royal">Strengthen Performance.</span>
+              <span className="text-primary">Strengthen Performance.</span>
             </>
           }
           className="mb-16"
@@ -62,7 +62,7 @@ export function Training() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold text-navy-deep mb-6">
+            <h3 className="text-2xl font-bold text-foreground mb-6">
               Training areas
             </h3>
             <div className="space-y-3">
@@ -75,8 +75,8 @@ export function Training() {
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   className="flex items-start gap-3"
                 >
-                  <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span className="text-neutral-700">{area}</span>
+                  <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">{area}</span>
                 </motion.div>
               ))}
             </div>
@@ -89,7 +89,7 @@ export function Training() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold text-navy-deep mb-6">
+            <h3 className="text-2xl font-bold text-foreground mb-6">
               Programme formats
             </h3>
             <div className="space-y-6">
@@ -102,17 +102,17 @@ export function Training() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-neutral-50 p-6 rounded-lg border border-neutral-200 hover:border-gold hover:shadow-sm transition-all"
+                    className="bg-muted p-6 rounded-lg border border-border hover:border-secondary/80 hover:shadow-sm transition-all"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-blue-royal/10 flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-6 h-6 text-blue-royal" />
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <Icon className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-bold text-navy-deep mb-1">
+                        <h4 className="text-lg font-bold text-foreground mb-1">
                           {type.title}
                         </h4>
-                        <p className="text-neutral-600 leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed">
                           {type.description}
                         </p>
                       </div>
@@ -129,13 +129,13 @@ export function Training() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center bg-blue-royal text-white p-8 lg:p-10 rounded-lg"
+          className="text-center bg-primary text-primary-foreground p-8 lg:p-10 rounded-lg"
         >
           <p className="text-xl md:text-2xl mb-8 leading-relaxed">
             Training programmes can be tailored to your organisation's specific
             needs and delivered on-site or virtually.
           </p>
-          <Button asChild size="lg" variant="gold">
+          <Button asChild size="lg" variant="accent">
             <Link href="/contact?service=training">Discuss Training</Link>
           </Button>
         </motion.div>

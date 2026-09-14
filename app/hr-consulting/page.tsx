@@ -81,22 +81,22 @@ export default function HRConsultingPage() {
       <Navigation />
       <main className="flex-1">
         {/* Hero */}
-        <Section background="light" className="pt-32 pb-20">
+        <Section background="muted" className="pt-32 pb-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="text-caption text-gold font-bold mb-6">
+            <div className="text-caption text-secondary font-bold mb-6">
               HR CONSULTING & ADVISORY
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-8">
-              <span className="text-navy-deep">Practical HR Solutions</span>
+              <span className="text-foreground">Practical HR Solutions</span>
               <br />
-              <span className="text-blue-royal">For Growing Organisations.</span>
+              <span className="text-primary">For Growing Organisations.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed mb-10">
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-10">
               We provide flexible HR consulting services to businesses that need
               professional HR support without necessarily maintaining a large internal
               HR function.
@@ -108,7 +108,7 @@ export default function HRConsultingPage() {
         </Section>
 
         {/* Overview */}
-        <Section background="white" className="section-spacing">
+        <Section background="default" className="section-spacing">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -116,10 +116,10 @@ export default function HRConsultingPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-8">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
                 HR Consulting Overview
               </h2>
-              <div className="space-y-6 text-lg leading-relaxed text-neutral-700">
+              <div className="space-y-6 text-lg leading-relaxed text-foreground">
                 <p>
                   Many growing organisations need professional HR support but do not
                   require (or cannot sustain) a full-time HR team. Others have HR
@@ -139,7 +139,7 @@ export default function HRConsultingPage() {
         </Section>
 
         {/* Benefits */}
-        <Section background="light" className="section-spacing">
+        <Section background="muted" className="section-spacing">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -148,10 +148,10 @@ export default function HRConsultingPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Why Work With Us
               </h2>
-              <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 Professional HR support tailored to your organisation's stage and needs.
               </p>
             </motion.div>
@@ -166,15 +166,15 @@ export default function HRConsultingPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-white p-6 rounded-lg border border-neutral-200 hover:shadow-lg transition-shadow"
+                    className="bg-card p-6 rounded-lg border border-border hover:shadow-lg transition-shadow"
                   >
-                    <div className="w-14 h-14 rounded-lg bg-blue-royal/10 flex items-center justify-center mb-6">
-                      <Icon className="w-7 h-7 text-blue-royal" />
+                    <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+                      <Icon className="w-7 h-7 text-primary" />
                     </div>
-                    <h3 className="text-xl font-bold text-navy-deep mb-3">
+                    <h3 className="text-xl font-bold text-foreground mb-3">
                       {benefit.title}
                     </h3>
-                    <p className="text-neutral-600 leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed">
                       {benefit.description}
                     </p>
                   </motion.div>
@@ -185,7 +185,7 @@ export default function HRConsultingPage() {
         </Section>
 
         {/* Consulting Services */}
-        <Section background="white" className="section-spacing">
+        <Section background="default" className="section-spacing">
           <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -194,10 +194,10 @@ export default function HRConsultingPage() {
               transition={{ duration: 0.8 }}
               className="mb-12"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 HR Consulting Services
               </h2>
-              <p className="text-xl text-neutral-600">
+              <p className="text-xl text-muted-foreground">
                 We provide comprehensive HR support across all aspects of people
                 management.
               </p>
@@ -211,10 +211,10 @@ export default function HRConsultingPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.03 }}
-                  className="flex items-start gap-3 p-5 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors"
+                  className="flex items-start gap-3 p-5 bg-muted rounded-lg hover:bg-muted transition-colors"
                 >
-                  <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span className="text-neutral-700 font-medium">{service}</span>
+                  <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground font-medium">{service}</span>
                 </motion.div>
               ))}
             </div>
@@ -222,7 +222,7 @@ export default function HRConsultingPage() {
         </Section>
 
         {/* Advisory Section */}
-        <Section background="navy" className="section-spacing">
+        <Section background="primary" className="section-spacing">
           <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -234,7 +234,7 @@ export default function HRConsultingPage() {
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 People Decisions Require More Than Paperwork
               </h2>
-              <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 We provide independent HR advisory support to business owners, managers
                 and organisations dealing with people-management challenges.
               </p>
@@ -248,7 +248,7 @@ export default function HRConsultingPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="bg-white/5 backdrop-blur-sm p-4 rounded-lg border border-white/10 text-white hover:bg-white/10 transition-colors"
+                  className="bg-card/5 backdrop-blur-sm p-4 rounded-lg border border-white/10 text-primary-foreground hover:bg-card/10 transition-colors"
                 >
                   {area}
                 </motion.div>
@@ -258,7 +258,7 @@ export default function HRConsultingPage() {
         </Section>
 
         {/* Objective */}
-        <Section background="white" className="section-spacing">
+        <Section background="default" className="section-spacing">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -266,7 +266,7 @@ export default function HRConsultingPage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto"
           >
-            <div className="bg-blue-royal text-white p-10 lg:p-16 rounded-lg text-center">
+            <div className="bg-primary text-primary-foreground p-10 lg:p-16 rounded-lg text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Our Objective
               </h2>
@@ -280,7 +280,7 @@ export default function HRConsultingPage() {
         </Section>
 
         {/* How We Work */}
-        <Section background="light" className="section-spacing">
+        <Section background="muted" className="section-spacing">
           <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -289,10 +289,10 @@ export default function HRConsultingPage() {
               transition={{ duration: 0.8 }}
               className="mb-12"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 How We Work
               </h2>
-              <p className="text-xl text-neutral-600">
+              <p className="text-xl text-muted-foreground">
                 Our approach is practical, flexible and aligned with your needs.
               </p>
             </motion.div>
@@ -321,15 +321,15 @@ export default function HRConsultingPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white p-8 rounded-lg border border-neutral-200 hover:shadow-lg transition-shadow"
+                  className="bg-card p-8 rounded-lg border border-border hover:shadow-lg transition-shadow"
                 >
-                  <div className="text-5xl font-bold text-gold/20 mb-4">
+                  <div className="text-5xl font-bold text-secondary/20 mb-4">
                     {step.number}
                   </div>
-                  <h3 className="text-2xl font-bold text-navy-deep mb-4">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">
                     {step.title}
                   </h3>
-                  <p className="text-neutral-600 leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed">
                     {step.description}
                   </p>
                 </motion.div>
@@ -339,7 +339,7 @@ export default function HRConsultingPage() {
         </Section>
 
         {/* CTA */}
-        <Section background="navy" className="section-spacing">
+        <Section background="primary" className="section-spacing">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -350,12 +350,12 @@ export default function HRConsultingPage() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Let's Discuss Your HR Needs
             </h2>
-            <p className="text-xl text-neutral-300 mb-10 leading-relaxed">
+            <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
               Whether you need help with a specific HR project or ongoing people
               management support, we're here to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="xl" variant="gold">
+              <Button asChild size="xl" variant="accent">
                 <Link href="/contact?service=hr-consulting">Get HR Support</Link>
               </Button>
               <Button asChild size="xl" variant="secondary">

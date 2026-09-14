@@ -53,22 +53,22 @@ export default function TrainingPage() {
       <Navigation />
       <main className="flex-1">
         {/* Hero */}
-        <Section background="light" className="pt-32 pb-20">
+        <Section background="muted" className="pt-32 pb-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="text-caption text-gold font-bold mb-6">
+            <div className="text-caption text-secondary font-bold mb-6">
               TRAINING & DEVELOPMENT
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-8">
-              <span className="text-navy-deep">Develop People.</span>
+              <span className="text-foreground">Develop People.</span>
               <br />
-              <span className="text-blue-royal">Strengthen Performance.</span>
+              <span className="text-primary">Strengthen Performance.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed mb-10">
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-10">
               Professional training programmes to build the skills your people need to
               perform effectively and contribute to organisational success.
             </p>
@@ -79,7 +79,7 @@ export default function TrainingPage() {
         </Section>
 
         {/* Overview */}
-        <Section background="white" className="section-spacing">
+        <Section background="default" className="section-spacing">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -87,10 +87,10 @@ export default function TrainingPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-8">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
                 Training & Development Overview
               </h2>
-              <div className="space-y-6 text-lg leading-relaxed text-neutral-700">
+              <div className="space-y-6 text-lg leading-relaxed text-foreground">
                 <p>
                   Employee development is essential for building capable teams and
                   maintaining competitive performance. Whether you need to strengthen
@@ -111,7 +111,7 @@ export default function TrainingPage() {
         </Section>
 
         {/* Training Areas */}
-        <Section background="light" className="section-spacing">
+        <Section background="muted" className="section-spacing">
           <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -120,10 +120,10 @@ export default function TrainingPage() {
               transition={{ duration: 0.8 }}
               className="mb-12"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Training Areas
               </h2>
-              <p className="text-xl text-neutral-600">
+              <p className="text-xl text-muted-foreground">
                 We provide training across a wide range of workplace and people
                 management topics.
               </p>
@@ -137,10 +137,10 @@ export default function TrainingPage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.03 }}
-                  className="flex items-start gap-3 p-4 bg-white rounded-lg border border-neutral-200 hover:border-gold hover:shadow-sm transition-all"
+                  className="flex items-start gap-3 p-4 bg-card rounded-lg border border-border hover:border-secondary/80 hover:shadow-sm transition-all"
                 >
-                  <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span className="text-neutral-700 font-medium">{area}</span>
+                  <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground font-medium">{area}</span>
                 </motion.div>
               ))}
             </div>
@@ -148,7 +148,7 @@ export default function TrainingPage() {
         </Section>
 
         {/* Programme Formats */}
-        <Section background="white" className="section-spacing">
+        <Section background="default" className="section-spacing">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -157,10 +157,10 @@ export default function TrainingPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Programme Formats
               </h2>
-              <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 Flexible training delivery options to suit your organisation's needs.
               </p>
             </motion.div>
@@ -175,24 +175,24 @@ export default function TrainingPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-neutral-50 border border-neutral-200 rounded-lg p-8 lg:p-10 hover:shadow-lg transition-shadow"
+                    className="bg-muted border border-border rounded-lg p-8 lg:p-10 hover:shadow-lg transition-shadow"
                   >
                     <div className="flex flex-col lg:flex-row gap-6">
-                      <div className="w-16 h-16 rounded-lg bg-blue-royal/10 flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-8 h-8 text-blue-royal" />
+                      <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <Icon className="w-8 h-8 text-primary" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-2xl lg:text-3xl font-bold text-navy-deep mb-4">
+                        <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
                           {format.title}
                         </h3>
-                        <p className="text-lg text-neutral-600 leading-relaxed mb-6">
+                        <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                           {format.description}
                         </p>
                         <div className="grid sm:grid-cols-2 gap-3">
                           {format.benefits.map((benefit) => (
                             <div key={benefit} className="flex items-start gap-2">
-                              <Check className="w-4 h-4 text-gold flex-shrink-0 mt-1" />
-                              <span className="text-neutral-700">{benefit}</span>
+                              <Check className="w-4 h-4 text-secondary flex-shrink-0 mt-1" />
+                              <span className="text-foreground">{benefit}</span>
                             </div>
                           ))}
                         </div>
@@ -206,7 +206,7 @@ export default function TrainingPage() {
         </Section>
 
         {/* Approach */}
-        <Section background="navy" className="section-spacing">
+        <Section background="primary" className="section-spacing">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -215,19 +215,19 @@ export default function TrainingPage() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <div className="w-16 h-16 rounded-lg bg-gold/20 flex items-center justify-center mx-auto mb-8">
-                <Presentation className="w-8 h-8 text-gold" />
+              <div className="w-16 h-16 rounded-lg bg-secondary/20 flex items-center justify-center mx-auto mb-8">
+                <Presentation className="w-8 h-8 text-secondary" />
               </div>
               <h2 className="text-4xl md:text-5xl font-bold mb-8">
                 Our Training Approach
               </h2>
-              <div className="space-y-6 text-lg md:text-xl text-neutral-300 leading-relaxed">
+              <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
                 <p>
                   Our training is practical, interactive and focused on real workplace
                   scenarios. We don't just present theory — we work with participants to
                   apply concepts to their actual work situations.
                 </p>
-                <p className="text-white font-medium text-xl md:text-2xl">
+                <p className="text-primary-foreground font-medium text-xl md:text-2xl">
                   Training programmes can be tailored to your organisation's specific
                   needs and delivered on-site or virtually.
                 </p>
@@ -237,7 +237,7 @@ export default function TrainingPage() {
         </Section>
 
         {/* Process */}
-        <Section background="light" className="section-spacing">
+        <Section background="muted" className="section-spacing">
           <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -246,7 +246,7 @@ export default function TrainingPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-12"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 How We Work
               </h2>
             </motion.div>
@@ -275,15 +275,15 @@ export default function TrainingPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white p-8 rounded-lg border border-neutral-200 hover:shadow-lg transition-shadow"
+                  className="bg-card p-8 rounded-lg border border-border hover:shadow-lg transition-shadow"
                 >
-                  <div className="text-5xl font-bold text-gold/20 mb-4">
+                  <div className="text-5xl font-bold text-secondary/20 mb-4">
                     {step.number}
                   </div>
-                  <h3 className="text-2xl font-bold text-navy-deep mb-4">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">
                     {step.title}
                   </h3>
-                  <p className="text-neutral-600 leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed">
                     {step.description}
                   </p>
                 </motion.div>
@@ -293,7 +293,7 @@ export default function TrainingPage() {
         </Section>
 
         {/* CTA */}
-        <Section background="white" className="section-spacing">
+        <Section background="default" className="section-spacing">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -301,10 +301,10 @@ export default function TrainingPage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Let's Discuss Your Training Needs
             </h2>
-            <p className="text-xl text-neutral-600 mb-10 leading-relaxed">
+            <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
               Whether you need team training, management development, or specialized
               workplace programmes — we're here to help.
             </p>

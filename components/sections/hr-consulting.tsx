@@ -27,7 +27,7 @@ const services = [
 
 export function HRConsulting() {
   return (
-    <Section background="white" className="section-spacing">
+    <Section background="default" className="section-spacing">
       <div className="max-w-5xl mx-auto">
         <SectionHeader
           label="HR CONSULTING"
@@ -44,10 +44,10 @@ export function HRConsulting() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.03 }}
-              className="flex items-start gap-3 p-4 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors"
+              className="flex items-start gap-3 p-4 bg-muted rounded-lg hover:bg-muted transition-colors"
             >
-              <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-              <span className="text-neutral-700">{service}</span>
+              <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+              <span className="text-foreground">{service}</span>
             </motion.div>
           ))}
         </div>
@@ -57,7 +57,7 @@ export function HRConsulting() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-blue-royal text-white p-8 lg:p-10 rounded-lg text-center"
+          className="bg-primary text-primary-foreground p-8 lg:p-10 rounded-lg text-center"
         >
           <h3 className="text-2xl lg:text-3xl font-bold mb-4">
             Our objective:
@@ -66,7 +66,7 @@ export function HRConsulting() {
             To help organisations establish structured, compliant and
             performance-oriented people management systems.
           </p>
-          <Button asChild size="lg" variant="gold">
+          <Button asChild size="lg" variant="accent">
             <Link href="/contact?service=hr-consulting">Get HR Support</Link>
           </Button>
         </motion.div>

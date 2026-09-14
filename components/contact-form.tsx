@@ -87,16 +87,16 @@ export function ContactForm() {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}
     >
-      <div className="bg-white p-8 lg:p-10 rounded-lg shadow-sm border border-neutral-200">
-        <h2 className="text-2xl font-bold text-navy-deep mb-6">
+      <div className="bg-card p-8 lg:p-10 rounded-lg shadow-sm border border-border">
+        <h2 className="text-2xl font-bold text-foreground mb-6">
           Send us a message
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Basic Information */}
           <div>
-            <label htmlFor="name" className="block text-sm font-semibold text-navy-deep mb-2">
-              Full Name <span className="text-gold">*</span>
+            <label htmlFor="name" className="block text-sm font-semibold text-foreground mb-2">
+              Full Name <span className="text-secondary">*</span>
             </label>
             <input
               type="text"
@@ -105,14 +105,14 @@ export function ContactForm() {
               required
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-neutral-200 rounded-md focus:ring-2 focus:ring-blue-royal focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
               placeholder="Your full name"
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-semibold text-navy-deep mb-2">
-              Email <span className="text-gold">*</span>
+            <label htmlFor="email" className="block text-sm font-semibold text-foreground mb-2">
+              Email <span className="text-secondary">*</span>
             </label>
             <input
               type="email"
@@ -121,13 +121,13 @@ export function ContactForm() {
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-neutral-200 rounded-md focus:ring-2 focus:ring-blue-royal focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
               placeholder="your@email.com"
             />
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-sm font-semibold text-navy-deep mb-2">
+            <label htmlFor="phone" className="block text-sm font-semibold text-foreground mb-2">
               Phone Number
             </label>
             <input
@@ -136,13 +136,13 @@ export function ContactForm() {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-neutral-200 rounded-md focus:ring-2 focus:ring-blue-royal focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
               placeholder="+254 700 000 000"
             />
           </div>
 
           <div>
-            <label htmlFor="organisation" className="block text-sm font-semibold text-navy-deep mb-2">
+            <label htmlFor="organisation" className="block text-sm font-semibold text-foreground mb-2">
               Organisation / Company
             </label>
             <input
@@ -151,15 +151,15 @@ export function ContactForm() {
               name="organisation"
               value={formData.organisation}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-neutral-200 rounded-md focus:ring-2 focus:ring-blue-royal focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
               placeholder="Your company name"
             />
           </div>
 
           {/* Inquiry Type */}
           <div>
-            <label htmlFor="inquiryType" className="block text-sm font-semibold text-navy-deep mb-2">
-              Service Required <span className="text-gold">*</span>
+            <label htmlFor="inquiryType" className="block text-sm font-semibold text-foreground mb-2">
+              Service Required <span className="text-secondary">*</span>
             </label>
             <select
               id="inquiryType"
@@ -167,7 +167,7 @@ export function ContactForm() {
               required
               value={formData.inquiryType}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-neutral-200 rounded-md focus:ring-2 focus:ring-blue-royal focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
             >
               <option value="">Select a service</option>
               {inquiryTypes.map((type) => (
@@ -184,12 +184,12 @@ export function ContactForm() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="space-y-6 p-6 bg-blue-royal/5 rounded-lg border border-blue-royal/20"
+              className="space-y-6 p-6 bg-primary/5 rounded-lg border border-primary/20"
             >
-              <h3 className="text-lg font-bold text-navy-deep">Recruitment Details</h3>
+              <h3 className="text-lg font-bold text-foreground">Recruitment Details</h3>
               
               <div>
-                <label htmlFor="position" className="block text-sm font-semibold text-navy-deep mb-2">
+                <label htmlFor="position" className="block text-sm font-semibold text-foreground mb-2">
                   Position Title
                 </label>
                 <input
@@ -198,13 +198,13 @@ export function ContactForm() {
                   name="position"
                   value={formData.position}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-neutral-200 rounded-md focus:ring-2 focus:ring-blue-royal focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
                   placeholder="e.g., HR Manager"
                 />
               </div>
 
               <div>
-                <label htmlFor="vacancies" className="block text-sm font-semibold text-navy-deep mb-2">
+                <label htmlFor="vacancies" className="block text-sm font-semibold text-foreground mb-2">
                   Number of Vacancies
                 </label>
                 <input
@@ -214,12 +214,12 @@ export function ContactForm() {
                   min="1"
                   value={formData.vacancies}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-neutral-200 rounded-md focus:ring-2 focus:ring-blue-royal focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
                 />
               </div>
 
               <div>
-                <label htmlFor="employmentType" className="block text-sm font-semibold text-navy-deep mb-2">
+                <label htmlFor="employmentType" className="block text-sm font-semibold text-foreground mb-2">
                   Employment Type
                 </label>
                 <select
@@ -227,7 +227,7 @@ export function ContactForm() {
                   name="employmentType"
                   value={formData.employmentType}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-neutral-200 rounded-md focus:ring-2 focus:ring-blue-royal focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
                 >
                   <option value="">Select type</option>
                   <option value="permanent">Permanent</option>
@@ -244,12 +244,12 @@ export function ContactForm() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="space-y-6 p-6 bg-gold/5 rounded-lg border border-gold/20"
+              className="space-y-6 p-6 bg-secondary/5 rounded-lg border border-secondary/20"
             >
-              <h3 className="text-lg font-bold text-navy-deep">Career Details</h3>
+              <h3 className="text-lg font-bold text-foreground">Career Details</h3>
               
               <div>
-                <label htmlFor="careerLevel" className="block text-sm font-semibold text-navy-deep mb-2">
+                <label htmlFor="careerLevel" className="block text-sm font-semibold text-foreground mb-2">
                   Career Level
                 </label>
                 <select
@@ -257,7 +257,7 @@ export function ContactForm() {
                   name="careerLevel"
                   value={formData.careerLevel}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-neutral-200 rounded-md focus:ring-2 focus:ring-blue-royal focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
                 >
                   <option value="">Select level</option>
                   <option value="graduate">Graduate</option>
@@ -269,7 +269,7 @@ export function ContactForm() {
               </div>
 
               <div>
-                <label htmlFor="targetRole" className="block text-sm font-semibold text-navy-deep mb-2">
+                <label htmlFor="targetRole" className="block text-sm font-semibold text-foreground mb-2">
                   Target Role / Industry
                 </label>
                 <input
@@ -278,13 +278,13 @@ export function ContactForm() {
                   name="targetRole"
                   value={formData.targetRole}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-neutral-200 rounded-md focus:ring-2 focus:ring-blue-royal focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
                   placeholder="e.g., Marketing Manager"
                 />
               </div>
 
               <div>
-                <label htmlFor="cvService" className="block text-sm font-semibold text-navy-deep mb-2">
+                <label htmlFor="cvService" className="block text-sm font-semibold text-foreground mb-2">
                   CV Service Required
                 </label>
                 <select
@@ -292,7 +292,7 @@ export function ContactForm() {
                   name="cvService"
                   value={formData.cvService}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-neutral-200 rounded-md focus:ring-2 focus:ring-blue-royal focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
                 >
                   <option value="">Select service</option>
                   <option value="new">Professional CV Writing</option>
@@ -308,8 +308,8 @@ export function ContactForm() {
 
           {/* Message */}
           <div>
-            <label htmlFor="message" className="block text-sm font-semibold text-navy-deep mb-2">
-              Additional Information <span className="text-gold">*</span>
+            <label htmlFor="message" className="block text-sm font-semibold text-foreground mb-2">
+              Additional Information <span className="text-secondary">*</span>
             </label>
             <textarea
               id="message"
@@ -318,7 +318,7 @@ export function ContactForm() {
               rows={6}
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-neutral-200 rounded-md focus:ring-2 focus:ring-blue-royal focus:border-transparent transition-all resize-none"
+              className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all resize-none bg-background text-foreground"
               placeholder="Tell us more about your requirements..."
             />
           </div>

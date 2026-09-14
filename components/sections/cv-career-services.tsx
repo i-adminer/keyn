@@ -46,7 +46,7 @@ const services = [
 
 export function CVCareerServices() {
   return (
-    <Section background="white" className="section-spacing">
+    <Section background="default" className="section-spacing">
       <div className="max-w-6xl mx-auto">
         <SectionHeader
           label="CV & CAREER SERVICES"
@@ -54,7 +54,7 @@ export function CVCareerServices() {
             <>
               Your CV Is More Than a Document.
               <br />
-              <span className="text-blue-royal">
+              <span className="text-primary">
                 It Is Your Career Marketing Tool.
               </span>
             </>
@@ -71,7 +71,7 @@ export function CVCareerServices() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <h3 className="text-2xl font-bold text-navy-deep mb-8 text-center">
+          <h3 className="text-2xl font-bold text-foreground mb-8 text-center">
             We work with professionals at all career levels
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -84,12 +84,12 @@ export function CVCareerServices() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="flex flex-col items-center gap-3 p-4 bg-neutral-50 rounded-lg hover:bg-neutral-100 transition-colors"
+                  className="flex flex-col items-center gap-3 p-4 bg-muted rounded-lg hover:bg-muted transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-gold/20 flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-gold" />
+                  <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-secondary" />
                   </div>
-                  <p className="text-sm font-medium text-navy-deep text-center">
+                  <p className="text-sm font-medium text-foreground text-center">
                     {audience.name}
                   </p>
                 </motion.div>
@@ -107,15 +107,15 @@ export function CVCareerServices() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white border border-neutral-200 p-6 rounded-lg hover:shadow-lg hover:-translate-y-1 transition-all"
+              className="bg-card border border-border p-6 rounded-lg hover:shadow-lg hover:-translate-y-1 transition-all"
             >
-              <div className="w-10 h-10 rounded-lg bg-blue-royal/10 flex items-center justify-center mb-4">
-                <FileText className="w-5 h-5 text-blue-royal" />
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                <FileText className="w-5 h-5 text-primary" />
               </div>
-              <h4 className="text-lg font-bold text-navy-deep mb-2">
+              <h4 className="text-lg font-bold text-foreground mb-2">
                 {service.name}
               </h4>
-              <p className="text-neutral-600 text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 {service.description}
               </p>
             </motion.div>

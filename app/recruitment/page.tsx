@@ -93,22 +93,22 @@ export default function RecruitmentPage() {
       <Navigation />
       <main className="flex-1">
         {/* Hero */}
-        <Section background="light" className="pt-32 pb-20">
+        <Section background="muted" className="pt-32 pb-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="text-caption text-gold font-bold mb-6">
+            <div className="text-caption text-secondary font-bold mb-6">
               RECRUITMENT & TALENT ACQUISITION
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-8">
-              <span className="text-navy-deep">Find the Right Talent.</span>
+              <span className="text-foreground">Find the Right Talent.</span>
               <br />
-              <span className="text-blue-royal">Build the Right Team.</span>
+              <span className="text-primary">Build the Right Team.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed mb-10">
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-10">
               We support organisations throughout the recruitment lifecycle — from
               identifying workforce requirements to sourcing, screening and
               shortlisting qualified candidates.
@@ -122,7 +122,7 @@ export default function RecruitmentPage() {
         </Section>
 
         {/* Overview */}
-        <Section background="white" className="section-spacing">
+        <Section background="default" className="section-spacing">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -130,10 +130,10 @@ export default function RecruitmentPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-8">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
                 Recruitment Overview
               </h2>
-              <div className="space-y-6 text-lg leading-relaxed text-neutral-700">
+              <div className="space-y-6 text-lg leading-relaxed text-foreground">
                 <p>
                   Finding the right person for a position requires more than posting
                   a job advertisement and reviewing CVs. It requires a structured
@@ -154,7 +154,7 @@ export default function RecruitmentPage() {
         </Section>
 
         {/* Services */}
-        <Section background="light" className="section-spacing">
+        <Section background="muted" className="section-spacing">
           <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -163,10 +163,10 @@ export default function RecruitmentPage() {
               transition={{ duration: 0.8 }}
               className="mb-12"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Recruitment Services
               </h2>
-              <p className="text-xl text-neutral-600">
+              <p className="text-xl text-muted-foreground">
                 We provide comprehensive recruitment support across all levels and
                 employment types.
               </p>
@@ -180,10 +180,10 @@ export default function RecruitmentPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="flex items-start gap-3 p-5 bg-white rounded-lg border border-neutral-200 hover:border-gold hover:shadow-md transition-all"
+                  className="flex items-start gap-3 p-5 bg-card rounded-lg border border-border hover:border-secondary/80 hover:shadow-md transition-all"
                 >
-                  <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span className="text-neutral-700 font-medium">{service}</span>
+                  <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground font-medium">{service}</span>
                 </motion.div>
               ))}
             </div>
@@ -191,7 +191,7 @@ export default function RecruitmentPage() {
         </Section>
 
         {/* Assessment Approach */}
-        <Section background="navy" className="section-spacing">
+        <Section background="primary" className="section-spacing">
           <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -203,7 +203,7 @@ export default function RecruitmentPage() {
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 We Focus on More Than Qualifications
               </h2>
-              <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 Our candidate assessment goes beyond skills and experience to
                 evaluate fit and future performance.
               </p>
@@ -219,15 +219,15 @@ export default function RecruitmentPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10"
+                    className="bg-card/5 backdrop-blur-sm p-6 rounded-lg border border-white/10"
                   >
-                    <div className="w-12 h-12 rounded-lg bg-gold/20 flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-gold" />
+                    <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-secondary" />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-2">
+                    <h3 className="text-xl font-bold text-primary-foreground mb-2">
                       {criterion.title}
                     </h3>
-                    <p className="text-neutral-300 leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed">
                       {criterion.description}
                     </p>
                   </motion.div>
@@ -245,15 +245,15 @@ export default function RecruitmentPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                    className="bg-white/5 backdrop-blur-sm p-6 rounded-lg border border-white/10"
+                    className="bg-card/5 backdrop-blur-sm p-6 rounded-lg border border-white/10"
                   >
-                    <div className="w-12 h-12 rounded-lg bg-gold/20 flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-gold" />
+                    <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-secondary" />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-2">
+                    <h3 className="text-xl font-bold text-primary-foreground mb-2">
                       {criterion.title}
                     </h3>
-                    <p className="text-neutral-300 leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed">
                       {criterion.description}
                     </p>
                   </motion.div>
@@ -264,7 +264,7 @@ export default function RecruitmentPage() {
         </Section>
 
         {/* Process */}
-        <Section background="white" className="section-spacing">
+        <Section background="default" className="section-spacing">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -273,13 +273,13 @@ export default function RecruitmentPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <div className="text-caption text-gold font-bold mb-4">
+              <div className="text-caption text-secondary font-bold mb-4">
                 OUR METHODOLOGY
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 From Vacancy to Talent
               </h2>
-              <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 Our structured recruitment process ensures quality at every stage.
               </p>
             </motion.div>
@@ -306,14 +306,14 @@ export default function RecruitmentPage() {
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     className="relative flex flex-col items-center"
                   >
-                    <div className="relative z-10 w-16 h-16 rounded-full bg-white border-2 border-blue-royal flex items-center justify-center font-bold text-blue-royal mb-6 shadow-sm">
+                    <div className="relative z-10 w-16 h-16 rounded-full bg-card border-2 border-primary flex items-center justify-center font-bold text-primary mb-6 shadow-sm">
                       {step.number}
                     </div>
                     <div className="text-center">
-                      <h3 className="text-lg font-bold text-navy-deep mb-2">
+                      <h3 className="text-lg font-bold text-foreground mb-2">
                         {step.title}
                       </h3>
-                      <p className="text-sm text-neutral-600 leading-relaxed">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         {step.description}
                       </p>
                     </div>
@@ -334,7 +334,7 @@ export default function RecruitmentPage() {
                   className="relative flex gap-6"
                 >
                   <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border-2 border-blue-royal flex items-center justify-center font-bold text-blue-royal shadow-sm flex-shrink-0">
+                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-card border-2 border-primary flex items-center justify-center font-bold text-primary shadow-sm flex-shrink-0">
                       {step.number}
                     </div>
                     {index < process.length - 1 && (
@@ -351,10 +351,10 @@ export default function RecruitmentPage() {
                     )}
                   </div>
                   <div className="flex-1 pb-8">
-                    <h3 className="text-xl md:text-2xl font-bold text-navy-deep mb-2">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-neutral-600 leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -365,7 +365,7 @@ export default function RecruitmentPage() {
         </Section>
 
         {/* CTA */}
-        <Section background="navy" className="section-spacing">
+        <Section background="primary" className="section-spacing">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -376,12 +376,12 @@ export default function RecruitmentPage() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Ready to Start Your Recruitment?
             </h2>
-            <p className="text-xl text-neutral-300 mb-10 leading-relaxed">
+            <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
               Tell us about your vacancy and we'll help you find the right talent for
               your organisation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="xl" variant="gold">
+              <Button asChild size="xl" variant="accent">
                 <Link href="/contact?service=recruitment">
                   Start a Recruitment Request
                 </Link>

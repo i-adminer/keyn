@@ -43,7 +43,7 @@ const services = [
 
 export function ServicesOverview() {
   return (
-    <Section background="white" className="section-spacing">
+    <Section background="default" className="section-spacing">
       <SectionHeader
         title="What We Do"
         description="Practical people solutions for organisations and professionals."
@@ -63,27 +63,27 @@ export function ServicesOverview() {
               className="group relative"
             >
               <Link href={service.href} className="block">
-                <div className="relative p-8 lg:p-10 bg-white border border-neutral-200 rounded-lg hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className="relative p-8 lg:p-10 bg-card border border-border rounded-lg hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   {/* Number */}
-                  <div className="text-6xl font-bold text-gold/20 mb-4 leading-none">
+                  <div className="text-6xl font-bold text-secondary/20 mb-4 leading-none">
                     {service.number}
                   </div>
 
                   {/* Icon */}
-                  <div className="w-14 h-14 rounded-lg bg-blue-royal/10 flex items-center justify-center mb-6 group-hover:bg-blue-royal/20 transition-colors">
-                    <Icon className="w-7 h-7 text-blue-royal" />
+                  <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                    <Icon className="w-7 h-7 text-primary" />
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-2xl lg:text-3xl font-bold text-navy-deep mb-4 leading-tight">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4 leading-tight">
                     {service.title}
                   </h3>
-                  <p className="text-lg text-neutral-600 leading-relaxed mb-6">
+                  <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                     {service.description}
                   </p>
 
                   {/* Link */}
-                  <div className="flex items-center gap-2 text-blue-royal font-semibold group-hover:gap-3 transition-all">
+                  <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
                     <span>Learn more</span>
                     <ArrowRight className="w-5 h-5" />
                   </div>

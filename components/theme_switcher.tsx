@@ -18,13 +18,7 @@ export function Theme_Switcher() {
   ];
 
   return (
-    <div
-      className="flex items-center gap-1 rounded-full p-1 w-max border border-border/50"
-      style={{
-        background:
-          "color-mix(in oklch, var(--muted) 70%, oklch(0.55 0.18 270) 30%)",
-      }}
-    >
+    <div className="flex items-center gap-1 rounded-full p-1 w-max border border-border/50 bg-card">
       {options.map(({ value, icon: Icon, label }) => (
         <button
           key={value}

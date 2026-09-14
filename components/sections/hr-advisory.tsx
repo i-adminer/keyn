@@ -44,7 +44,7 @@ const highlights = [
 
 export function HRAdvisory() {
   return (
-    <Section background="light" className="section-spacing">
+    <Section background="muted" className="section-spacing">
       <div className="max-w-5xl mx-auto">
         <SectionHeader
           label="HR ADVISORY"
@@ -63,15 +63,15 @@ export function HRAdvisory() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-6 rounded-lg shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+                className="bg-card p-6 rounded-lg shadow-sm border border-border hover:shadow-md transition-shadow"
               >
-                <div className="w-12 h-12 rounded-lg bg-blue-royal/10 flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-blue-royal" />
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <Icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-bold text-navy-deep mb-2">
+                <h3 className="font-bold text-foreground mb-2">
                   {highlight.title}
                 </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {highlight.description}
                 </p>
               </motion.div>
@@ -85,7 +85,7 @@ export function HRAdvisory() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-2xl font-bold text-navy-deep mb-6">
+          <h3 className="text-2xl font-bold text-foreground mb-6">
             Advisory areas
           </h3>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
@@ -96,7 +96,7 @@ export function HRAdvisory() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.03 }}
-                className="bg-white p-4 rounded-lg border border-neutral-200 text-neutral-700 hover:border-gold hover:shadow-sm transition-all"
+                className="bg-card p-4 rounded-lg border border-border text-foreground hover:border-secondary/80 hover:shadow-sm transition-all"
               >
                 {area}
               </motion.div>

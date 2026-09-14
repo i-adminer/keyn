@@ -8,7 +8,7 @@ import { Briefcase, TrendingUp } from "lucide-react"
 
 export function DualPathway() {
   return (
-    <Section background="light" className="section-spacing">
+    <Section background="muted" className="section-spacing">
       <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
         {/* For Employers */}
         <motion.div
@@ -16,21 +16,21 @@ export function DualPathway() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative bg-white p-8 lg:p-12 rounded-lg shadow-sm border border-neutral-200 hover:shadow-xl transition-shadow"
+          className="relative bg-card p-8 lg:p-12 rounded-lg shadow-sm border border-border hover:shadow-xl transition-shadow"
         >
-          <div className="w-16 h-16 rounded-lg bg-blue-royal/10 flex items-center justify-center mb-6">
-            <Briefcase className="w-8 h-8 text-blue-royal" />
+          <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+            <Briefcase className="w-8 h-8 text-primary" />
           </div>
 
-          <h3 className="text-sm font-bold uppercase tracking-wider text-gold mb-4">
+          <h3 className="text-sm font-bold uppercase tracking-wider text-secondary mb-4">
             FOR EMPLOYERS
           </h3>
 
-          <h2 className="text-3xl lg:text-4xl font-bold text-navy-deep mb-6 leading-tight">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6 leading-tight">
             Looking for the right talent?
           </h2>
 
-          <p className="text-lg text-neutral-600 leading-relaxed mb-8">
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
             Tell us what you are looking for and we will help you identify,
             assess and shortlist suitable candidates.
           </p>
@@ -49,13 +49,13 @@ export function DualPathway() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative bg-navy-deep text-white p-8 lg:p-12 rounded-lg shadow-lg"
+          className="relative bg-primary text-primary-foreground p-8 lg:p-12 rounded-lg shadow-lg"
         >
-          <div className="w-16 h-16 rounded-lg bg-gold/20 flex items-center justify-center mb-6">
-            <TrendingUp className="w-8 h-8 text-gold" />
+          <div className="w-16 h-16 rounded-lg bg-secondary/20 flex items-center justify-center mb-6">
+            <TrendingUp className="w-8 h-8 text-secondary" />
           </div>
 
-          <h3 className="text-sm font-bold uppercase tracking-wider text-gold mb-4">
+          <h3 className="text-sm font-bold uppercase tracking-wider text-secondary mb-4">
             FOR PROFESSIONALS
           </h3>
 
@@ -63,12 +63,12 @@ export function DualPathway() {
             Ready for your next career opportunity?
           </h2>
 
-          <p className="text-lg text-neutral-300 leading-relaxed mb-8">
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
             Stand out in a competitive job market with a professional CV and
             stronger career positioning.
           </p>
 
-          <Button asChild size="lg" variant="gold" className="w-full sm:w-auto">
+          <Button asChild size="lg" variant="accent" className="w-full sm:w-auto">
             <Link href="/cv-career-services">Build My CV</Link>
           </Button>
 

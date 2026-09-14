@@ -6,7 +6,7 @@ interface SectionProps {
   className?: string
   containerClassName?: string
   id?: string
-  background?: "white" | "light" | "navy" | "dark" | "gradient"
+  background?: "default" | "muted" | "card" | "primary" | "accent"
 }
 
 export function Section({
@@ -14,14 +14,14 @@ export function Section({
   className,
   containerClassName,
   id,
-  background = "white",
+  background = "default",
 }: SectionProps) {
   const bgClasses = {
-    white: "bg-white",
-    light: "bg-neutral-50",
-    navy: "bg-navy-deep text-white",
-    dark: "bg-navy-midnight text-white",
-    gradient: "gradient-navy-blue text-white",
+    default: "bg-background text-foreground",
+    muted: "bg-muted text-foreground",
+    card: "bg-card text-card-foreground",
+    primary: "bg-primary text-primary-foreground",
+    accent: "bg-accent text-accent-foreground",
   }
 
   return (
@@ -50,7 +50,7 @@ export function SectionHeader({
   return (
     <div className={cn("max-w-3xl", className)}>
       {label && (
-        <div className="text-caption text-gold mb-4 font-semibold">
+        <div className="text-caption text-secondary font-semibold mb-4">
           {label}
         </div>
       )}

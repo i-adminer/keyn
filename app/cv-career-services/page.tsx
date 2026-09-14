@@ -64,22 +64,22 @@ export default function CVCareerServicesPage() {
       <Navigation />
       <main className="flex-1">
         {/* Hero */}
-        <Section background="light" className="pt-32 pb-20">
+        <Section background="muted" className="pt-32 pb-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="text-caption text-gold font-bold mb-6">
+            <div className="text-caption text-secondary font-bold mb-6">
               CV & CAREER SERVICES
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-8">
-              <span className="text-navy-deep">Your CV Is More Than a Document.</span>
+              <span className="text-foreground">Your CV Is More Than a Document.</span>
               <br />
-              <span className="text-blue-royal">It Is Your Career Marketing Tool.</span>
+              <span className="text-primary">It Is Your Career Marketing Tool.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed mb-10">
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-10">
               Keyn helps professionals create clear, professional and results-focused
               CVs that stand out in competitive job markets.
             </p>
@@ -90,7 +90,7 @@ export default function CVCareerServicesPage() {
         </Section>
 
         {/* Overview */}
-        <Section background="white" className="section-spacing">
+        <Section background="default" className="section-spacing">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -98,10 +98,10 @@ export default function CVCareerServicesPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-8">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
                 Professional CV Writing
               </h2>
-              <div className="space-y-6 text-lg leading-relaxed text-neutral-700">
+              <div className="space-y-6 text-lg leading-relaxed text-foreground">
                 <p>
                   Your CV is often the first impression a potential employer has of you.
                   It needs to clearly communicate your skills, experience and
@@ -114,7 +114,7 @@ export default function CVCareerServicesPage() {
                   or create CVs that are difficult to read or not optimized for modern
                   recruitment processes.
                 </p>
-                <p className="font-medium text-navy-deep">
+                <p className="font-medium text-foreground">
                   Keyn People Advisory provides professional CV writing services to help
                   you present yourself competitively in today's job market.
                 </p>
@@ -124,7 +124,7 @@ export default function CVCareerServicesPage() {
         </Section>
 
         {/* Target Audiences */}
-        <Section background="light" className="section-spacing">
+        <Section background="muted" className="section-spacing">
           <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -133,7 +133,7 @@ export default function CVCareerServicesPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-12"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 We Work With Professionals at All Career Levels
               </h2>
             </motion.div>
@@ -148,12 +148,12 @@ export default function CVCareerServicesPage() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
-                    className="flex flex-col items-center gap-4 p-6 bg-white rounded-lg border border-neutral-200 hover:border-gold hover:shadow-md transition-all"
+                    className="flex flex-col items-center gap-4 p-6 bg-card rounded-lg border border-border hover:border-secondary/80 hover:shadow-md transition-all"
                   >
-                    <div className="w-12 h-12 rounded-lg bg-gold/20 flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-gold" />
+                    <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center">
+                      <Icon className="w-6 h-6 text-secondary" />
                     </div>
-                    <p className="text-sm font-semibold text-navy-deep text-center">
+                    <p className="text-sm font-semibold text-foreground text-center">
                       {audience.name}
                     </p>
                   </motion.div>
@@ -164,7 +164,7 @@ export default function CVCareerServicesPage() {
         </Section>
 
         {/* Services */}
-        <Section background="white" className="section-spacing">
+        <Section background="default" className="section-spacing">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -173,10 +173,10 @@ export default function CVCareerServicesPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Our Services
               </h2>
-              <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 Professional career documents tailored to your needs and career stage.
               </p>
             </motion.div>
@@ -189,35 +189,35 @@ export default function CVCareerServicesPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white border border-neutral-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+                  className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
                 >
                   <div className="p-8 lg:p-10">
                     <div className="flex items-start gap-6">
-                      <div className="w-14 h-14 rounded-lg bg-blue-royal/10 flex items-center justify-center flex-shrink-0">
-                        <FileText className="w-7 h-7 text-blue-royal" />
+                      <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <FileText className="w-7 h-7 text-primary" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-2xl lg:text-3xl font-bold text-navy-deep mb-3">
+                        <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">
                           {service.title}
                         </h3>
-                        <p className="text-lg text-neutral-600 leading-relaxed mb-4">
+                        <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                           {service.description}
                         </p>
                         <div className="mb-4">
-                          <span className="text-sm font-semibold text-gold uppercase tracking-wide">
+                          <span className="text-sm font-semibold text-secondary uppercase tracking-wide">
                             Who this is for:
                           </span>
-                          <p className="text-neutral-700 mt-1">{service.whoFor}</p>
+                          <p className="text-foreground mt-1">{service.whoFor}</p>
                         </div>
                         <div>
-                          <span className="text-sm font-semibold text-navy-deep uppercase tracking-wide block mb-3">
+                          <span className="text-sm font-semibold text-foreground uppercase tracking-wide block mb-3">
                             What's included:
                           </span>
                           <div className="grid sm:grid-cols-2 gap-2">
                             {service.included.map((item) => (
                               <div key={item} className="flex items-start gap-2">
-                                <Check className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                                <span className="text-sm text-neutral-600">{item}</span>
+                                <Check className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
+                                <span className="text-sm text-muted-foreground">{item}</span>
                               </div>
                             ))}
                           </div>
@@ -232,7 +232,7 @@ export default function CVCareerServicesPage() {
         </Section>
 
         {/* Career Positioning */}
-        <Section background="navy" className="section-spacing">
+        <Section background="primary" className="section-spacing">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -244,13 +244,13 @@ export default function CVCareerServicesPage() {
               <h2 className="text-4xl md:text-5xl font-bold mb-8">
                 Beyond the CV: Career Positioning
               </h2>
-              <div className="space-y-6 text-lg md:text-xl text-neutral-300 leading-relaxed">
+              <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
                 <p>
                   A strong CV is more than a list of jobs and responsibilities. It's a
                   strategic document that positions you as the right candidate for the
                   opportunities you're pursuing.
                 </p>
-                <p className="text-white font-medium">
+                <p className="text-primary-foreground font-medium">
                   Our approach focuses on presenting your achievements, demonstrating
                   your value, and aligning your experience with the roles you're
                   targeting.
@@ -261,7 +261,7 @@ export default function CVCareerServicesPage() {
         </Section>
 
         {/* Process */}
-        <Section background="light" className="section-spacing">
+        <Section background="muted" className="section-spacing">
           <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -270,7 +270,7 @@ export default function CVCareerServicesPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-12"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 How It Works
               </h2>
             </motion.div>
@@ -304,15 +304,15 @@ export default function CVCareerServicesPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white p-6 rounded-lg border border-neutral-200 text-center hover:shadow-md transition-shadow"
+                  className="bg-card p-6 rounded-lg border border-border text-center hover:shadow-md transition-shadow"
                 >
-                  <div className="text-5xl font-bold text-gold/20 mb-4">
+                  <div className="text-5xl font-bold text-secondary/20 mb-4">
                     {step.number}
                   </div>
-                  <h3 className="text-xl font-bold text-navy-deep mb-3">
+                  <h3 className="text-xl font-bold text-foreground mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-neutral-600 leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed">
                     {step.description}
                   </p>
                 </motion.div>
@@ -322,7 +322,7 @@ export default function CVCareerServicesPage() {
         </Section>
 
         {/* CTA */}
-        <Section background="white" className="section-spacing">
+        <Section background="default" className="section-spacing">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -330,10 +330,10 @@ export default function CVCareerServicesPage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Ready to Strengthen Your Professional Profile?
             </h2>
-            <p className="text-xl text-neutral-600 mb-10 leading-relaxed">
+            <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
               Let's build a professional CV that positions you for your next career
               opportunity.
             </p>

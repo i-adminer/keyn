@@ -24,7 +24,7 @@ const servicesDropdown = [
 
 const rightNavigation = [{ name: "Contact", href: "/contact" }];
 
-export function Navigation() {
+export function LandingNavigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -62,17 +62,17 @@ export function Navigation() {
       ? resolvedTheme
       : theme
     : "light";
-  const logoSrc = currentTheme === "dark" ? "/logo.png" : "/logo.jpeg";
+  const logoSrc = currentTheme === "dark" ? "/logo.png" : "/logod.png";
 
   return (
     <>
       <nav
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-          " backdrop-blur-md text-foreground shadow-md border-b border-border",
+          "absolute top-1 inset-x-0 z-50 transition-all duration-300",
+          " ",
         )}
       >
-        <div className="container-premium">
+        <div className="container-premium backdrop-blur-md text-foreground shadow-md border-b border-border rounded-b-4xl">
           <div className="flex items-center justify-between h-20 lg:h-24">
             {/* Logo */}
             <Link

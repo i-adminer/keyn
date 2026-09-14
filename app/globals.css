@@ -62,7 +62,7 @@
 }
 
 .dark {
-  --background: oklch(0 0 0);
+  --background: oklch(0.1803 0.057 255.8817);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.1378 0.0312 239.3136);
   --card-foreground: oklch(1 0 0);
@@ -252,34 +252,6 @@ html {
 }
 
 @layer utilities {
-  /* Gradient Utilities */
-  .gradient-navy-blue {
-    background: linear-gradient(
-      135deg,
-      var(--navy-deep) 0%,
-      var(--blue-royal) 100%
-    );
-  }
-
-  .gradient-blue-gold {
-    background: linear-gradient(135deg, var(--blue-royal) 0%, var(--gold) 100%);
-  }
-
-  /* Gold Accent Line */
-  .accent-line {
-    position: relative;
-  }
-
-  .accent-line::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background: var(--gold);
-  }
-
   /* Premium Container */
   .container-premium {
     @apply mx-auto px-6 md:px-8 lg:px-12 max-w-7xl;
@@ -297,5 +269,66 @@ html {
   /* Focus Visible */
   .focus-ring {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+
+  /* 3D Transform Utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b4e9e;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #2d3c7a;
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3b4e9e #f5f5f5;
+}
+
+.dark * {
+  scrollbar-color: #3b4e9e #1a1a2e;
+}
+
+/* Custom Cursor Support */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* Prevent cursor on touch devices */
+@media (pointer: coarse) {
+  body {
+    cursor: auto !important;
   }
 }

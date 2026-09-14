@@ -24,7 +24,7 @@ const highlights = [
 
 export function AboutSection() {
   return (
-    <Section background="light" className="section-spacing">
+    <Section background="muted" className="section-spacing">
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Content */}
         <motion.div
@@ -34,19 +34,19 @@ export function AboutSection() {
           transition={{ duration: 0.8 }}
         >
           <div className="mb-6">
-            <div className="text-caption text-gold font-bold mb-4">
+            <div className="text-caption text-secondary font-bold mb-4">
               ABOUT KEYN
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
-              <span className="text-navy-deep">Your People.</span>
+              <span className="text-foreground">Your People.</span>
               <br />
-              <span className="text-blue-royal">Our Expertise.</span>
+              <span className="text-primary">Our Expertise.</span>
               <br />
-              <span className="text-navy-deep">Better Outcomes.</span>
+              <span className="text-foreground">Better Outcomes.</span>
             </h2>
           </div>
 
-          <div className="space-y-6 text-lg leading-relaxed text-neutral-700">
+          <div className="space-y-6 text-lg leading-relaxed text-foreground">
             <p>
               Keyn People Advisory is a professional recruitment and human
               resource consulting firm providing talent acquisition, HR advisory,
@@ -59,7 +59,7 @@ export function AboutSection() {
               deliver solutions that are practical, professional and aligned with
               organisational objectives.
             </p>
-            <p className="font-medium text-navy-deep">
+            <p className="font-medium text-foreground">
               Whether you are an employer looking for the right person or a
               professional looking to advance your career, we provide tailored
               solutions designed around your specific needs.
@@ -84,17 +84,17 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-6 rounded-lg shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+                className="bg-card p-6 rounded-lg shadow-sm border border-border hover:shadow-md transition-shadow"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-blue-royal/10 flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-6 h-6 text-blue-royal" />
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-navy-deep mb-2">
+                    <h3 className="text-lg font-semibold text-foreground mb-2">
                       {highlight.title}
                     </h3>
-                    <p className="text-neutral-600 leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed">
                       {highlight.description}
                     </p>
                   </div>

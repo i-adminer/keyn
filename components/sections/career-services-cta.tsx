@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react"
 
 export function CareerServicesCTA() {
   return (
-    <Section background="navy" className="section-spacing">
+    <Section background="primary" className="section-spacing">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -19,14 +19,14 @@ export function CareerServicesCTA() {
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
           Ready for Your Next
           <br />
-          <span className="text-gold">Career Opportunity?</span>
+          <span className="text-secondary">Career Opportunity?</span>
         </h2>
-        <p className="text-xl md:text-2xl text-neutral-300 leading-relaxed mb-10">
+        <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-10">
           Stand out in a competitive job market with a professional CV and
           stronger career positioning.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="xl" variant="gold">
+          <Button asChild size="xl" variant="accent">
             <Link href="/cv-career-services">
               Build My CV
               <ArrowRight className="h-5 w-5" />

@@ -25,7 +25,7 @@ const navigation = {
 
 export function Footer() {
   return (
-    <footer className="bg-navy-deep text-white border-t border-neutral-800">
+    <footer className="bg-primary text-primary-foreground border-t border-border">
       <div className="container-premium">
         {/* Main Footer Content */}
         <div className="py-16 lg:py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
@@ -40,10 +40,10 @@ export function Footer() {
                 className="h-12 w-auto"
               />
             </Link>
-            <p className="text-neutral-400 leading-relaxed mb-6 max-w-sm">
+            <p className="text-primary-foreground/80 leading-relaxed mb-6 max-w-sm">
               Recruitment | HR Consulting | Career & CV Services | Training
             </p>
-            <div className="text-sm text-neutral-400 space-y-2">
+            <div className="text-sm text-primary-foreground/70 space-y-2">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 flex-shrink-0" />
                 <span>Nairobi, Kenya</span>
@@ -52,7 +52,7 @@ export function Footer() {
                 <Mail className="w-4 h-4 flex-shrink-0" />
                 <a
                   href="mailto:info@keynpeople.com"
-                  className="hover:text-gold transition-colors"
+                  className="hover:text-secondary transition-colors"
                 >
                   info@keynpeople.com
                 </a>
@@ -61,7 +61,7 @@ export function Footer() {
                 <Phone className="w-4 h-4 flex-shrink-0" />
                 <a
                   href="tel:+254700000000"
-                  className="hover:text-gold transition-colors"
+                  className="hover:text-secondary transition-colors"
                 >
                   +254 700 000 000
                 </a>
@@ -71,7 +71,7 @@ export function Footer() {
 
           {/* Navigation Columns */}
           <div className="lg:col-span-2">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-gold mb-4">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-secondary mb-4">
               Company
             </h3>
             <ul className="space-y-3">
@@ -79,7 +79,7 @@ export function Footer() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-neutral-400 hover:text-white transition-colors"
+                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -89,7 +89,7 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-gold mb-4">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-secondary mb-4">
               Services
             </h3>
             <ul className="space-y-3">
@@ -97,7 +97,7 @@ export function Footer() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-neutral-400 hover:text-white transition-colors"
+                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -107,7 +107,7 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-gold mb-4">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-secondary mb-4">
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -115,7 +115,7 @@ export function Footer() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-neutral-400 hover:text-white transition-colors"
+                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -126,8 +126,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-neutral-400">
+        <div className="py-8 border-t border-primary-foreground/20 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-primary-foreground/70">
             © {new Date().getFullYear()} Keyn People Advisory. All rights
             reserved.
           </p>
@@ -136,7 +136,7 @@ export function Footer() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm text-neutral-400 hover:text-white transition-colors"
+                className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
               >
                 {item.name}
               </Link>
@@ -145,7 +145,7 @@ export function Footer() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-neutral-400 hover:text-gold transition-colors"
+              className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors"
               aria-label="LinkedIn"
             >
               LinkedIn

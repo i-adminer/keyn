@@ -28,7 +28,7 @@ const values = [
 
 export function ValueStrip() {
   return (
-    <section className="py-12 md:py-16 bg-white border-y border-neutral-200">
+    <section className="py-12 md:py-16 bg-card border-y border-border">
       <div className="container-premium">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
           {values.map((value, index) => {
@@ -42,14 +42,14 @@ export function ValueStrip() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex flex-col items-start gap-3"
               >
-                <div className="w-12 h-12 rounded-lg bg-blue-royal/10 flex items-center justify-center">
-                  <Icon className="w-6 h-6 text-blue-royal" />
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <Icon className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold tracking-wider text-navy-deep mb-1">
+                  <h3 className="text-sm font-bold tracking-wider text-foreground mb-1">
                     {value.title}
                   </h3>
-                  <p className="text-sm text-neutral-600 leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {value.description}
                   </p>
                 </div>

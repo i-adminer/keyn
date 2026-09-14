@@ -20,7 +20,7 @@ const industries = [
 
 export function Industries() {
   return (
-    <Section background="light" className="section-spacing">
+    <Section background="muted" className="section-spacing">
       <SectionHeader
         label="EXPERIENCE"
         title="Industries We Serve"
@@ -37,11 +37,11 @@ export function Industries() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="group relative bg-white p-6 rounded-lg border border-neutral-200 hover:border-gold hover:shadow-md transition-all duration-300"
+              className="group relative bg-card p-6 rounded-lg border border-border hover:border-secondary/80 hover:shadow-md transition-all duration-300"
             >
               <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-gold group-hover:scale-150 transition-transform" />
-                <p className="text-lg font-semibold text-navy-deep group-hover:text-blue-royal transition-colors">
+                <div className="w-2 h-2 rounded-full bg-secondary group-hover:scale-150 transition-transform" />
+                <p className="text-lg font-semibold text-foreground group-hover:text-primary/80 transition-colors">
                   {industry}
                 </p>
               </div>

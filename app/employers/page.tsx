@@ -44,22 +44,22 @@ export default function EmployersPage() {
       <Navigation />
       <main className="flex-1">
         {/* Hero */}
-        <Section background="light" className="pt-32 pb-20">
+        <Section background="muted" className="pt-32 pb-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="text-caption text-gold font-bold mb-6">
+            <div className="text-caption text-secondary font-bold mb-6">
               FOR EMPLOYERS
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-8">
-              <span className="text-navy-deep">Looking for</span>
+              <span className="text-foreground">Looking for</span>
               <br />
-              <span className="text-blue-royal">the Right Talent?</span>
+              <span className="text-primary">the Right Talent?</span>
             </h1>
-            <p className="text-xl md:text-2xl text-neutral-600 leading-relaxed mb-10">
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-10">
               Tell us what you are looking for and we will help you identify, assess
               and shortlist suitable candidates.
             </p>
@@ -73,7 +73,7 @@ export default function EmployersPage() {
         </Section>
 
         {/* Services */}
-        <Section background="white" className="section-spacing">
+        <Section background="default" className="section-spacing">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -82,10 +82,10 @@ export default function EmployersPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 How We Support Employers
               </h2>
-              <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                 We provide comprehensive talent and HR solutions to help organisations
                 build stronger teams and better people practices.
               </p>
@@ -101,20 +101,20 @@ export default function EmployersPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-white border border-neutral-200 rounded-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1"
+                    className="bg-card border border-border rounded-lg p-8 hover:shadow-xl transition-all hover:-translate-y-1"
                   >
-                    <div className="w-16 h-16 rounded-lg bg-blue-royal/10 flex items-center justify-center mb-6">
-                      <Icon className="w-8 h-8 text-blue-royal" />
+                    <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+                      <Icon className="w-8 h-8 text-primary" />
                     </div>
-                    <h3 className="text-2xl font-bold text-navy-deep mb-4">
+                    <h3 className="text-2xl font-bold text-foreground mb-4">
                       {service.title}
                     </h3>
-                    <p className="text-neutral-600 leading-relaxed mb-6">
+                    <p className="text-muted-foreground leading-relaxed mb-6">
                       {service.description}
                     </p>
                     <Link
                       href={service.link}
-                      className="inline-flex items-center gap-2 text-blue-royal font-semibold hover:gap-3 transition-all"
+                      className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
                     >
                       <span>Learn more</span>
                       <ArrowRight className="w-5 h-5" />
@@ -127,7 +127,7 @@ export default function EmployersPage() {
         </Section>
 
         {/* Why Work With Keyn */}
-        <Section background="light" className="section-spacing">
+        <Section background="muted" className="section-spacing">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -136,10 +136,10 @@ export default function EmployersPage() {
               transition={{ duration: 0.8 }}
               className="mb-12"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 Why Employers Work With Keyn
               </h2>
-              <p className="text-xl text-neutral-600">
+              <p className="text-xl text-muted-foreground">
                 We combine recruitment expertise with practical HR experience to deliver
                 solutions that work for your organisation.
               </p>
@@ -153,10 +153,10 @@ export default function EmployersPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-start gap-3 p-5 bg-white rounded-lg border border-neutral-200 hover:border-gold hover:shadow-sm transition-all"
+                  className="flex items-start gap-3 p-5 bg-card rounded-lg border border-border hover:border-secondary/80 hover:shadow-sm transition-all"
                 >
-                  <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span className="text-neutral-700 font-medium">{benefit}</span>
+                  <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground font-medium">{benefit}</span>
                 </motion.div>
               ))}
             </div>
@@ -164,7 +164,7 @@ export default function EmployersPage() {
         </Section>
 
         {/* How It Works */}
-        <Section background="white" className="section-spacing">
+        <Section background="default" className="section-spacing">
           <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -173,7 +173,7 @@ export default function EmployersPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-12"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-navy-deep mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 How It Works
               </h2>
             </motion.div>
@@ -204,13 +204,13 @@ export default function EmployersPage() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="text-center"
                 >
-                  <div className="w-20 h-20 rounded-full bg-gold/20 flex items-center justify-center text-2xl font-bold text-gold mx-auto mb-6">
+                  <div className="w-20 h-20 rounded-full bg-secondary/20 flex items-center justify-center text-2xl font-bold text-secondary mx-auto mb-6">
                     {step.number}
                   </div>
-                  <h3 className="text-2xl font-bold text-navy-deep mb-4">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">
                     {step.title}
                   </h3>
-                  <p className="text-neutral-600 leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed">
                     {step.description}
                   </p>
                 </motion.div>
@@ -220,7 +220,7 @@ export default function EmployersPage() {
         </Section>
 
         {/* CTA */}
-        <Section background="navy" className="section-spacing">
+        <Section background="primary" className="section-spacing">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -231,11 +231,11 @@ export default function EmployersPage() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Ready to Get Started?
             </h2>
-            <p className="text-xl text-neutral-300 mb-10 leading-relaxed">
+            <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
               Let's discuss how we can support your talent and HR needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="xl" variant="gold">
+              <Button asChild size="xl" variant="accent">
                 <Link href="/contact?service=recruitment">Start Hiring</Link>
               </Button>
               <Button asChild size="xl" variant="secondary">

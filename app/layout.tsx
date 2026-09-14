@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import ThemeProvider from "@/providers/theme";
+import { CustomCursor } from "@/components/custom-cursor";
 
 const inter = Inter({ 
   subsets: ["latin"], 
@@ -45,8 +46,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={cn("h-full", "antialiased", inter.variable)}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-sans">
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className="min-h-full flex flex-col font-sans cursor-none">
+        <ThemeProvider>
+          <CustomCursor />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -29,7 +29,7 @@ const assessmentCriteria = [
 
 export function RecruitmentSection() {
   return (
-    <Section background="light" className="section-spacing">
+    <Section background="muted" className="section-spacing">
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         {/* Main Content */}
         <motion.div
@@ -44,20 +44,20 @@ export function RecruitmentSection() {
               <>
                 Find the Right Talent.
                 <br />
-                <span className="text-blue-royal">Build the Right Team.</span>
+                <span className="text-primary">Build the Right Team.</span>
               </>
             }
             className="mb-8"
           />
 
-          <p className="text-lg leading-relaxed text-neutral-700 mb-8">
+          <p className="text-lg leading-relaxed text-foreground mb-8">
             We support organisations throughout the recruitment lifecycle — from
             identifying workforce requirements to sourcing, screening and
             shortlisting qualified candidates.
           </p>
 
           <div className="mb-10">
-            <h4 className="text-xl font-semibold text-navy-deep mb-4">
+            <h4 className="text-xl font-semibold text-foreground mb-4">
               Services
             </h4>
             <div className="grid sm:grid-cols-2 gap-3">
@@ -70,8 +70,8 @@ export function RecruitmentSection() {
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   className="flex items-start gap-2"
                 >
-                  <Check className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                  <span className="text-neutral-700">{service}</span>
+                  <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">{service}</span>
                 </motion.div>
               ))}
             </div>
@@ -92,11 +92,11 @@ export function RecruitmentSection() {
           transition={{ duration: 0.8 }}
           className="lg:sticky lg:top-32"
         >
-          <div className="bg-navy-deep text-white p-8 lg:p-10 rounded-lg">
+          <div className="bg-primary text-primary-foreground p-8 lg:p-10 rounded-lg">
             <h3 className="text-2xl lg:text-3xl font-bold mb-6">
               We focus on more than qualifications.
             </h3>
-            <p className="text-lg text-neutral-300 mb-8 leading-relaxed">
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               We assess candidates against:
             </p>
             <div className="space-y-4">
@@ -107,10 +107,10 @@ export function RecruitmentSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex items-center gap-4 p-4 bg-white/5 rounded-lg border border-white/10"
+                  className="flex items-center gap-4 p-4 bg-card/5 rounded-lg border border-white/10"
                 >
-                  <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
-                    <div className="w-3 h-3 rounded-full bg-gold" />
+                  <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                    <div className="w-3 h-3 rounded-full bg-secondary" />
                   </div>
                   <span className="text-lg font-medium">{criterion}</span>
                 </motion.div>
