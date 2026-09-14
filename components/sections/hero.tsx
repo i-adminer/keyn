@@ -32,7 +32,7 @@ export function Hero() {
           src={heroImage}
           alt="Hero Background"
           fill
-          className="object-cover rounded-2xl border-2 border-secondary"
+          className="object-cover object-right md:object-center rounded-2xl border-2 border-secondary"
           priority
           quality={100}
           suppressHydrationWarning
@@ -115,21 +115,21 @@ export function Hero() {
                 <motion.div
                   key={service}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ 
-                    opacity: 1, 
+                  animate={{
+                    opacity: 1,
                     y: [0, -10, 0],
                   }}
-                  transition={{ 
+                  transition={{
                     opacity: { duration: 0.4, delay: 0.6 + index * 0.1 },
-                    y: { 
+                    y: {
                       duration: 1.5,
                       delay: index * 0.5,
                       repeat: Infinity,
                       repeatDelay: (services.length - 1) * 0.5,
-                      ease: "easeInOut"
-                    }
+                      ease: "easeInOut",
+                    },
                   }}
-                  className="flex items-center gap-2 px-3 md:px-4 py-2 rounded-full bg-card/80 backdrop-blur-sm border border-border"
+                  className="flex items-center gap-2 px-3 md:px-4 py-2 bg-card/80 backdrop-blur-sm border border-border"
                 >
                   <div className="w-2 h-2 rounded-full bg-secondary" />
                   <span className="text-xs md:text-sm font-semibold tracking-wider text-foreground">
