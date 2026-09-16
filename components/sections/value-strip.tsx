@@ -1,47 +1,26 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Briefcase, Users, FileText, TrendingUp } from "lucide-react"
-import Link from "next/link"
+import { Briefcase, Users, FileText, TrendingUp, Award, Target, Sparkles, Rocket } from "lucide-react"
 
-const values = [
-  {
-    icon: Briefcase,
-    title: "RECRUITMENT",
-    description: "Find exceptional talent",
-    href: "/recruitment",
-    gradient: "from-blue-500 to-primary",
-  },
-  {
-    icon: Users,
-    title: "HR CONSULTING",
-    description: "Strengthen your people systems",
-    href: "/hr-consulting",
-    gradient: "from-primary to-purple-500",
-  },
-  {
-    icon: FileText,
-    title: "CAREER SERVICES",
-    description: "Position yourself for opportunity",
-    href: "/cv-career-services",
-    gradient: "from-purple-500 to-pink-500",
-  },
-  {
-    icon: TrendingUp,
-    title: "TRAINING",
-    description: "Develop people and performance",
-    href: "/training",
-    gradient: "from-pink-500 to-secondary",
-  },
+const services = [
+  { icon: Briefcase, title: "RECRUITMENT", description: "Find exceptional talent" },
+  { icon: Users, title: "HR CONSULTING", description: "Strengthen your people systems" },
+  { icon: FileText, title: "CAREER SERVICES", description: "Position yourself for opportunity" },
+  { icon: TrendingUp, title: "TRAINING", description: "Develop people and performance" },
+  { icon: Award, title: "TALENT ACQUISITION", description: "Strategic hiring solutions" },
+  { icon: Target, title: "PERFORMANCE MANAGEMENT", description: "Optimize team performance" },
+  { icon: Sparkles, title: "CV WRITING", description: "Professional resume creation" },
+  { icon: Rocket, title: "CAREER COACHING", description: "Accelerate your growth" },
 ]
+
+// Duplicate services for seamless infinite scroll
+const duplicatedServices = [...services, ...services]
 
 export function ValueStrip() {
   return (
-    <section className="relative py-16 md:py-20 lg:py-24 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
-      
-      <div className="container-premium relative z-10">
+    <section className="relative py-16 md:py-20 lg:py-24 overflow-hidden bg-gradient-to-b from-background via-card/30 to-background">
+      <div className="container-premium">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -61,79 +40,72 @@ export function ValueStrip() {
           </p>
         </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-          {values.map((value, index) => {
-            const Icon = value.icon
-            return (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ 
-                  duration: 0.6, 
-                  delay: index * 0.15,
-                  ease: "easeOut"
-                }}
-                whileHover={{ y: -8 }}
-                className="group"
-              >
-                <Link href={value.href}>
-                  <div className="relative h-full bg-card border-2 border-border rounded-tl-3xl rounded-br-3xl p-6 md:p-8 hover:border-primary transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20">
-                    {/* Gradient Overlay on Hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-tl-3xl rounded-br-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    
-                    {/* Content */}
-                    <div className="relative z-10 flex flex-col h-full">
-                      {/* Icon with Gradient Background */}
-                      <motion.div
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                        transition={{ type: "spring", stiffness: 400 }}
-                        className={`w-14 h-14 md:w-16 md:h-16 rounded-tl-2xl rounded-br-2xl bg-gradient-to-br ${value.gradient} p-0.5 mb-6`}
-                      >
-                        <div className="w-full h-full bg-card rounded-tl-2xl rounded-br-2xl flex items-center justify-center group-hover:bg-transparent transition-colors duration-300">
-                          <Icon className="w-7 h-7 md:w-8 md:h-8 text-primary group-hover:text-white transition-colors duration-300" />
-                        </div>
-                      </motion.div>
-
-                      {/* Title */}
-                      <h3 className="text-lg md:text-xl font-bold tracking-wider text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                        {value.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4 flex-grow">
-                        {value.description}
-                      </p>
-
-                      {/* Animated Arrow */}
-                      <motion.div
-                        initial={{ x: 0 }}
-                        whileHover={{ x: 5 }}
-                        className="text-primary text-sm font-semibold flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      >
-                        Learn More
-                        <motion.span
-                          animate={{ x: [0, 5, 0] }}
-                          transition={{ 
-                            duration: 1.5, 
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                          }}
+        {/* Infinite Marquee Scrolling */}
+        <div className="relative">
+          {/* Gradient Fades on edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-background to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-background to-transparent z-10" />
+          
+          {/* Scrolling Container */}
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex gap-6 md:gap-8"
+              animate={{
+                x: [0, -50 + "%"],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 30,
+                  ease: "linear",
+                },
+              }}
+            >
+              {duplicatedServices.map((service, index) => {
+                const Icon = service.icon
+                return (
+                  <motion.div
+                    key={`${service.title}-${index}`}
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    className="flex-shrink-0 w-72 md:w-80 group cursor-pointer"
+                  >
+                    <div className="relative h-full bg-card border-2 border-border rounded-tl-3xl rounded-br-3xl p-6 md:p-8 hover:border-primary transition-all duration-300 hover:shadow-xl hover:shadow-primary/20">
+                      {/* Gradient Overlay on Hover */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/5 rounded-tl-3xl rounded-br-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      
+                      {/* Content */}
+                      <div className="relative z-10 flex items-start gap-4">
+                        {/* Icon */}
+                        <motion.div
+                          whileHover={{ rotate: 360 }}
+                          transition={{ duration: 0.6 }}
+                          className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 rounded-tl-2xl rounded-br-2xl bg-gradient-to-br from-primary to-secondary p-0.5"
                         >
-                          →
-                        </motion.span>
-                      </motion.div>
-                    </div>
+                          <div className="w-full h-full bg-card rounded-tl-2xl rounded-br-2xl flex items-center justify-center group-hover:bg-transparent transition-colors duration-300">
+                            <Icon className="w-7 h-7 md:w-8 md:h-8 text-primary group-hover:text-white transition-colors duration-300" />
+                          </div>
+                        </motion.div>
 
-                    {/* Corner Accent */}
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                </Link>
-              </motion.div>
-            )
-          })}
+                        {/* Text */}
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-base md:text-lg font-bold tracking-wider text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                            {service.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            {service.description}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Corner Accent */}
+                      <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                  </motion.div>
+                )
+              })}
+            </motion.div>
+          </div>
         </div>
 
         {/* Bottom Decorative Element */}
@@ -141,7 +113,7 @@ export function ValueStrip() {
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-12 md:mt-16 flex justify-center"
         >
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full" />
