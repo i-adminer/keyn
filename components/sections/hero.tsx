@@ -8,6 +8,7 @@ import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { useTheme } from "next-themes";
 import { LandingNavigation } from "../layout/landing-navigation";
+import { TypeAnimation } from 'react-type-animation';
 
 const services = ["RECRUITMENT", "HR CONSULTING", "CAREER SERVICES"];
 
@@ -65,7 +66,21 @@ export function Hero() {
                 Our Expertise.
               </span>
               <br />
-              <span className="text-outline">Better Outcomes.</span>
+              <span className="text-outline">
+                <TypeAnimation
+                  sequence={[
+                    'Better Outcomes.',
+                    2000,
+                    'Perfect Solutions.',
+                    2000,
+                    'Exceptional Results.',
+                    2000,
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  repeat={Infinity}
+                />
+              </span>
             </motion.h1>
 
             {/* Description */}
