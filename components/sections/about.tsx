@@ -1,23 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Target, Award, Users2, Sparkles } from "lucide-react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { Button } from "../ui/button";
 
 const highlights = [
   {
-    icon: Target,
+    image: "/images/1.png",
     title: "Targeted Solutions",
     description: "Tailored to your specific organisational or career needs",
   },
   {
-    icon: Award,
+    image: "/images/2.png",
     title: "Practical HR Experience",
     description: "Grounded in real-world people management practices",
   },
   {
-    icon: Users2,
+    image: "/images/3.png",
     title: "Professional Approach",
     description: "Aligned with organisational objectives and career goals",
   },
@@ -144,6 +144,9 @@ export function AboutSection() {
                 </motion.div>
               ))}
             </motion.div>
+            <div className="pt-5 ">
+              <Button className="rounded-none">LEARN MORE...</Button>
+            </div>
           </motion.div>
 
           {/* Right: Highlights Cards */}
@@ -155,7 +158,6 @@ export function AboutSection() {
             className="space-y-4"
           >
             {highlights.map((highlight, index) => {
-              const Icon = highlight.icon;
               return (
                 <motion.div
                   key={highlight.title}
@@ -171,15 +173,19 @@ export function AboutSection() {
                     <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-secondary/5 rounded-tl-3xl rounded-br-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                     <div className="relative z-10 flex items-start gap-4">
-                      {/* Icon */}
+                      {/* Image */}
                       <motion.div
-                        whileHover={{ rotate: 360, scale: 1.1 }}
+                        whileHover={{ scale: 1.1, rotate: 5 }}
                         transition={{ duration: 0.6 }}
-                        className="w-12 h-12 shrink-0 rounded-tl-2xl rounded-br-2xl bg-linear-to-br from-primary to-secondary p-0.5"
+                        className="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-tl-2xl rounded-br-2xl overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors duration-300"
                       >
-                        <div className="w-full h-full bg-card rounded-tl-2xl rounded-br-2xl flex items-center justify-center group-hover:bg-transparent transition-colors duration-300">
-                          <Icon className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
-                        </div>
+                        <Image
+                          src={highlight.image}
+                          alt={highlight.title}
+                          width={56}
+                          height={56}
+                          className="w-full h-full object-cover"
+                        />
                       </motion.div>
 
                       {/* Text */}
