@@ -168,39 +168,35 @@ export function AboutSection() {
                   whileHover={{ x: 5, scale: 1.02 }}
                   className="group"
                 >
-                  <div className="relative bg-card/90 backdrop-blur-sm border-2 border-border rounded-tl-3xl rounded-br-3xl p-4 md:p-6 hover:border-primary transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
-                    {/* Gradient overlay on hover */}
-                    <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-secondary/5 rounded-tl-3xl rounded-br-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="relative h-32 md:h-40 overflow-hidden border-2 border-border rounded-tl-3xl rounded-br-3xl hover:border-primary transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
+                    {/* Background Image */}
+                    <Image
+                      src={highlight.image}
+                      alt={highlight.title}
+                      fill
+                      className="object-cover"
+                    />
 
-                    <div className="relative z-10 flex items-start gap-4">
-                      {/* Image */}
-                      <motion.div
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                        transition={{ duration: 0.6 }}
-                        className="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-tl-2xl rounded-br-2xl overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors duration-300"
-                      >
-                        <Image
-                          src={highlight.image}
-                          alt={highlight.title}
-                          width={56}
-                          height={56}
-                          className="w-full h-full object-cover"
-                        />
-                      </motion.div>
+                    {/* Animated Gradient Overlay - more opacity on hover, from top to bottom */}
+                    <motion.div
+                      initial={{ opacity: 0.7 }}
+                      whileHover={{ opacity: 0.9 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 bg-linear-to-b from-black/80 via-black/70 to-black/60"
+                    />
 
-                      {/* Text */}
-                      <div className="flex-1">
-                        <h3 className="text-base md:text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
-                          {highlight.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {highlight.description}
-                        </p>
-                      </div>
+                    {/* Text Content on Top */}
+                    <div className="relative z-10 h-full flex flex-col justify-center p-4 md:p-6">
+                      <h3 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors duration-300">
+                        {highlight.title}
+                      </h3>
+                      <p className="text-sm text-white/90 leading-relaxed">
+                        {highlight.description}
+                      </p>
                     </div>
 
                     {/* Corner accent */}
-                    <div className="absolute top-0 right-0 w-16 h-16 bg-linear-to-br from-primary/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute top-0 right-0 w-16 h-16 bg-linear-to-br from-primary/30 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                 </motion.div>
               );
