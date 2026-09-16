@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Target, Award, Users2, Sparkles } from "lucide-react";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 const highlights = [
   {
@@ -29,10 +30,28 @@ const stats = [
 ];
 
 export function AboutSection() {
+  const { theme, resolvedTheme } = useTheme();
+
+  // Determine which about image to use based on theme
+  const currentTheme = theme === "system" ? resolvedTheme : theme;
+  const aboutImage =
+    currentTheme === "dark" ? "/images/aboutd.png" : "/images/about.png";
+
   return (
     <section className="relative py-16 md:py-24 lg:py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-linear-to-b from-background via-muted/50 to-background" />
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src={aboutImage}
+          alt="KEYN People Advisory Background"
+          fill
+          className="object-cover opacity-20"
+          quality={100}
+          suppressHydrationWarning
+        />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-linear-to-b from-background/90 via-background/80 to-background/90" />
+      </div>
 
       <div className="container-premium relative z-10">
         {/* Main Content Grid */}
@@ -133,7 +152,7 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-4 md:space-y-6"
+            className="space-y-4"
           >
             {highlights.map((highlight, index) => {
               const Icon = highlight.icon;
@@ -143,11 +162,11 @@ export function AboutSection() {
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.15 }}
+                  transition={{ duration: 0.6, delay: 0.3 + index * 0.15 }}
                   whileHover={{ x: 5, scale: 1.02 }}
                   className="group"
                 >
-                  <div className="relative bg-card border-2 border-border rounded-tl-3xl rounded-br-3xl p-6 hover:border-primary transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
+                  <div className="relative bg-card/90 backdrop-blur-sm border-2 border-border rounded-tl-3xl rounded-br-3xl p-4 md:p-6 hover:border-primary transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
                     {/* Gradient overlay on hover */}
                     <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-secondary/5 rounded-tl-3xl rounded-br-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -156,19 +175,19 @@ export function AboutSection() {
                       <motion.div
                         whileHover={{ rotate: 360, scale: 1.1 }}
                         transition={{ duration: 0.6 }}
-                        className="w-12 h-12 md:w-14 md:h-14 shrink-0 rounded-tl-2xl rounded-br-2xl bg-linear-to-br from-primary to-secondary p-0.5"
+                        className="w-12 h-12 shrink-0 rounded-tl-2xl rounded-br-2xl bg-linear-to-br from-primary to-secondary p-0.5"
                       >
                         <div className="w-full h-full bg-card rounded-tl-2xl rounded-br-2xl flex items-center justify-center group-hover:bg-transparent transition-colors duration-300">
-                          <Icon className="w-6 h-6 md:w-7 md:h-7 text-primary group-hover:text-white transition-colors duration-300" />
+                          <Icon className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
                         </div>
                       </motion.div>
 
                       {/* Text */}
                       <div className="flex-1">
-                        <h3 className="text-base md:text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                        <h3 className="text-base md:text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
                           {highlight.title}
                         </h3>
-                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                           {highlight.description}
                         </p>
                       </div>
