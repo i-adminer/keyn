@@ -111,7 +111,7 @@ export function RecruitmentSection() {
             <div className="absolute inset-0 bg-linear-to-br from-primary to-secondary rounded-tl-3xl rounded-br-3xl" />
 
             {/* Card Content */}
-            <div className="relative bg-card p-8 lg:p-10 rounded-tl-2xl rounded-br-3xl border border-primary/20 group-hover:-translate-y-0.5 group-hover:-translate-x-10.5transition-all duration-300">
+            <div className="relative bg-card p-8 lg:p-10 rounded-tl-2xl rounded-br-3xl border hover:border-none border-primary/20 group-hover:-translate-y-0.5 group-hover:-translate-x-0.5 transition-all duration-300">
               {/* linear Overlay on Hover */}
               <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-secondary/5 rounded-tl-3xl rounded-br-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
