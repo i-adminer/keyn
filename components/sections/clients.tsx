@@ -20,7 +20,7 @@ export function ClientsSection() {
     <section className="py-16 bg-background overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <p className="text-center text-muted-foreground mb-12 text-sm uppercase tracking-wider">
+          <p className="text-center text-muted-foreground mb-12 text-sm uppercase tracking-wider font-extrabold">
             Our diversified clients have ended up at
           </p>
 
@@ -34,7 +34,7 @@ export function ClientsSection() {
             {clients.map((client, index) => (
               <div
                 key={`${client.name}-${index}`}
-                className="mx-8 md:mx-12 transition-all duration-300 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 hover:scale-110"
+                className="mx-8 md:mx-12 transition-all duration-300 grayscale hover:grayscale-0 opacity-60 hover:opacity-100"
               >
                 <Image
                   src={client.logo}
