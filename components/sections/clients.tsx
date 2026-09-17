@@ -17,7 +17,7 @@ const clients = [
 
 export function ClientsSection() {
   return (
-    <section className="py-16 bg-background overflow-hidden">
+    <section className="py-16 bg-background overflow-hidden border-b">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <p className="text-center text-muted-foreground mb-12 text-sm uppercase tracking-wider font-extrabold">
