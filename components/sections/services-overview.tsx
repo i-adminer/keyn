@@ -117,7 +117,7 @@ export function ServicesOverview() {
                       </span>
 
                       {/* Description */}
-                      <span className="text-sm text-muted-foreground leading-relaxed mb-4 flex-grow block">
+                      <span className="text-sm text-muted-foreground leading-relaxed mb-4 grow block">
                         {service.description}
                       </span>
 
