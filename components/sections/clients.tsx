@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 const clients = [
   { name: "Apple", logo: "/images/clients/apple.svg" },
@@ -10,7 +9,7 @@ const clients = [
   { name: "Google", logo: "/images/clients/google.svg" },
   { name: "Amazon", logo: "/images/clients/amazon.svg" },
   { name: "IBM", logo: "/images/clients/ibm.svg" },
-  { name: "Safaricom", logo: "/images/clients/safaricom.png" },
+  { name: "Safaricom", logo: "/images/clients/safaricom.webp" },
   { name: "KCB Bank", logo: "/images/clients/kcb.png" },
   { name: "Equity Bank", logo: "/images/clients/equity.png" },
   { name: "Coca-Cola", logo: "/images/clients/coca-cola.svg" },
@@ -20,8 +19,6 @@ const clients = [
 const duplicatedClients = [...clients, ...clients];
 
 export function ClientsSection() {
-  const [isPaused, setIsPaused] = useState(false);
-
   return (
     <section className="py-16 bg-background overflow-hidden">
       <div className="container mx-auto px-4">
@@ -29,22 +26,18 @@ export function ClientsSection() {
           <p className="text-center text-muted-foreground mb-12 text-sm uppercase tracking-wider">
             Our diversified clients have ended up at
           </p>
-          
+
           <div className="relative">
             {/* Gradient Fades on edges */}
             <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-background to-transparent z-10" />
             <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-background to-transparent z-10" />
 
             {/* Scrolling Container */}
-            <div 
-              className="overflow-hidden"
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
-            >
+            <div className="overflow-hidden [&:hover>div]:pause">
               <motion.div
                 className="flex gap-12 md:gap-16"
                 animate={{
-                  x: isPaused ? undefined : [0, -50 + "%"],
+                  x: [0, "-50%"],
                 }}
                 transition={{
                   x: {
