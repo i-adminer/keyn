@@ -2,6 +2,7 @@ import { Footer } from "@/components/layout/footer";
 import { Hero } from "@/components/sections/hero";
 import { ValueStrip } from "@/components/sections/value-strip";
 import { AboutSection } from "@/components/sections/about";
+import { ClientsSection } from "@/components/sections/clients";
 import { ServicesOverview } from "@/components/sections/services-overview";
 import { RecruitmentSection } from "@/components/sections/recruitment";
 import { RecruitmentProcess } from "@/components/sections/recruitment-process";
@@ -23,6 +24,7 @@ export default function Home() {
         <Hero />
         <ValueStrip />
         <AboutSection />
+        <ClientsSection />
         <ServicesOverview />
         <RecruitmentSection />
         <RecruitmentProcess />

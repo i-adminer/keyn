@@ -11,11 +11,11 @@ const highlights = [
     title: "Targeted Solutions",
     description: "Tailored to your specific organisational or career needs",
   },
-  {
-    image: "/images/2.png",
-    title: "Practical HR Experience",
-    description: "Grounded in real-world people management practices",
-  },
+  // {
+  //   image: "/images/2.png",
+  //   title: "Practical HR Experience",
+  //   description: "Grounded in real-world people management practices",
+  // },
   {
     image: "/images/3.png",
     title: "Professional Approach",
@@ -38,9 +38,9 @@ export function AboutSection() {
     currentTheme === "dark" ? "/images/aboutd.png" : "/images/about.png";
 
   return (
-    <section className="relative py-16 md:py-24 lg:py-32 overflow-hidden">
+    <section className="relative py-16 overflow-hidden border-b">
       {/* Background Image */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 hidden">
         <Image
           src={aboutImage}
           alt="KEYN People Advisory Background"
@@ -155,44 +155,36 @@ export function AboutSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-4"
+            className="space-y-4 h-full flex justify-center items-center flex-col w-96"
           >
             {highlights.map((highlight, index) => {
               return (
                 <motion.div
                   key={highlight.title}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.3 + index * 0.15 }}
-                  whileHover={{ x: 5, scale: 1.02 }}
                   className="group"
                 >
-                  <div className="relative h-32 md:h-40 overflow-hidden border-2 border-border rounded-tl-3xl rounded-br-3xl hover:border-primary transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
+                  <div className="relative h-32 md:h-40 overflow-hidden border border-border/50 rounded-md hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 flex justify-between">
                     {/* Background Image */}
-                    <Image
-                      src={highlight.image}
-                      alt={highlight.title}
-                      fill
-                      className="object-cover"
-                    />
-
-                    {/* Animated Gradient Overlay - more opacity on hover, from top to bottom */}
-                    <motion.div
-                      initial={{ opacity: 0.7 }}
-                      whileHover={{ opacity: 0.9 }}
-                      transition={{ duration: 0.3 }}
-                      className="absolute inset-0 bg-linear-to-b from-black/80 via-black/70 to-black/60"
-                    />
+                    <div className="flex justify-center items-center">
+                      <Image
+                        src={highlight.image}
+                        alt={highlight.title}
+                        width={100}
+                        height={100}
+                        className="object-contain"
+                      />
+                    </div>
 
                     {/* Text Content on Top */}
-                    <div className="relative z-10 h-full flex flex-col justify-center p-4 md:p-6">
-                      <h3 className="text-base md:text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors duration-300">
+                    <div className="relative h-full flex flex-col justify-center p-4 md:p-6">
+                      <span className="text-base md:text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                         {highlight.title}
-                      </h3>
-                      <p className="text-sm text-white/90 leading-relaxed">
+                      </span>
+                      <span className="text-sm text-muted-foreground leading-relaxed">
                         {highlight.description}
-                      </p>
+                      </span>
                     </div>
 
                     {/* Corner accent */}
