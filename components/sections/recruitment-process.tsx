@@ -15,21 +15,23 @@ const steps = [
 
 export function RecruitmentProcess() {
   return (
-    <section className="relative py-20 overflow-hidden bg-gradient-to-b from-background via-card/30 to-background border-b">
-      {/* Floating Background Image - Transparent PNG */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-full opacity-10 pointer-events-none hidden lg:block">
+    <section className="relative py-20 overflow-hidden border-b">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
         {/* Placeholder - replace with actual transparent PNG */}
-        <div className="relative w-full h-full flex items-center justify-center">
-          <div className="text-9xl opacity-20">👥</div>
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-card/50 to-background" />
+        
         {/* Uncomment when you have the image */}
         {/* <Image
-          src="/images/recruitment-process-floating.png"
+          src="/images/recruitment-process-bg.png"
           alt=""
           fill
-          className="object-contain object-center"
+          className="object-cover object-center opacity-5"
           quality={100}
         /> */}
+        
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/80 to-background/95" />
       </div>
 
       <div className="container-premium relative z-10">
@@ -126,7 +128,7 @@ export function RecruitmentProcess() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-tl-2xl rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               {/* Step Card */}
-              <div className="relative flex items-center gap-4 p-4 bg-card border border-border/50 rounded-tl-2xl rounded-br-2xl group-hover:border-primary/50 group-hover:-translate-y-0.5 group-hover:-translate-x-0.5 transition-all duration-300">
+              <div className="relative flex items-center gap-4 p-4 bg-card/80 backdrop-blur-sm border border-border/50 rounded-tl-2xl rounded-br-2xl group-hover:border-primary/50 group-hover:-translate-y-0.5 group-hover:-translate-x-0.5 transition-all duration-300">
                 {/* Number Badge */}
                 <div className="flex-shrink-0">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary p-0.5">

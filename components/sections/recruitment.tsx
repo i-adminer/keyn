@@ -28,7 +28,7 @@ const assessmentCriteria = [
 
 export function RecruitmentSection() {
   return (
-    <section className="relative py-20 overflow-hidden bg-linear-to-b from-background via-muted/30 to-background border-b">
+    <section className="relative py-20 overflow-hidden bg-muted border-b">
       <div className="container-premium">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Main Content */}
