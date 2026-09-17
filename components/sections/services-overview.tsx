@@ -85,7 +85,11 @@ export function ServicesOverview() {
                 className="group relative h-full"
               >
                 <Link href={service.href} className="block h-full">
-                  <div className="relative p-6 lg:p-7 bg-card border border-border/50 rounded-tl-3xl rounded-br-3xl hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2 h-full flex flex-col">
+                  {/* Gradient Background Layer */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-tl-3xl rounded-br-3xl" />
+                  
+                  {/* Card that shifts on hover to reveal gradient */}
+                  <div className="relative p-6 lg:p-7 bg-card border border-border/50 rounded-tl-3xl rounded-br-3xl hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 group-hover:-translate-y-1 group-hover:-translate-x-1 h-full flex flex-col">
                     {/* Gradient Overlay on Hover */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/5 rounded-tl-3xl rounded-br-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -126,9 +130,6 @@ export function ServicesOverview() {
 
                     {/* Corner Accent */}
                     <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                    {/* Bottom Accent Line */}
-                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-br-3xl" />
                   </div>
                 </Link>
               </motion.div>
