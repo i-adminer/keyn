@@ -58,21 +58,21 @@ export function ServicesOverview() {
           </div>
 
           {/* Heading */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] mb-6">
+          <div className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] mb-6">
             <span className="text-foreground">Practical </span>
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               People Solutions
             </span>
-          </h2>
+          </div>
 
           {/* Description */}
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <span className="text-lg text-muted-foreground">
             For organisations and professionals seeking excellence
-          </p>
+          </span>
         </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+        {/* Services Grid - Single Row on Large Screens */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -82,50 +82,50 @@ export function ServicesOverview() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative"
+                className="group relative h-full"
               >
-                <Link href={service.href} className="block">
-                  <div className="relative p-8 lg:p-10 bg-card border border-border/50 rounded-tl-3xl rounded-br-3xl hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2">
+                <Link href={service.href} className="block h-full">
+                  <div className="relative p-6 lg:p-7 bg-card border border-border/50 rounded-tl-3xl rounded-br-3xl hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2 h-full flex flex-col">
                     {/* Gradient Overlay on Hover */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/5 rounded-tl-3xl rounded-br-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                     {/* Content */}
-                    <div className="relative z-10">
+                    <div className="relative z-10 flex flex-col h-full">
                       {/* Icon with Gradient Border */}
                       <motion.div
                         whileHover={{ rotate: 360 }}
                         transition={{ duration: 0.6 }}
-                        className="w-16 h-16 md:w-20 md:h-20 rounded-tl-2xl rounded-br-2xl bg-gradient-to-br from-primary to-secondary p-0.5 mb-6"
+                        className="w-14 h-14 rounded-tl-2xl rounded-br-2xl bg-gradient-to-br from-primary to-secondary p-0.5 mb-4"
                       >
                         <div className="w-full h-full bg-card rounded-tl-2xl rounded-br-2xl flex items-center justify-center group-hover:bg-transparent transition-colors duration-300">
-                          <Icon className="w-8 h-8 md:w-10 md:h-10 text-primary group-hover:text-white transition-colors duration-300" />
+                          <Icon className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-300" />
                         </div>
                       </motion.div>
 
                       {/* Number Badge */}
-                      <div className="text-7xl md:text-8xl font-bold text-primary/10 absolute top-4 right-4 leading-none select-none">
+                      <div className="text-6xl font-bold text-primary/10 absolute top-3 right-3 leading-none select-none">
                         {service.number}
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4 leading-tight group-hover:text-primary transition-colors duration-300">
+                      <span className="text-xl font-bold text-foreground mb-3 leading-tight group-hover:text-primary transition-colors duration-300 block">
                         {service.title}
-                      </h3>
+                      </span>
 
                       {/* Description */}
-                      <p className="text-base lg:text-lg text-muted-foreground leading-relaxed mb-6">
+                      <span className="text-sm text-muted-foreground leading-relaxed mb-4 flex-grow block">
                         {service.description}
-                      </p>
+                      </span>
 
                       {/* Link Arrow */}
-                      <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
+                      <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all text-sm mt-auto">
                         <span>Learn more</span>
-                        <ArrowRight className="w-5 h-5" />
+                        <ArrowRight className="w-4 h-4" />
                       </div>
                     </div>
 
                     {/* Corner Accent */}
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                     {/* Bottom Accent Line */}
                     <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-br-3xl" />
