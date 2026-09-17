@@ -7,8 +7,8 @@ const clients = [
   { name: "Microsoft", logo: "/images/clients/microsoft.svg" },
   { name: "Google", logo: "/images/clients/google.svg" },
   { name: "Safaricom", logo: "/images/clients/safaricom.svg" },
-  { name: "KCB Bank", logo: "/images/clients/kcb.svg" },
-  { name: "Equity Bank", logo: "/images/clients/equity.svg" },
+  { name: "KCB Bank", logo: "/images/clients/kcb.png" },
+  { name: "Equity Bank", logo: "/images/clients/equity.png" },
   { name: "Coca-Cola", logo: "/images/clients/coca-cola.svg" },
 ];
 
