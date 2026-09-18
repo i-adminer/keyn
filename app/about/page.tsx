@@ -243,7 +243,7 @@ export default function AboutPage() {
                       className="group bg-background p-6 lg:p-7 min-h-[225px] flex flex-col hover:bg-muted/30 transition-colors"
                     >
                       <div className="flex items-start justify-between mb-4">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-primary/40 bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-primary/40 bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
                           <Icon className="h-6 w-6" />
                         </div>
                         <span className="text-xs font-semibold text-muted-foreground/50">
@@ -299,7 +299,7 @@ export default function AboutPage() {
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mt-7">
                     <div className="inline-block group relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary rounded-tl-2xl rounded-br-2xl" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-tl-2xl rounded-br-2xl" />
                       <Button
                         asChild
                         size="lg"
