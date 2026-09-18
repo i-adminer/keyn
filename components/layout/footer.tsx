@@ -19,7 +19,7 @@ const navigation = {
 
 export function Footer() {
   return (
-    <footer className="relative bg-foreground overflow-hidden">
+    <footer className="relative bg-primary overflow-hidden">
       {/* Gradient Accent */}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent" />
 
@@ -37,7 +37,7 @@ export function Footer() {
                 className="h-10 w-auto"
               />
             </Link>
-            <p className="text-sm text-background/70 leading-relaxed">
+            <p className="text-sm text-primary-foreground/70 leading-relaxed">
               Recruitment · HR Consulting · Career Services · Training
             </p>
           </div>
@@ -52,7 +52,7 @@ export function Footer() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-sm text-background/80 hover:text-secondary transition-colors inline-flex items-center group"
+                    className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors inline-flex items-center group"
                   >
                     <span className="w-0 group-hover:w-2 h-px bg-secondary transition-all duration-300 mr-0 group-hover:mr-2" />
                     {item.name}
@@ -72,7 +72,7 @@ export function Footer() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-sm text-background/80 hover:text-secondary transition-colors inline-flex items-center group"
+                    className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors inline-flex items-center group"
                   >
                     <span className="w-0 group-hover:w-2 h-px bg-secondary transition-all duration-300 mr-0 group-hover:mr-2" />
                     {item.name}
@@ -91,7 +91,7 @@ export function Footer() {
               <li>
                 <a
                   href="mailto:info@keynpeople.com"
-                  className="text-sm text-background/80 hover:text-secondary transition-colors flex items-center gap-2 group"
+                  className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors flex items-center gap-2 group"
                 >
                   <Mail className="w-4 h-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
                   <span>info@keynpeople.com</span>
@@ -100,14 +100,14 @@ export function Footer() {
               <li>
                 <a
                   href="tel:+254700000000"
-                  className="text-sm text-background/80 hover:text-secondary transition-colors flex items-center gap-2 group"
+                  className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors flex items-center gap-2 group"
                 >
                   <Phone className="w-4 h-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
                   <span>+254 700 000 000</span>
                 </a>
               </li>
               <li>
-                <div className="text-sm text-background/80 flex items-center gap-2">
+                <div className="text-sm text-primary-foreground/80 flex items-center gap-2">
                   <MapPin className="w-4 h-4 flex-shrink-0" />
                   <span>Nairobi, Kenya</span>
                 </div>
@@ -131,9 +131,9 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-6 border-t border-background/10">
+        <div className="py-6 border-t border-primary-foreground/10">
           <div className="text-center">
-            <span className="text-xs text-background/60">
+            <span className="text-xs text-primary-foreground/60">
               © {new Date().getFullYear()} Keyn People Advisory. All rights reserved.
             </span>
           </div>
