@@ -57,8 +57,8 @@ export function RecruitmentSection() {
 
             {/* Description */}
             <span className="text-lg leading-relaxed text-muted-foreground mb-8 block">
-              We support organisations throughout the recruitment lifecycle —
-              from identifying workforce requirements to sourcing, screening and
+              We support organisations throughout the recruitment lifecycle from
+              identifying workforce requirements to sourcing, screening and
               shortlisting qualified candidates.
             </span>
 
@@ -90,7 +90,7 @@ export function RecruitmentSection() {
               <Button
                 asChild
                 size="lg"
-                className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-primary text-white hover:bg-transparent hover:text-primary border-primary group-hover:-translate-y-1 group-hover:-translate-x-1 transition-all duration-300"
+                className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-primary text-white  border-primary group-hover:-translate-y-1 group-hover:-translate-x-1 transition-all duration-300"
               >
                 <Link href="/contact?service=recruitment">
                   Start a Recruitment Request
@@ -132,7 +132,7 @@ export function RecruitmentSection() {
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className="flex items-center gap-4 p-4 bg-linear-to-r from-primary/5 to-transparent rounded-tl-2xl rounded-br-2xl border border-primary/10 hover:border-primary/30 transition-colors duration-300"
                     >
-                      <div className="w-8 h-8 rounded-full bg-linear-to-br from-primary to-secondary p-0.5 flex-shrink-0">
+                      <div className="w-8 h-8 rounded-full bg-linear-to-br from-primary to-secondary p-0.5 shrink-0">
                         <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
                           <div className="w-3 h-3 rounded-full bg-linear-to-br from-primary to-secondary" />
                         </div>

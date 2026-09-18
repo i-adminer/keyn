@@ -61,7 +61,7 @@ export function HRConsulting() {
           >
             {/* Eyebrow */}
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-12 h-0.5 bg-gradient-to-r from-primary-foreground/80 to-secondary rounded-full" />
+              <div className="w-12 h-0.5 bg-linear-to-r from-primary-foreground/80 to-secondary rounded-full" />
               <span className="text-sm font-bold tracking-widest text-primary-foreground/90">
                 HR CONSULTING
               </span>
@@ -82,13 +82,13 @@ export function HRConsulting() {
               without the overhead of hiring one.
             </span>
 
-            {/* CTA Button with gradient background */}
+            {/* CTA Button with linear background */}
             <div className="inline-block group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary to-primary-foreground rounded-tl-2xl rounded-br-2xl" />
+              <div className="absolute inset-0 bg-linear-to-br from-secondary to-primary-foreground rounded-tl-2xl rounded-br-2xl" />
               <Button
                 asChild
                 size="lg"
-                className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-secondary text-primary hover:bg-transparent hover:text-primary-foreground border-secondary group-hover:-translate-y-1 group-hover:-translate-x-1 transition-all duration-300"
+                className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-secondary text-primary hover:bg-secondary border-secondary group-hover:-translate-y-1 group-hover:-translate-x-1 transition-all duration-300"
               >
                 <Link href="/contact?service=hr-consulting">
                   Get HR support
@@ -119,7 +119,7 @@ export function HRConsulting() {
           </motion.div>
         </div>
 
-        {/* Decorative Line with Gradient */}
+        {/* Decorative Line with linear */}
         <motion.div
           initial={{ opacity: 0, scaleX: 0 }}
           whileInView={{ opacity: 1, scaleX: 1 }}
@@ -127,7 +127,7 @@ export function HRConsulting() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="mb-8 flex justify-center"
         >
-          <div className="w-full max-w-3xl h-0.5 bg-gradient-to-r from-transparent via-primary-foreground/30 to-transparent rounded-full" />
+          <div className="w-full max-w-3xl h-0.5 bg-linear-to-r from-transparent via-primary-foreground/30 to-transparent rounded-full" />
         </motion.div>
 
         {/* Service Categories Grid - Compact, no hover */}
@@ -145,8 +145,8 @@ export function HRConsulting() {
                 {/* Category Card - No hover effects */}
                 <div className="flex items-start gap-3 p-4 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-tl-2xl rounded-br-2xl">
                   {/* Icon */}
-                  <div className="flex-shrink-0">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-secondary to-primary-foreground p-0.5">
+                  <div className="shrink-0">
+                    <div className="w-8 h-8 rounded-full bg-linear-to-br from-secondary to-primary-foreground p-0.5">
                       <div className="w-full h-full rounded-full bg-primary flex items-center justify-center">
                         <Icon className="w-4 h-4 text-secondary" />
                       </div>

@@ -5,15 +5,16 @@ import { cn } from "@/lib/utils";
 import ThemeProvider from "@/providers/theme";
 import { CustomCursor } from "@/components/custom-cursor";
 
-const inter = Inter({ 
-  subsets: ["latin"], 
+const inter = Inter({
+  subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Keyn People Advisory | Recruitment, HR Consulting & Career Services",
-  description: "Keyn People Advisory provides professional recruitment, HR consulting, career development and CV services for organisations and professionals.",
+  description:
+    "Keyn People Advisory provides professional recruitment, HR consulting, career development and CV services for organisations and professionals.",
   keywords: [
     "recruitment Kenya",
     "HR consulting",
@@ -27,15 +28,19 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://keynpeople.com",
-    title: "Keyn People Advisory | Recruitment, HR Consulting & Career Services",
-    description: "Professional recruitment, HR consulting, career development and CV services for organisations and professionals.",
+    url: "https://keynpeopleadvisory.co.ke",
+    title:
+      "Keyn People Advisory | Recruitment, HR Consulting & Career Services",
+    description:
+      "Professional recruitment, HR consulting, career development and CV services for organisations and professionals.",
     siteName: "Keyn People Advisory",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Keyn People Advisory | Recruitment, HR Consulting & Career Services",
-    description: "Professional recruitment, HR consulting, career development and CV services for organisations and professionals.",
+    title:
+      "Keyn People Advisory | Recruitment, HR Consulting & Career Services",
+    description:
+      "Professional recruitment, HR consulting, career development and CV services for organisations and professionals.",
   },
 };
 

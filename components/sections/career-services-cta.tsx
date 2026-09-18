@@ -40,7 +40,7 @@ export function CareerServicesCTA() {
           </p>
 
           {/* Comparison - Compact Text Only */}
-          <div className="grid md:grid-cols-2 gap-8 mb-10 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 mb-10 max-w-4xl mx-auto hidden">
             {/* Traditional */}
             <div className="text-center">
               <span className="text-primary-foreground/60 text-base font-medium block mb-2">
@@ -69,7 +69,7 @@ export function CareerServicesCTA() {
               <Button
                 asChild
                 size="lg"
-                className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-secondary text-foreground hover:bg-transparent hover:text-secondary border-secondary group-hover:-translate-y-1 group-hover:-translate-x-1 transition-all duration-300"
+                className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-secondary text-foreground border-secondary group-hover:-translate-y-0.5 group-hover:-translate-x-0.5 transition-all duration-300 hover:bg-secondary"
               >
                 <Link href="/cv-career-services">
                   Build My CV

@@ -54,14 +54,14 @@ export function FAQ() {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden border-t">
+    <section className="relative py-20 overflow-hidden border-t bg-card">
       {/* Background Image - Bottom Half */}
       <div className="absolute inset-x-0 bottom-0 h-2/3 z-0">
         <Image
           src="/images/bgfq.png"
           alt=""
           fill
-          className="object-cover object-bottom"
+          className="object-cover object-bottom opacity-10"
           quality={100}
           priority
         />

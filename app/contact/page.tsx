@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { Suspense } from "react"
-import { ContactForm } from "@/components/contact-form"
-import { Navigation } from "@/components/layout/navigation"
-import { Footer } from "@/components/layout/footer"
-import { Section } from "@/components/ui/section"
-import { motion } from "framer-motion"
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Suspense } from "react";
+import { ContactForm } from "@/components/contact-form";
+import { Navigation } from "@/components/layout/navigation";
+import { Footer } from "@/components/layout/footer";
+import { Section } from "@/components/ui/section";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactPage() {
   return (
@@ -35,7 +35,11 @@ export default function ContactPage() {
 
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
               {/* Contact Form */}
-              <Suspense fallback={<div className="text-center py-12">Loading form...</div>}>
+              <Suspense
+                fallback={
+                  <div className="text-center py-12">Loading form...</div>
+                }
+              >
                 <ContactForm />
               </Suspense>
 
@@ -62,12 +66,14 @@ export default function ContactPage() {
                         <Mail className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-foreground mb-1">Email</h3>
+                        <h3 className="font-semibold text-foreground mb-1">
+                          Email
+                        </h3>
                         <a
-                          href="mailto:info@keynpeople.com"
+                          href="mailto:info@keynpeopleadvisory.co.ke"
                           className="text-muted-foreground hover:text-primary/80 transition-colors"
                         >
-                          info@keynpeople.com
+                          info@keynpeopleadvisory.co.ke{" "}
                         </a>
                       </div>
                     </div>
@@ -77,7 +83,9 @@ export default function ContactPage() {
                         <Phone className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-foreground mb-1">Phone</h3>
+                        <h3 className="font-semibold text-foreground mb-1">
+                          Phone
+                        </h3>
                         <a
                           href="tel:+254700000000"
                           className="text-muted-foreground hover:text-primary/80 transition-colors"
@@ -92,10 +100,10 @@ export default function ContactPage() {
                         <MapPin className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-foreground mb-1">Location</h3>
-                        <p className="text-muted-foreground">
-                          Nairobi, Kenya
-                        </p>
+                        <h3 className="font-semibold text-foreground mb-1">
+                          Location
+                        </h3>
+                        <p className="text-muted-foreground">Nairobi, Kenya</p>
                       </div>
                     </div>
                   </div>
@@ -150,5 +158,5 @@ export default function ContactPage() {
       </main>
       <Footer />
     </>
-  )
+  );
 }
