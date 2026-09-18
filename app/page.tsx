@@ -14,7 +14,7 @@ import { Training } from "@/components/sections/training";
 import { DualPathway } from "@/components/sections/dual-pathway";
 import { Industries } from "@/components/sections/industries";
 import { Philosophy } from "@/components/sections/philosophy";
-import { FinalCTA } from "@/components/sections/final-cta";
+import { FAQ } from "@/components/sections/faq";
 
 export default function Home() {
   return (
@@ -35,7 +35,7 @@ export default function Home() {
         <DualPathway />
         <Industries />
         <Philosophy />
-        <FinalCTA />
+        <FAQ />
       </main>
       <Footer />
     </>

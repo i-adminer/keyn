@@ -46,7 +46,7 @@ export function CareerServicesCTA() {
               <span className="text-primary-foreground/60 text-base font-medium block mb-2">
                 Traditional approach
               </span>
-              <span className="text-xl md:text-2xl font-bold text-primary-foreground/80">
+              <span className="text-xl md:text-2xl font-bold text-primary-foreground/80 font-serif">
                 "Who can do the job?"
               </span>
             </div>
@@ -56,7 +56,7 @@ export function CareerServicesCTA() {
               <span className="text-secondary text-base font-medium block mb-2">
                 Keyn approach
               </span>
-              <span className="text-xl md:text-2xl font-bold text-primary-foreground">
+              <span className="text-xl md:text-2xl font-bold text-primary-foreground font-serif">
                 "Who will succeed and contribute to objectives?"
               </span>
             </div>
