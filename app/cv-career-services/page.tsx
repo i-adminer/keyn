@@ -132,34 +132,19 @@ export default function CVCareerServicesPage() {
 
                 <div className="space-y-4 text-lg leading-8 text-muted-foreground max-w-3xl mb-8">
                   <p>
-                    Keyn helps professionals at all career levels—from graduates
-                    and entry-level professionals to experienced managers, senior
-                    executives, career changers, and international applicants—create
-                    clear, professional, and results-focused CVs that stand out in
-                    competitive job markets.
+                    Keyn helps professionals at all career levels from graduates
+                    and entry-level professionals to experienced managers,
+                    senior executives, career changers, and international
+                    applicants create clear, professional, and results-focused
+                    CVs that stand out in competitive job markets.
                   </p>
                   <p>
                     Our services are crafted by experienced HR professionals who
-                    have reviewed thousands of CVs and know exactly what employers
-                    are looking for. We create ATS-friendly, achievement-focused CVs
-                    that highlight your strengths and position you competitively.
+                    have reviewed thousands of CVs and know exactly what
+                    employers are looking for. We create ATS-friendly,
+                    achievement focused CVs that highlight your strengths and
+                    position you competitively.
                   </p>
-                </div>
-
-                {/* Audience Pills */}
-                <div className="flex flex-wrap gap-2">
-                  {audiences.map((audience, index) => (
-                    <motion.div
-                      key={audience}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: index * 0.05 }}
-                      className="px-4 py-2 rounded-full border border-primary/30 bg-primary/5 text-sm font-medium text-foreground hover:bg-primary/10 transition-colors"
-                    >
-                      {audience}
-                    </motion.div>
-                  ))}
                 </div>
               </div>
             </div>
@@ -255,8 +240,9 @@ export default function CVCareerServicesPage() {
                           HR Professional Expertise
                         </span>
                         <p className="text-sm">
-                          Our CV writers are experienced HR professionals who have
-                          reviewed thousands of CVs and know what employers want.
+                          Our CV writers are experienced HR professionals who
+                          have reviewed thousands of CVs and know what employers
+                          want.
                         </p>
                       </div>
                     </div>

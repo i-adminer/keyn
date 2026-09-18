@@ -83,16 +83,11 @@ export function ContactForm() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: -30 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8, delay: 0.2 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.3 }}
     >
-      <div className="bg-card p-8 lg:p-10 rounded-lg shadow-sm border border-border">
-        <h2 className="text-2xl font-bold text-foreground mb-6">
-          Send us a message
-        </h2>
-
-        <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-6">
           {/* Basic Information */}
           <div>
             <label htmlFor="name" className="block text-sm font-semibold text-foreground mb-2">
@@ -105,7 +100,7 @@ export function ContactForm() {
               required
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
+              className="w-full px-4 py-2.5 border border-input rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-background text-foreground"
               placeholder="Your full name"
             />
           </div>
@@ -121,7 +116,7 @@ export function ContactForm() {
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
+              className="w-full px-4 py-2.5 border border-input rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-background text-foreground"
               placeholder="your@email.com"
             />
           </div>
@@ -136,7 +131,7 @@ export function ContactForm() {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
+              className="w-full px-4 py-2.5 border border-input rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-background text-foreground"
               placeholder="+254 700 000 000"
             />
           </div>
@@ -151,7 +146,7 @@ export function ContactForm() {
               name="organisation"
               value={formData.organisation}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
+              className="w-full px-4 py-2.5 border border-input rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-background text-foreground"
               placeholder="Your company name"
             />
           </div>
@@ -167,7 +162,7 @@ export function ContactForm() {
               required
               value={formData.inquiryType}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
+              className="w-full px-4 py-2.5 border border-input rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-background text-foreground"
             >
               <option value="">Select a service</option>
               {inquiryTypes.map((type) => (
@@ -184,9 +179,9 @@ export function ContactForm() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="space-y-6 p-6 bg-primary/5 rounded-lg border border-primary/20"
+              className="space-y-4 p-5 bg-primary/5 rounded-xl border border-primary/20"
             >
-              <h3 className="text-lg font-bold text-foreground">Recruitment Details</h3>
+              <span className="text-sm font-bold text-primary block">RECRUITMENT DETAILS</span>
               
               <div>
                 <label htmlFor="position" className="block text-sm font-semibold text-foreground mb-2">
@@ -198,7 +193,7 @@ export function ContactForm() {
                   name="position"
                   value={formData.position}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
+                  className="w-full px-4 py-2.5 border border-input rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-background text-foreground"
                   placeholder="e.g., HR Manager"
                 />
               </div>
@@ -214,7 +209,7 @@ export function ContactForm() {
                   min="1"
                   value={formData.vacancies}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
+                  className="w-full px-4 py-2.5 border border-input rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-background text-foreground"
                 />
               </div>
 
@@ -227,7 +222,7 @@ export function ContactForm() {
                   name="employmentType"
                   value={formData.employmentType}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
+                  className="w-full px-4 py-2.5 border border-input rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-background text-foreground"
                 >
                   <option value="">Select type</option>
                   <option value="permanent">Permanent</option>
@@ -244,9 +239,9 @@ export function ContactForm() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="space-y-6 p-6 bg-secondary/5 rounded-lg border border-secondary/20"
+              className="space-y-4 p-5 bg-secondary/5 rounded-xl border border-secondary/20"
             >
-              <h3 className="text-lg font-bold text-foreground">Career Details</h3>
+              <span className="text-sm font-bold text-secondary block">CAREER DETAILS</span>
               
               <div>
                 <label htmlFor="careerLevel" className="block text-sm font-semibold text-foreground mb-2">
@@ -257,7 +252,7 @@ export function ContactForm() {
                   name="careerLevel"
                   value={formData.careerLevel}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
+                  className="w-full px-4 py-2.5 border border-input rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-background text-foreground"
                 >
                   <option value="">Select level</option>
                   <option value="graduate">Graduate</option>
@@ -278,7 +273,7 @@ export function ContactForm() {
                   name="targetRole"
                   value={formData.targetRole}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
+                  className="w-full px-4 py-2.5 border border-input rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-background text-foreground"
                   placeholder="e.g., Marketing Manager"
                 />
               </div>
@@ -292,7 +287,7 @@ export function ContactForm() {
                   name="cvService"
                   value={formData.cvService}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all bg-background text-foreground"
+                  className="w-full px-4 py-2.5 border border-input rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-background text-foreground"
                 >
                   <option value="">Select service</option>
                   <option value="new">Professional CV Writing</option>
@@ -315,50 +310,51 @@ export function ContactForm() {
               id="message"
               name="message"
               required
-              rows={6}
+              rows={5}
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-input rounded-md focus:ring-2 focus:ring-ring focus:border-transparent transition-all resize-none bg-background text-foreground"
+              className="w-full px-4 py-2.5 border border-input rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none bg-background text-foreground"
               placeholder="Tell us more about your requirements..."
             />
           </div>
 
           {/* Submit Button */}
-          <Button
-            type="submit"
-            size="lg"
-            variant="primary"
-            className="w-full"
-            disabled={isSubmitting || submitStatus === "success"}
-          >
-            {isSubmitting ? (
-              <>
-                <Loader2 className="w-5 h-5 animate-spin" />
-                Sending...
-              </>
-            ) : submitStatus === "success" ? (
-              <>Message Sent!</>
-            ) : (
-              <>
-                Send Message
-                <Send className="w-5 h-5" />
-              </>
-            )}
-          </Button>
+          <div className="pt-2">
+            <Button
+              type="submit"
+              size="lg"
+              variant="primary"
+              className="w-full rounded-lg"
+              disabled={isSubmitting || submitStatus === "success"}
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                  Sending...
+                </>
+              ) : submitStatus === "success" ? (
+                <>Message Sent Successfully!</>
+              ) : (
+                <>
+                  Send Message
+                  <Send className="w-5 h-5 ml-2" />
+                </>
+              )}
+            </Button>
+          </div>
 
           {submitStatus === "success" && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="p-4 bg-green-50 border border-green-200 rounded-md"
+              className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg"
             >
-              <p className="text-green-800 text-sm font-medium">
+              <p className="text-green-600 dark:text-green-400 text-sm font-medium">
                 Thank you! We've received your message and will get back to you soon.
               </p>
             </motion.div>
           )}
         </form>
-      </div>
     </motion.div>
   )
 }
