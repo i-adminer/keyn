@@ -7,7 +7,14 @@ import { AnimatedSection } from "@/components/ui/animated-section";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { Target, Heart, Shield, Lightbulb, Users, TrendingUp } from "lucide-react";
+import {
+  Target,
+  Heart,
+  Shield,
+  Lightbulb,
+  Users,
+  TrendingUp,
+} from "lucide-react";
 
 const beliefs = [
   {
@@ -43,14 +50,14 @@ export default function AboutPage() {
       <main className="flex-1">
         {/* Hero with Background */}
         <AnimatedSection>
-          <section className="relative pt-32 pb-16 overflow-hidden min-h-[40vh] flex items-center justify-center">
-            {/* Background Image - Starts below navbar with padding */}
-            <div className="absolute top-20 left-0 right-0 bottom-0 z-0">
+          <section className="relative pt-30 pb-16 overflow-hidden min-h-[40vh] flex items-center justify-center">
+            {/* Background Image - Starts below navbar with more padding */}
+            <div className="absolute top-32 left-0 right-0 bottom-0 z-0 opacity-50">
               <Image
                 src="/images/bgweb.jpeg"
                 alt="Background"
                 fill
-                className="object-cover object-top opacity-50"
+                className="object-cover object-top"
                 quality={100}
                 priority
               />
@@ -76,17 +83,15 @@ export default function AboutPage() {
                 <div className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-8">
                   <span className="text-white">Your People. </span>
                   <br />
-                  <span className="text-secondary">
-                    Our Expertise.
-                  </span>
+                  <span className="text-secondary">Our Expertise.</span>
                   <br />
                   <span className="text-white">Better Outcomes.</span>
                 </div>
 
                 {/* Description */}
                 <span className="text-xl md:text-2xl text-white/90 leading-relaxed block">
-                  We combine recruitment expertise with practical HR experience to
-                  deliver talent and people solutions for organisations and
+                  We combine recruitment expertise with practical HR experience
+                  to deliver talent and people solutions for organisations and
                   professionals.
                 </span>
               </motion.div>
@@ -121,21 +126,24 @@ export default function AboutPage() {
                 {/* Description Paragraphs */}
                 <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
                   <p>
-                    <strong className="text-foreground">Keyn People Advisory</strong> is
-                    a professional recruitment and human resource consulting firm
-                    providing talent acquisition, HR advisory, career development and CV
-                    writing services to organisations and professionals.
+                    <strong className="text-foreground">
+                      Keyn People Advisory
+                    </strong>{" "}
+                    is a professional recruitment and human resource consulting
+                    firm providing talent acquisition, HR advisory, career
+                    development and CV writing services to organisations and
+                    professionals.
                   </p>
                   <p>
-                    We combine practical HR experience with a deep understanding of
-                    recruitment, employee management and workplace requirements to
-                    deliver solutions that are practical, professional and aligned with
-                    organisational objectives.
+                    We combine practical HR experience with a deep understanding
+                    of recruitment, employee management and workplace
+                    requirements to deliver solutions that are practical,
+                    professional and aligned with organisational objectives.
                   </p>
                   <p>
-                    Whether you are an employer looking for the right person or a
-                    professional looking to advance your career, we provide tailored
-                    solutions designed around your specific needs.
+                    Whether you are an employer looking for the right person or
+                    a professional looking to advance your career, we provide
+                    tailored solutions designed around your specific needs.
                   </p>
                 </div>
 
@@ -161,7 +169,9 @@ export default function AboutPage() {
                     <div className="w-12 h-0.5 bg-gradient-to-r from-secondary to-primary rounded-full" />
                   </div>
                   <div className="text-3xl md:text-4xl font-bold tracking-tight leading-[1.1]">
-                    <span className="text-foreground">Our approach to talent and HR is </span>
+                    <span className="text-foreground">
+                      Our approach to talent and HR is{" "}
+                    </span>
                     <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                       grounded in core principles
                     </span>
@@ -223,7 +233,8 @@ export default function AboutPage() {
                 {/* Content */}
                 <div className="space-y-6 text-lg md:text-xl text-primary-foreground/90 leading-relaxed">
                   <p>
-                    Unlike recruitment providers focused only on filling vacancies,
+                    Unlike recruitment providers focused only on filling
+                    vacancies,
                     <strong className="text-primary-foreground">
                       {" "}
                       Keyn People Advisory approaches talent from a broader HR
@@ -240,9 +251,9 @@ export default function AboutPage() {
                     "Who will succeed and contribute to objectives?"
                   </div>
                   <p>
-                    This perspective allows us to assess candidates not only on skills
-                    and experience, but also on competencies, cultural alignment, and
-                    performance expectations.
+                    This perspective allows us to assess candidates not only on
+                    skills and experience, but also on competencies, cultural
+                    alignment, and performance expectations.
                   </p>
                 </div>
               </div>
@@ -290,9 +301,9 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <p className="text-muted-foreground leading-relaxed mb-6">
-                      We help organisations find the right talent, build stronger HR
-                      systems, and develop their people through recruitment, HR
-                      consulting, and training services.
+                      We help organisations find the right talent, build
+                      stronger HR systems, and develop their people through
+                      recruitment, HR consulting, and training services.
                     </p>
                     <div className="inline-block group relative">
                       <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-tl-2xl rounded-br-2xl" />
@@ -319,9 +330,9 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <p className="text-muted-foreground leading-relaxed mb-6">
-                      We help professionals present themselves competitively through
-                      professional CV writing, career positioning, and job application
-                      support.
+                      We help professionals present themselves competitively
+                      through professional CV writing, career positioning, and
+                      job application support.
                     </p>
                     <div className="inline-block group relative">
                       <div className="absolute inset-0 bg-gradient-to-br from-secondary to-primary rounded-tl-2xl rounded-br-2xl" />
@@ -384,7 +395,10 @@ export default function AboutPage() {
                   <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                     hire talent, strengthen HR, or advance your career
                   </span>
-                  <span className="text-foreground"> — we're here to help.</span>
+                  <span className="text-foreground">
+                    {" "}
+                    — we're here to help.
+                  </span>
                 </div>
 
                 {/* CTA Buttons */}
