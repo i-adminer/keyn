@@ -4,9 +4,10 @@ import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/ui/animated-section";
-import { motion } from "framer-motion";
+import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import React, { useRef } from "react";
 import {
   Target,
   Heart,
@@ -19,6 +20,44 @@ import {
   CheckCircle2,
   Quote,
 } from "lucide-react";
+import { useTheme } from "next-themes";
+
+// Counter component for animated numbers
+function AnimatedCounter({
+  value,
+  suffix = "",
+}: {
+  value: number;
+  suffix?: string;
+}) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, {
+    damping: 50,
+    stiffness: 100,
+  });
+  const [displayValue, setDisplayValue] = React.useState("0" + suffix);
+
+  React.useEffect(() => {
+    if (isInView) {
+      motionValue.set(value);
+    }
+  }, [isInView, motionValue, value]);
+
+  React.useEffect(() => {
+    const unsubscribe = springValue.on("change", (latest) => {
+      setDisplayValue(Math.floor(latest).toString() + suffix);
+    });
+    return unsubscribe;
+  }, [springValue, suffix]);
+
+  return (
+    <span ref={ref} className="text-2xl font-bold text-primary block">
+      {displayValue}
+    </span>
+  );
+}
 
 const beliefs = [
   {
@@ -48,6 +87,12 @@ const beliefs = [
 ];
 
 export default function AboutPage() {
+  const { theme, resolvedTheme } = useTheme();
+
+  // Determine which hero background to use based on theme
+  const currentTheme = theme === "system" ? resolvedTheme : theme;
+  const aboutImage =
+    currentTheme === "dark" ? "/images/concept.png" : "/images/conceptd.png";
   return (
     <>
       <Navigation />
@@ -55,8 +100,8 @@ export default function AboutPage() {
       <main className="flex-1 overflow-hidden">
         {/* HERO */}
         <AnimatedSection>
-          <section className="relative min-h-[540px] lg:min-h-[580px] flex items-center overflow-hidden">
-            <div className="absolute inset-0 z-0">
+          <section className="relative min-h-50 lg:min-h-85 flex items-center overflow-visible ">
+            <div className="absolute inset-x-0 top-24 -bottom-10 z-0 overflow-hidden">
               <Image
                 src="/images/bgweb.jpeg"
                 alt="Background"
@@ -67,64 +112,44 @@ export default function AboutPage() {
               />
             </div>
 
-            <div className="absolute inset-0 z-[1] pointer-events-none">
-              <div className="absolute -left-32 top-1/4 h-80 w-80 rounded-full border border-border/20" />
-              <div className="absolute -left-20 top-[30%] h-56 w-56 rounded-full border border-border/10" />
-              <div className="absolute right-[-140px] bottom-[-160px] h-[420px] w-[420px] rounded-full border border-border/20" />
-            </div>
-
-            <div className="container-premium relative z-10 w-full py-20">
+            <div className="container-premium relative z-10 w-full pt-32   h-full">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="max-w-3xl"
+                className="max-w-3xl "
               >
-                <div className="inline-flex items-center gap-3 rounded-full border border-primary/30 bg-primary/10 px-5 py-2.5 backdrop-blur-md mb-4">
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-primary">
-                    ABOUT KEYN PEOPLE ADVISORY
+                <span className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight leading-[0.98] mb-4 flex flex-col gap-2 font-realce">
+                  <span className="text-white">Your People. </span>
+
+                  <span className="text-white">Our Expertise.</span>
+
+                  <span className="text-transparent bg-linear-to-r from-secondary to-white bg-clip-text w-max">
+                    Better Outcomes.
                   </span>
-                </div>
-
-                <span className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[0.98] mb-4">
-                  <span className="text-foreground">Your People. </span>
-                  <br />
-                  <span className="text-primary">Our Expertise.</span>
-                  <br />
-                  <span className="text-foreground">Better Outcomes.</span>
                 </span>
-
-                <div className="flex items-center gap-4">
-                  <div className="h-px w-16 bg-primary" />
-                  <div className="h-px w-8 bg-primary/40" />
-                </div>
               </motion.div>
             </div>
-
-            <div className="absolute bottom-0 left-0 right-0 z-10 h-24 bg-gradient-to-t from-background to-transparent" />
           </section>
         </AnimatedSection>
 
         {/* WHO WE ARE */}
         <AnimatedSection>
-          <section className="relative py-14 lg:py-16">
+          <section className="relative py-14 lg:py-32">
             <div className="container-premium">
-              <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-center">
+              <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="h-px w-14 bg-gradient-to-r from-primary to-secondary" />
+                    <span className="h-px w-14 bg-linear-to-r from-primary to-secondary" />
                     <span className="text-xs font-bold tracking-[0.2em] text-primary">
                       WHO WE ARE
                     </span>
                   </div>
 
                   <span className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.03] mb-4">
-                    <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                      Practical HR Experience
-                    </span>{" "}
+                    Practical HR Experience
                     <span className="text-foreground">Meets</span>{" "}
-                    <span className="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
+                    <span className="bg-linear-to-r from-secondary to-primary bg-clip-text text-transparent  ">
                       Recruitment Expertise
                     </span>
                   </span>
@@ -153,57 +178,14 @@ export default function AboutPage() {
                       needs.
                     </p>
                   </div>
-
-                  <div className="mt-7 flex items-center gap-5">
-                    <div className="h-1 w-24 rounded-full bg-gradient-to-r from-primary to-secondary" />
-                    <div className="h-px flex-1 max-w-xs bg-border" />
-                  </div>
                 </div>
 
-                <div className="relative min-h-[340px] rounded-[1.5rem] border border-border/70 bg-muted/30 p-5 lg:p-7 overflow-hidden">
-                  <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full border border-border/20" />
-                  <div className="absolute -left-24 -bottom-24 h-72 w-72 rounded-full border border-primary/15" />
-
-                  <div className="relative h-full min-h-[300px] rounded-[1.5rem] bg-primary p-6 md:p-8 flex flex-col justify-between overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/80" />
-
-                    <div className="relative">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-primary shadow-lg">
-                        <Users className="h-7 w-7" />
-                      </div>
-                    </div>
-
-                    <div className="relative">
-                      <div className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-                        People & Performance
-                      </div>
-                      <div className="text-2xl md:text-3xl font-bold leading-tight text-primary-foreground">
-                        Building stronger teams through practical people
-                        solutions.
-                      </div>
-
-                      <div className="mt-6 grid grid-cols-3 gap-3">
-                        <div className="rounded-xl border border-border/10 bg-background/5 p-4">
-                          <CheckCircle2 className="h-5 w-5 text-primary mb-3" />
-                          <span className="text-xs text-primary-foreground/70">
-                            Talent
-                          </span>
-                        </div>
-                        <div className="rounded-xl border border-border/10 bg-background/5 p-4">
-                          <CheckCircle2 className="h-5 w-5 text-primary mb-3" />
-                          <span className="text-xs text-primary-foreground/70">
-                            HR
-                          </span>
-                        </div>
-                        <div className="rounded-xl border border-border/10 bg-background/5 p-4">
-                          <CheckCircle2 className="h-5 w-5 text-primary mb-3" />
-                          <span className="text-xs text-primary-foreground/70">
-                            Careers
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div className=" h-full flex justify-center items-center">
+                  <img
+                    src={aboutImage}
+                    alt="Background"
+                    className="z-0  bg-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -212,11 +194,11 @@ export default function AboutPage() {
 
         {/* WHAT WE BELIEVE */}
         <AnimatedSection>
-          <section className="relative py-14 lg:py-16 bg-gradient-to-b from-background via-muted/25 to-background border-y">
+          <section className="relative py-14 lg:py-16 bg-card border-y">
             <div className="container-premium">
               <div className="max-w-3xl mb-9 lg:mb-10">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="h-px w-14 bg-gradient-to-r from-primary to-secondary" />
+                  <span className="h-px w-14 bg-linear-to-r from-primary to-secondary" />
                   <span className="text-xs font-bold tracking-[0.2em] text-primary">
                     WHAT WE BELIEVE
                   </span>
@@ -224,7 +206,7 @@ export default function AboutPage() {
 
                 <span className="text-2xl md:text-3xl font-bold tracking-tight leading-tight">
                   Our approach to talent and HR is{" "}
-                  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
                     grounded in core principles
                   </span>
                 </span>
@@ -241,7 +223,7 @@ export default function AboutPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: index * 0.08 }}
-                      className="group bg-background p-6 lg:p-7 min-h-[225px] flex flex-col hover:bg-muted/30 transition-colors"
+                      className="group bg-background p-6 lg:p-7 min-h-56.25 flex flex-col hover:bg-muted/30 transition-colors"
                     >
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-primary/40 bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
@@ -270,7 +252,7 @@ export default function AboutPage() {
 
         {/* TEAM & VALUES */}
         <AnimatedSection>
-          <section className="relative py-14 lg:py-16 bg-gradient-to-b from-background via-muted/30 to-background">
+          <section className="relative py-14 lg:py-16 bg-card">
             <div className="container-premium">
               {/* Team Profile */}
               <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-14 items-center mb-16">
@@ -284,7 +266,7 @@ export default function AboutPage() {
                 >
                   <div className="relative aspect-square rounded-tl-3xl rounded-br-3xl overflow-hidden border border-border/50">
                     <Image
-                      src="/images/eric.jpg"
+                      src="/images/director.png"
                       alt="Mr. Eric Otera"
                       fill
                       className="object-cover"
@@ -304,7 +286,7 @@ export default function AboutPage() {
                   transition={{ duration: 0.8 }}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="h-px w-14 bg-gradient-to-r from-primary to-secondary" />
+                    <span className="h-px w-14 bg-linear-to-r from-primary to-secondary" />
                     <span className="text-xs font-bold tracking-[0.2em] text-primary">
                       LEADERSHIP
                     </span>
@@ -321,70 +303,82 @@ export default function AboutPage() {
 
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
-                      Eric Otera is the founder and director of Keyn People Advisory, 
-                      bringing over 10 years of extensive human resource management and 
-                      recruitment experience to the organization. His career has been built 
-                      on a deep understanding of talent acquisition, employee relations, and 
-                      strategic HR consulting across diverse industries.
+                      Eric Otera is the founder and director of Keyn People
+                      Advisory, bringing over 10 years of extensive human
+                      resource management and recruitment experience to the
+                      organization. His career has been built on a deep
+                      understanding of talent acquisition, employee relations,
+                      and strategic HR consulting across diverse industries.
                     </p>
                     <p>
-                      With a proven track record in matching exceptional talent with 
-                      organizational needs, Eric has helped hundreds of companies build 
-                      high-performing teams while supporting professionals in advancing 
-                      their careers. His approach combines practical HR expertise with a 
-                      genuine commitment to understanding both employer objectives and 
-                      candidate aspirations.
+                      With a proven track record in matching exceptional talent
+                      with organizational needs, Eric has helped hundreds of
+                      companies build high-performing teams while supporting
+                      professionals in advancing their careers. His approach
+                      combines practical HR expertise with a genuine commitment
+                      to understanding both employer objectives and candidate
+                      aspirations.
                     </p>
                     <p>
-                      Eric's vision for Keyn People Advisory extends beyond traditional 
-                      recruitment—he believes in creating meaningful connections that drive 
-                      organizational success and individual career growth. His leadership 
-                      philosophy centers on quality over speed, practical solutions, and 
-                      viewing talent as a strategic investment rather than an expense.
+                      Eric's vision for Keyn People Advisory extends beyond
+                      traditional recruitment—he believes in creating meaningful
+                      connections that drive organizational success and
+                      individual career growth. His leadership philosophy
+                      centers on quality over speed, practical solutions, and
+                      viewing talent as a strategic investment rather than an
+                      expense.
                     </p>
                   </div>
 
                   {/* Credentials/Stats */}
                   <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-border/50">
                     <div>
-                      <span className="text-2xl font-bold text-primary block">10+</span>
-                      <span className="text-xs text-muted-foreground">Years Experience</span>
+                      <AnimatedCounter value={10} suffix="+" />
+                      <span className="text-xs text-muted-foreground">
+                        Years Experience
+                      </span>
                     </div>
                     <div>
-                      <span className="text-2xl font-bold text-primary block">500+</span>
-                      <span className="text-xs text-muted-foreground">Placements</span>
+                      <AnimatedCounter value={500} suffix="+" />
+                      <span className="text-xs text-muted-foreground">
+                        Placements
+                      </span>
                     </div>
                     <div>
-                      <span className="text-2xl font-bold text-primary block">200+</span>
-                      <span className="text-xs text-muted-foreground">Companies</span>
+                      <AnimatedCounter value={200} suffix="+" />
+                      <span className="text-xs text-muted-foreground">
+                        Companies
+                      </span>
                     </div>
                   </div>
                 </motion.div>
               </div>
 
               {/* Mission, Vision, Core Values - Compact Grid */}
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-3 gap-4">
                 {/* Mission */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="group relative"
+                  className="group relative rounded-xl border border-border bg-card p-4 hover:border-primary/40 transition-colors"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-tl-xl rounded-br-xl bg-gradient-to-br from-primary to-secondary p-0.5 flex-shrink-0 group-hover:scale-110 transition-transform">
-                      <div className="w-full h-full bg-background rounded-tl-xl rounded-br-xl flex items-center justify-center">
-                        <Target className="h-5 w-5 text-primary" />
+                  <div className="flex items-start gap-3">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-tl-lg rounded-br-lg bg-linear-to-br from-primary to-secondary p-0.5 shrink-0 group-hover:scale-110 transition-transform">
+                      <div className="w-full h-full bg-background rounded-tl-lg rounded-br-lg flex items-center justify-center">
+                        <Target className="h-4 w-4 text-primary" />
                       </div>
                     </div>
-                    <div>
-                      <span className="text-sm font-bold text-primary mb-2 block">MISSION</span>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        To connect exceptional talent with organizations seeking to build 
-                        high-performing teams, while empowering professionals to achieve 
-                        their career goals through expert HR support and career services.
-                      </p>
+                    <div className="min-w-0">
+                      <span className="text-xs font-bold tracking-wider text-primary mb-1.5 block">
+                        MISSION
+                      </span>
+                      <span className="text-sm text-muted-foreground leading-relaxed">
+                        To connect exceptional talent with organizations that
+                        need high-performing teams, and help professionals move
+                        their careers forward through expert HR support.
+                      </span>
                     </div>
                   </div>
                 </motion.div>
@@ -395,22 +389,23 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  className="group relative"
+                  className="group relative rounded-xl border border-border bg-card p-4 hover:border-secondary/40 transition-colors"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-tl-xl rounded-br-xl bg-gradient-to-br from-secondary to-primary p-0.5 flex-shrink-0 group-hover:scale-110 transition-transform">
-                      <div className="w-full h-full bg-background rounded-tl-xl rounded-br-xl flex items-center justify-center">
-                        <Eye className="h-5 w-5 text-secondary" />
+                  <div className="flex items-start gap-3">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-tl-lg rounded-br-lg bg-linear-to-br from-secondary to-primary p-0.5 shrink-0 group-hover:scale-110 transition-transform">
+                      <div className="w-full h-full bg-background rounded-tl-lg rounded-br-lg flex items-center justify-center">
+                        <Eye className="h-4 w-4 text-secondary" />
                       </div>
                     </div>
-                    <div>
-                      <span className="text-sm font-bold text-secondary mb-2 block">VISION</span>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        To be the trusted HR partner of choice in Kenya and beyond, 
-                        recognized for our practical approach, quality service, and 
-                        commitment to viewing talent as a strategic investment that drives 
-                        organizational growth and individual success.
-                      </p>
+                    <div className="min-w-0">
+                      <span className="text-xs font-bold tracking-wider text-secondary mb-1.5 block">
+                        VISION
+                      </span>
+                      <span className="text-sm text-muted-foreground leading-relaxed">
+                        To be the HR partner of choice in Kenya and beyond known
+                        for practical solutions, quality service, and treating
+                        talent as a strategic investment.
+                      </span>
                     </div>
                   </div>
                 </motion.div>
@@ -421,31 +416,33 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="group relative"
+                  className="group relative rounded-xl border border-border bg-card p-4 hover:border-primary/40 transition-colors"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-tl-xl rounded-br-xl bg-gradient-to-br from-primary to-secondary p-0.5 flex-shrink-0 group-hover:scale-110 transition-transform">
-                      <div className="w-full h-full bg-background rounded-tl-xl rounded-br-xl flex items-center justify-center">
-                        <Heart className="h-5 w-5 text-primary" />
+                  <div className="flex items-start gap-3">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-tl-lg rounded-br-lg bg-linear-to-br from-primary to-secondary p-0.5 shrink-0 group-hover:scale-110 transition-transform">
+                      <div className="w-full h-full bg-background rounded-tl-lg rounded-br-lg flex items-center justify-center">
+                        <Heart className="h-4 w-4 text-primary" />
                       </div>
                     </div>
-                    <div>
-                      <span className="text-sm font-bold text-primary mb-2 block">CORE VALUES</span>
-                      <div className="space-y-2 text-sm text-muted-foreground">
+                    <div className="min-w-0">
+                      <span className="text-xs font-bold tracking-wider text-primary mb-1.5 block">
+                        CORE VALUES
+                      </span>
+                      <div className="space-y-1.5 text-sm text-muted-foreground">
                         <div className="flex items-center gap-2">
-                          <span className="h-1 w-1 rounded-full bg-primary" />
+                          <span className="h-1 w-1 rounded-full bg-primary shrink-0" />
                           <span>Quality Over Speed</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="h-1 w-1 rounded-full bg-primary" />
+                          <span className="h-1 w-1 rounded-full bg-primary shrink-0" />
                           <span>Practical Solutions</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="h-1 w-1 rounded-full bg-primary" />
+                          <span className="h-1 w-1 rounded-full bg-primary shrink-0" />
                           <span>Professional Integrity</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="h-1 w-1 rounded-full bg-primary" />
+                          <span className="h-1 w-1 rounded-full bg-primary shrink-0" />
                           <span>Client-Centered Approach</span>
                         </div>
                       </div>
@@ -461,24 +458,24 @@ export default function AboutPage() {
         <AnimatedSection>
           <section className="relative py-14 lg:py-16">
             <div className="container-premium">
-              <div className="relative overflow-hidden rounded-[1.5rem] border border-border bg-muted/25 px-6 py-10 md:px-9 lg:px-12">
+              <div className="relative overflow-hidden rounded-3xl border border-border bg-muted/25 px-6 py-10 md:px-9 lg:px-12">
                 <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full border border-border/20" />
                 <div className="absolute -left-24 -bottom-24 h-72 w-72 rounded-full border border-primary/10" />
 
                 <div className="relative text-center max-w-4xl mx-auto">
                   <div className="flex items-center justify-center gap-3 mb-4">
-                    <span className="h-px w-14 bg-gradient-to-r from-primary to-secondary" />
+                    <span className="h-px w-14 bg-linear-to-r from-primary to-secondary" />
                     <span className="text-xs font-bold tracking-[0.2em] text-primary">
                       LET'S WORK TOGETHER
                     </span>
-                    <span className="h-px w-14 bg-gradient-to-r from-primary to-secondary" />
+                    <span className="h-px w-14 bg-linear-to-r from-primary to-secondary" />
                   </div>
 
                   <span className="text-2xl md:text-3xl font-bold tracking-tight leading-tight">
                     <span className="text-foreground">
                       Whether you need to{" "}
                     </span>
-                    <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    <span>
                       hire talent, strengthen HR, or advance your career
                     </span>
                     <span className="text-foreground">
@@ -489,11 +486,11 @@ export default function AboutPage() {
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mt-7">
                     <div className="inline-block group relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-tl-2xl rounded-br-2xl" />
+                      <div className="absolute inset-0 bg-linear-to-br from-primary to-secondary rounded-tl-2xl rounded-br-2xl" />
                       <Button
                         asChild
                         size="lg"
-                        className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-primary text-primary-foreground hover:bg-transparent hover:text-primary border-primary group-hover:-translate-y-1 group-hover:-translate-x-1 transition-all duration-300 px-7"
+                        className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-primary text-primary-foreground  border-primary group-hover:-translate-y-0.5 group-hover:-translate-x-0.5 transition-all duration-300 px-7"
                       >
                         <Link href="/contact">
                           Get in Touch
