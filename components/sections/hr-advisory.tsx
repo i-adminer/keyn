@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AlertCircle, Users, FileCheck, Scale } from "lucide-react";
+import Image from "next/image";
 
 const areas = [
   "Employee performance concerns",
@@ -16,29 +16,6 @@ const areas = [
   "Recruitment decisions",
   "Employee relations",
   "HR best-practice advisory",
-];
-
-const highlights = [
-  {
-    icon: AlertCircle,
-    title: "Independent Advice",
-    description: "Objective guidance on people-management challenges",
-  },
-  {
-    icon: Users,
-    title: "Employee Relations",
-    description: "Navigate complex workplace relationships professionally",
-  },
-  {
-    icon: FileCheck,
-    title: "Compliance Support",
-    description: "Ensure your processes align with employment regulations",
-  },
-  {
-    icon: Scale,
-    title: "Fair Practices",
-    description: "Balance organisational needs with employee rights",
-  },
 ];
 
 export function HRAdvisory() {
@@ -77,87 +54,55 @@ export function HRAdvisory() {
           </span>
         </motion.div>
 
-        {/* Highlights Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {highlights.map((highlight, index) => {
-            const Icon = highlight.icon;
-            return (
-              <motion.div
-                key={highlight.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative"
-              >
-                {/* Gradient Background Layer */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-tl-3xl rounded-br-3xl" />
-                
-                {/* Highlight Card */}
-                <div className="relative p-6 bg-card border border-border/50 rounded-tl-3xl rounded-br-3xl group-hover:border-primary/50 transition-all duration-300 group-hover:-translate-y-1 group-hover:-translate-x-1">
-                  {/* Gradient Overlay on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/5 rounded-tl-3xl rounded-br-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
-                  <div className="relative z-10">
-                    {/* Icon with Gradient Border */}
-                    <motion.div
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
-                      className="w-14 h-14 rounded-tl-2xl rounded-br-2xl bg-gradient-to-br from-primary to-secondary p-0.5 mb-4"
-                    >
-                      <div className="w-full h-full bg-card rounded-tl-2xl rounded-br-2xl flex items-center justify-center group-hover:bg-transparent transition-colors duration-300">
-                        <Icon className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-300" />
-                      </div>
-                    </motion.div>
+        {/* Two Column Layout: Image + Advisory Areas */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left: Image */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            <div className="relative aspect-square">
+              <Image
+                src="/images/lady.png"
+                alt="HR Advisory Services"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-contain"
+                quality={100}
+              />
+            </div>
+          </motion.div>
 
-                    <span className="font-bold text-foreground mb-2 block group-hover:text-primary transition-colors duration-300">
-                      {highlight.title}
-                    </span>
-                    <span className="text-sm text-muted-foreground leading-relaxed block">
-                      {highlight.description}
-                    </span>
-                  </div>
-
-                  {/* Corner Accent */}
-                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-primary/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Advisory Areas */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-5xl mx-auto"
-        >
-          <span className="text-2xl font-bold text-foreground mb-6 block text-center">
-            Advisory areas
-          </span>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {areas.map((area, index) => (
-              <motion.div
-                key={area}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.03 }}
-                className="group relative"
-              >
-                {/* Gradient Background Layer */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-tl-2xl rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Area Card */}
-                <div className="relative p-4 bg-card border border-border/50 rounded-tl-2xl rounded-br-2xl text-foreground group-hover:border-secondary/50 group-hover:-translate-y-0.5 group-hover:-translate-x-0.5 transition-all duration-300 text-sm">
+          {/* Right: Advisory Areas as Paragraphs */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="text-2xl font-bold text-foreground mb-6 block">
+              Advisory areas
+            </span>
+            <div className="space-y-3">
+              {areas.map((area, index) => (
+                <motion.p
+                  key={area}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="text-base text-muted-foreground leading-relaxed flex items-start gap-2"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-primary to-secondary flex-shrink-0 mt-2" />
                   {area}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+                </motion.p>
+              ))}
+            </div>
+          </motion.div>
+        </div>
 
         {/* Bottom Decorative Element */}
         <motion.div
