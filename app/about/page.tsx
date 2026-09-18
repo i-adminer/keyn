@@ -50,17 +50,19 @@ export default function AboutPage() {
       <main className="flex-1">
         {/* Hero with Background */}
         <AnimatedSection>
-          <section className="relative pt-30 pb-16 overflow-hidden min-h-[40vh] flex items-center justify-center">
-            {/* Background Image - Starts below navbar with more padding */}
-            <div className="absolute top-32 left-0 right-0 bottom-0 z-0 opacity-50">
-              <Image
-                src="/images/bgweb.jpeg"
-                alt="Background"
-                fill
-                className="object-cover object-top"
-                quality={100}
-                priority
-              />
+          <section className="relative pt-32 pb-16 overflow-hidden min-h-[40vh] flex items-center justify-center">
+            {/* Background Image - Starts below navbar */}
+            <div className="absolute top-24 left-0 right-0 bottom-0 z-0">
+              <div className="relative w-full h-full opacity-50">
+                <Image
+                  src="/images/bgweb.jpeg"
+                  alt="Background"
+                  fill
+                  className="object-cover object-top"
+                  quality={100}
+                  priority
+                />
+              </div>
             </div>
 
             <div className="container-premium relative z-10">
