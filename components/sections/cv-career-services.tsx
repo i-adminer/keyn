@@ -26,7 +26,7 @@ export function CVCareerServices() {
           </div>
 
           {/* Heading */}
-          <div className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] mb-6">
+          <div className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] mb-12">
             <span className="text-foreground">
               Your CV Is More Than a Document.{" "}
             </span>
@@ -34,59 +34,64 @@ export function CVCareerServices() {
               It Is Your Career Marketing Tool
             </span>
           </div>
+        </motion.div>
 
-          {/* Single Comprehensive Paragraph */}
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        {/* Two Column Layout: Paragraph + Image */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left: Paragraph and CTA */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-muted-foreground leading-relaxed mb-8"
+            transition={{ duration: 0.8 }}
           >
-            Keyn helps professionals at all career levels from graduates and
-            entry-level professionals to experienced managers, senior
-            executives, career changers, and international applicants create
-            clear, professional, and results focused CVs that stand out in
-            competitive job markets. Our services include professional CV
-            writing, CV redesign, ATS-friendly optimization, executive CVs for
-            senior leadership positions, LinkedIn profile optimization, and
-            compelling cover letters tailored to your target role, all crafted
-            by experienced HR professionals who understand what employers are
-            looking for.
-          </motion.p>
+            {/* Single Comprehensive Paragraph */}
+            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+              Keyn helps professionals at all career levels from graduates and
+              entry-level professionals to experienced managers, senior
+              executives, career changers, and international applicants create
+              clear, professional, and results focused CVs that stand out in
+              competitive job markets. Our services include professional CV
+              writing, CV redesign, ATS-friendly optimization, executive CVs for
+              senior leadership positions, LinkedIn profile optimization, and
+              compelling cover letters tailored to your target role, all crafted
+              by experienced HR professionals who understand what employers are
+              looking for.
+            </p>
 
-          {/* CTA Button */}
-          <div className="inline-block group relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-tl-2xl rounded-br-2xl" />
-            <Button
-              asChild
-              size="lg"
-              className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-primary text-white hover:bg-transparent hover:text-primary border-primary group-hover:-translate-y-1 group-hover:-translate-x-1 transition-all duration-300"
-            >
-              <Link href="/cv-career-services">Build My CV</Link>
-            </Button>
-          </div>
-        </motion.div>
+            {/* CTA Button */}
+            <div className="inline-block group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-tl-2xl rounded-br-2xl" />
+              <Button
+                asChild
+                size="lg"
+                className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-primary text-white hover:bg-transparent hover:text-primary border-primary group-hover:-translate-y-1 group-hover:-translate-x-1 transition-all duration-300"
+              >
+                <Link href="/cv-career-services">Build My CV</Link>
+              </Button>
+            </div>
+          </motion.div>
 
-        {/* Full Width CV Image */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-16"
-        >
-          <div className="relative w-full">
-            <Image
-              src="/images/cv.png"
-              alt="Professional CV Examples"
-              width={2000}
-              height={800}
-              className="w-full h-auto object-contain"
-              quality={100}
-            />
-          </div>
-        </motion.div>
+          {/* Right: CV Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            <div className="relative">
+              <Image
+                src="/images/cv.png"
+                alt="Professional CV Examples"
+                width={800}
+                height={600}
+                className="w-full h-auto object-contain"
+                quality={90}
+              />
+            </div>
+          </motion.div>
+        </div>
 
         {/* Bottom Decorative Element */}
         <motion.div
