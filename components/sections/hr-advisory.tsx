@@ -3,21 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const areas = [
-  "Employee performance concerns",
-  "Workplace disciplinary processes",
-  "Employee grievances",
-  "Employment documentation",
-  "HR policy interpretation",
-  "Employee exits",
-  "Performance improvement processes",
-  "Workforce restructuring",
-  "HR compliance",
-  "Recruitment decisions",
-  "Employee relations",
-  "HR best-practice advisory",
-];
-
 export function HRAdvisory() {
   return (
     <section className="relative py-20 overflow-hidden bg-gradient-to-b from-background via-muted/30 to-background border-b">
@@ -76,7 +61,7 @@ export function HRAdvisory() {
             </div>
           </motion.div>
 
-          {/* Right: Advisory Areas as Paragraphs */}
+          {/* Right: Advisory Areas as Descriptive Paragraphs */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -86,20 +71,57 @@ export function HRAdvisory() {
             <span className="text-2xl font-bold text-foreground mb-6 block">
               Advisory areas
             </span>
-            <div className="space-y-3">
-              {areas.map((area, index) => (
-                <motion.p
-                  key={area}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="text-base text-muted-foreground leading-relaxed flex items-start gap-2"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-primary to-secondary flex-shrink-0 mt-2" />
-                  {area}
-                </motion.p>
-              ))}
+            <div className="space-y-4">
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4 }}
+                className="text-base text-muted-foreground leading-relaxed"
+              >
+                We guide you through employee performance concerns, workplace 
+                disciplinary processes, and employee grievances with practical, 
+                objective advice that considers both organizational needs and 
+                fair treatment.
+              </motion.p>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="text-base text-muted-foreground leading-relaxed"
+              >
+                Our support extends to employment documentation, HR policy 
+                interpretation, and employee exits, ensuring your processes 
+                remain structured, compliant, and professionally managed at 
+                every stage.
+              </motion.p>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                className="text-base text-muted-foreground leading-relaxed"
+              >
+                Whether you're implementing performance improvement processes, 
+                navigating workforce restructuring, or seeking HR compliance 
+                clarity, we provide actionable guidance grounded in employment 
+                regulations and workplace best practice.
+              </motion.p>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+                className="text-base text-muted-foreground leading-relaxed"
+              >
+                From recruitment decisions and employee relations to broader 
+                HR strategy, we act as your independent advisor when people 
+                decisions require more than templates and guesswork.
+              </motion.p>
             </div>
           </motion.div>
         </div>
