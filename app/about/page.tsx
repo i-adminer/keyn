@@ -70,14 +70,14 @@ export default function AboutPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="max-w-4xl"
               >
                 {/* Eyebrow */}
-                <div className="flex items-center gap-2 mb-6">
+                <div className="flex items-center justify-center gap-2 mb-6">
                   <div className="w-12 h-0.5 bg-gradient-to-r from-secondary to-primary-foreground rounded-full" />
                   <span className="text-sm font-bold tracking-widest text-secondary">
                     ABOUT KEYN PEOPLE ADVISORY
                   </span>
+                  <div className="w-12 h-0.5 bg-gradient-to-r from-primary-foreground to-secondary rounded-full" />
                 </div>
 
                 {/* Heading */}
@@ -104,7 +104,7 @@ export default function AboutPage() {
         <AnimatedSection>
           <section className="relative py-16 overflow-hidden border-b">
             <div className="container-premium">
-              <div className="max-w-4xl">
+              <div>
                 {/* Eyebrow */}
                 <div className="flex items-center gap-2 mb-6">
                   <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
@@ -159,7 +159,7 @@ export default function AboutPage() {
         <AnimatedSection>
           <section className="relative py-16 overflow-hidden bg-gradient-to-b from-background via-muted/30 to-background border-b">
             <div className="container-premium">
-              <div className="max-w-5xl">
+              <div>
                 {/* Section Header */}
                 <div className="text-center mb-12">
                   <div className="flex items-center justify-center gap-2 mb-6">
@@ -221,7 +221,7 @@ export default function AboutPage() {
         <AnimatedSection>
           <section className="relative py-16 overflow-hidden bg-primary">
             <div className="container-premium">
-              <div className="max-w-4xl text-center">
+              <div className="text-center">
                 {/* Eyebrow */}
                 <div className="flex items-center justify-center gap-2 mb-6">
                   <div className="w-12 h-0.5 bg-gradient-to-r from-secondary to-primary-foreground rounded-full" />
@@ -266,7 +266,7 @@ export default function AboutPage() {
         <AnimatedSection>
           <section className="relative py-16 overflow-hidden border-b">
             <div className="container-premium">
-              <div className="max-w-5xl">
+              <div>
                 {/* Section Header */}
                 <div className="text-center mb-12">
                   <div className="flex items-center justify-center gap-2 mb-6">
@@ -356,7 +356,7 @@ export default function AboutPage() {
         <AnimatedSection>
           <section className="relative py-16 overflow-hidden bg-primary">
             <div className="container-premium">
-              <div className="max-w-4xl text-center">
+              <div className="text-center">
                 <div className="w-24 h-1 bg-secondary mx-auto mb-8" />
                 <div className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-8">
                   <span className="text-primary-foreground">
@@ -380,7 +380,7 @@ export default function AboutPage() {
         <AnimatedSection>
           <section className="relative py-16 overflow-hidden">
             <div className="container-premium">
-              <div className="max-w-4xl text-center">
+              <div className="text-center">
                 {/* Eyebrow */}
                 <div className="flex items-center justify-center gap-2 mb-6">
                   <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
