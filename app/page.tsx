@@ -11,9 +11,6 @@ import { HRAdvisory } from "@/components/sections/hr-advisory";
 import { CVCareerServices } from "@/components/sections/cv-career-services";
 import { CareerServicesCTA } from "@/components/sections/career-services-cta";
 import { Training } from "@/components/sections/training";
-import { DualPathway } from "@/components/sections/dual-pathway";
-import { Industries } from "@/components/sections/industries";
-import { Philosophy } from "@/components/sections/philosophy";
 import { FAQ } from "@/components/sections/faq";
 
 export default function Home() {
@@ -32,9 +29,6 @@ export default function Home() {
         <CVCareerServices />
         <CareerServicesCTA />
         <Training />
-        <DualPathway />
-        <Industries />
-        <Philosophy />
         <FAQ />
       </main>
       <Footer />
