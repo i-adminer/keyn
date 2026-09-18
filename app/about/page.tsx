@@ -112,18 +112,18 @@ export default function AboutPage() {
               <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-center">
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="h-px w-14 bg-gradient-to-r from-primary to-primary" />
+                    <span className="h-px w-14 bg-gradient-to-r from-primary to-secondary" />
                     <span className="text-xs font-bold tracking-[0.2em] text-primary">
                       WHO WE ARE
                     </span>
                   </div>
 
                   <span className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.03] mb-4">
-                    <span className="bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                       Practical HR Experience
                     </span>{" "}
                     <span className="text-foreground">Meets</span>{" "}
-                    <span className="bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
                       Recruitment Expertise
                     </span>
                   </span>
@@ -154,7 +154,7 @@ export default function AboutPage() {
                   </div>
 
                   <div className="mt-7 flex items-center gap-5">
-                    <div className="h-1 w-24 rounded-full bg-gradient-to-r from-primary to-primary" />
+                    <div className="h-1 w-24 rounded-full bg-gradient-to-r from-primary to-secondary" />
                     <div className="h-px flex-1 max-w-xs bg-border" />
                   </div>
                 </div>
@@ -215,7 +215,7 @@ export default function AboutPage() {
             <div className="container-premium">
               <div className="max-w-3xl mb-9 lg:mb-10">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="h-px w-14 bg-gradient-to-r from-primary to-primary" />
+                  <span className="h-px w-14 bg-gradient-to-r from-primary to-secondary" />
                   <span className="text-xs font-bold tracking-[0.2em] text-primary">
                     WHAT WE BELIEVE
                   </span>
@@ -223,7 +223,7 @@ export default function AboutPage() {
 
                 <span className="text-2xl md:text-3xl font-bold tracking-tight leading-tight">
                   Our approach to talent and HR is{" "}
-                  <span className="bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                     grounded in core principles
                   </span>
                 </span>
@@ -277,18 +277,18 @@ export default function AboutPage() {
 
                 <div className="relative text-center max-w-4xl mx-auto">
                   <div className="flex items-center justify-center gap-3 mb-4">
-                    <span className="h-px w-14 bg-gradient-to-r from-primary to-primary" />
+                    <span className="h-px w-14 bg-gradient-to-r from-primary to-secondary" />
                     <span className="text-xs font-bold tracking-[0.2em] text-primary">
                       LET'S WORK TOGETHER
                     </span>
-                    <span className="h-px w-14 bg-gradient-to-r from-primary to-primary" />
+                    <span className="h-px w-14 bg-gradient-to-r from-primary to-secondary" />
                   </div>
 
                   <span className="text-2xl md:text-3xl font-bold tracking-tight leading-tight">
                     <span className="text-foreground">
                       Whether you need to{" "}
                     </span>
-                    <span className="bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                       hire talent, strengthen HR, or advance your career
                     </span>
                     <span className="text-foreground">
