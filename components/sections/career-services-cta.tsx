@@ -62,32 +62,6 @@ export function CareerServicesCTA() {
             </div>
           </div>
 
-          {/* Capabilities - Compact Inline */}
-          <div className="text-center mb-10">
-            <span className="text-sm font-semibold text-secondary mb-3 block">
-              SUPPORTING CAPABILITIES
-            </span>
-            <div className="flex flex-wrap justify-center gap-3">
-              {[
-                "Recruitment",
-                "Employee relations",
-                "Performance management",
-                "HR operations",
-                "Workforce planning",
-                "Employee development",
-                "Workplace compliance",
-                "Talent retention",
-              ].map((capability) => (
-                <span
-                  key={capability}
-                  className="px-4 py-2 bg-primary-foreground/10 rounded-full text-primary-foreground text-sm font-medium"
-                >
-                  {capability}
-                </span>
-              ))}
-            </div>
-          </div>
-
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <div className="inline-block group relative">
