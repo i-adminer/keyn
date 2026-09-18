@@ -14,6 +14,9 @@ import {
   Lightbulb,
   Users,
   TrendingUp,
+  ArrowUpRight,
+  CheckCircle2,
+  Quote,
 } from "lucide-react";
 
 const beliefs = [
@@ -47,303 +50,157 @@ export default function AboutPage() {
   return (
     <>
       <Navigation />
-      <main className="flex-1">
-        {/* Hero with Background */}
+
+      <main className="flex-1 overflow-hidden">
+        {/* HERO */}
         <AnimatedSection>
-          <section className="relative pt-32 pb-16 overflow-hidden min-h-[40vh] ">
-            {/* Background Image - Starts below navbar */}
-            <div className="absolute top-24 left-0 right-0 bottom-0 z-0">
-              <div className="relative w-full h-full ">
-                <Image
-                  src="/images/bgweb.jpeg"
-                  alt="Background"
-                  fill
-                  className="object-cover object-bottom"
-                  quality={100}
-                  priority
-                />
-              </div>
+          <section className="relative min-h-[540px] lg:min-h-[580px] flex items-center overflow-hidden">
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/images/bgweb.jpeg"
+                alt="Background"
+                fill
+                className="object-cover object-bottom"
+                quality={100}
+                priority
+              />
             </div>
 
-            <div className="container-premium relative z-10">
+            <div className="absolute inset-0 z-[1] pointer-events-none">
+              <div className="absolute -left-32 top-1/4 h-80 w-80 rounded-full border border-border/20" />
+              <div className="absolute -left-20 top-[30%] h-56 w-56 rounded-full border border-border/10" />
+              <div className="absolute right-[-140px] bottom-[-160px] h-[420px] w-[420px] rounded-full border border-border/20" />
+            </div>
+
+            <div className="container-premium relative z-10 w-full py-20">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
+                className="max-w-3xl"
               >
-                {/* Eyebrow */}
-                <div className="flex items-center justify-center gap-2 mb-6">
-                  <div className="w-12 h-0.5 bg-gradient-to-r from-secondary to-primary-foreground rounded-full" />
-                  <span className="text-sm font-bold tracking-widest text-secondary">
+                <div className="inline-flex items-center gap-3 rounded-full border border-primary/30 bg-primary/10 px-5 py-2.5 backdrop-blur-md mb-4">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-primary">
                     ABOUT KEYN PEOPLE ADVISORY
                   </span>
-                  <div className="w-12 h-0.5 bg-gradient-to-r from-primary-foreground to-secondary rounded-full" />
                 </div>
 
-                {/* Heading */}
-                <div className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-8">
-                  <span className="text-white">Your People. </span>
+                <span className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[0.98] mb-4">
+                  <span className="text-foreground">Your People. </span>
                   <br />
-                  <span className="text-secondary">Our Expertise.</span>
+                  <span className="text-primary">Our Expertise.</span>
                   <br />
-                  <span className="text-white">Better Outcomes.</span>
-                </div>
-
-                {/* Description */}
-                <span className="text-xl md:text-2xl text-white/90 leading-relaxed  hidden">
-                  We combine recruitment expertise with practical HR experience
-                  to deliver talent and people solutions for organisations and
-                  professionals.
+                  <span className="text-foreground">Better Outcomes.</span>
                 </span>
+
+                <div className="flex items-center gap-4">
+                  <div className="h-px w-16 bg-primary" />
+                  <div className="h-px w-8 bg-primary/40" />
+                </div>
               </motion.div>
             </div>
+
+            <div className="absolute bottom-0 left-0 right-0 z-10 h-24 bg-gradient-to-t from-background to-transparent" />
           </section>
         </AnimatedSection>
 
-        {/* Who We Are */}
+        {/* WHO WE ARE */}
         <AnimatedSection>
-          <section className="relative py-16 overflow-hidden border-b">
+          <section className="relative py-14 lg:py-16">
             <div className="container-premium">
-              <div>
-                {/* Eyebrow */}
-                <div className="flex items-center gap-2 mb-6">
-                  <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
-                  <span className="text-sm font-bold tracking-widest text-primary">
-                    WHO WE ARE
-                  </span>
-                </div>
-
-                {/* Heading */}
-                <div className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] mb-8">
-                  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                    Practical HR Experience
-                  </span>
-                  <span className="text-foreground"> Meets </span>
-                  <span className="bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
-                    Recruitment Expertise
-                  </span>
-                </div>
-
-                {/* Description Paragraphs */}
-                <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
-                  <p>
-                    <strong className="text-foreground">
-                      Keyn People Advisory
-                    </strong>{" "}
-                    is a professional recruitment and human resource consulting
-                    firm providing talent acquisition, HR advisory, career
-                    development and CV writing services to organisations and
-                    professionals.
-                  </p>
-                  <p>
-                    We combine practical HR experience with a deep understanding
-                    of recruitment, employee management and workplace
-                    requirements to deliver solutions that are practical,
-                    professional and aligned with organisational objectives.
-                  </p>
-                  <p>
-                    Whether you are an employer looking for the right person or
-                    a professional looking to advance your career, we provide
-                    tailored solutions designed around your specific needs.
-                  </p>
-                </div>
-
-                {/* Decorative Line */}
-                <div className="mt-12 w-full h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full" />
-              </div>
-            </div>
-          </section>
-        </AnimatedSection>
-
-        {/* What We Believe - Compact Grid */}
-        <AnimatedSection>
-          <section className="relative py-16 overflow-hidden bg-gradient-to-b from-background via-muted/30 to-background border-b">
-            <div className="container-premium">
-              <div>
-                {/* Section Header */}
-                <div className="text-center mb-12">
-                  <div className="flex items-center justify-center gap-2 mb-6">
-                    <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
-                    <span className="text-sm font-bold tracking-widest text-primary">
-                      WHAT WE BELIEVE
+              <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-center">
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="h-px w-14 bg-gradient-to-r from-primary to-primary" />
+                    <span className="text-xs font-bold tracking-[0.2em] text-primary">
+                      WHO WE ARE
                     </span>
-                    <div className="w-12 h-0.5 bg-gradient-to-r from-secondary to-primary rounded-full" />
                   </div>
-                  <div className="text-3xl md:text-4xl font-bold tracking-tight leading-[1.1]">
-                    <span className="text-foreground">
-                      Our approach to talent and HR is{" "}
+
+                  <span className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.03] mb-4">
+                    <span className="bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
+                      Practical HR Experience
+                    </span>{" "}
+                    <span className="text-foreground">Meets</span>{" "}
+                    <span className="bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
+                      Recruitment Expertise
                     </span>
-                    <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                      grounded in core principles
-                    </span>
+                  </span>
+
+                  <div className="space-y-4 text-lg leading-8 text-muted-foreground max-w-3xl">
+                    <p>
+                      <strong className="text-foreground">
+                        Keyn People Advisory
+                      </strong>{" "}
+                      is a professional recruitment and human resource
+                      consulting firm providing talent acquisition, HR advisory,
+                      career development and CV writing services to
+                      organisations and professionals.
+                    </p>
+                    <p>
+                      We combine practical HR experience with a deep
+                      understanding of recruitment, employee management and
+                      workplace requirements to deliver solutions that are
+                      practical, professional and aligned with organisational
+                      objectives.
+                    </p>
+                    <p>
+                      Whether you are an employer looking for the right person
+                      or a professional looking to advance your career, we
+                      provide tailored solutions designed around your specific
+                      needs.
+                    </p>
+                  </div>
+
+                  <div className="mt-7 flex items-center gap-5">
+                    <div className="h-1 w-24 rounded-full bg-gradient-to-r from-primary to-primary" />
+                    <div className="h-px flex-1 max-w-xs bg-border" />
                   </div>
                 </div>
 
-                {/* Beliefs - Compact No-Card Design */}
-                <div className="grid md:grid-cols-2 gap-8">
-                  {beliefs.map((belief, index) => {
-                    const Icon = belief.icon;
-                    return (
-                      <motion.div
-                        key={belief.title}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: index * 0.1 }}
-                        className="flex gap-4 group"
-                      >
-                        {/* Icon with Gradient Border */}
-                        <div className="w-12 h-12 rounded-tl-2xl rounded-br-2xl bg-gradient-to-br from-primary to-secondary p-0.5 flex-shrink-0 group-hover:scale-110 transition-transform">
-                          <div className="w-full h-full bg-background rounded-tl-2xl rounded-br-2xl flex items-center justify-center">
-                            <Icon className="w-6 h-6 text-primary" />
-                          </div>
-                        </div>
+                <div className="relative min-h-[340px] rounded-[1.5rem] border border-border/70 bg-muted/30 p-5 lg:p-7 overflow-hidden">
+                  <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full border border-border/20" />
+                  <div className="absolute -left-24 -bottom-24 h-72 w-72 rounded-full border border-primary/15" />
 
-                        {/* Text Content */}
-                        <div>
-                          <div className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                            {belief.title}
-                          </div>
-                          <span className="text-muted-foreground leading-relaxed">
-                            {belief.description}
+                  <div className="relative h-full min-h-[300px] rounded-[1.5rem] bg-primary p-6 md:p-8 flex flex-col justify-between overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/80" />
+
+                    <div className="relative">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary text-primary shadow-lg">
+                        <Users className="h-7 w-7" />
+                      </div>
+                    </div>
+
+                    <div className="relative">
+                      <div className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+                        People & Performance
+                      </div>
+                      <div className="text-2xl md:text-3xl font-bold leading-tight text-primary-foreground">
+                        Building stronger teams through practical people
+                        solutions.
+                      </div>
+
+                      <div className="mt-6 grid grid-cols-3 gap-3">
+                        <div className="rounded-xl border border-border/10 bg-background/5 p-4">
+                          <CheckCircle2 className="h-5 w-5 text-primary mb-3" />
+                          <span className="text-xs text-primary-foreground/70">
+                            Talent
                           </span>
                         </div>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          </section>
-        </AnimatedSection>
-
-        {/* Our Approach - Full Width Primary */}
-        <AnimatedSection>
-          <section className="relative py-16 overflow-hidden bg-primary">
-            <div className="container-premium">
-              <div className="text-center">
-                {/* Eyebrow */}
-                <div className="flex items-center justify-center gap-2 mb-6">
-                  <div className="w-12 h-0.5 bg-gradient-to-r from-secondary to-primary-foreground rounded-full" />
-                  <span className="text-sm font-bold tracking-widest text-secondary">
-                    OUR APPROACH
-                  </span>
-                  <div className="w-12 h-0.5 bg-gradient-to-r from-primary-foreground to-secondary rounded-full" />
-                </div>
-
-                {/* Content */}
-                <div className="space-y-6 text-lg md:text-xl text-primary-foreground/90 leading-relaxed">
-                  <p>
-                    Unlike recruitment providers focused only on filling
-                    vacancies,
-                    <strong className="text-primary-foreground">
-                      {" "}
-                      Keyn People Advisory approaches talent from a broader HR
-                      perspective.
-                    </strong>
-                  </p>
-                  <p>
-                    We don't just ask{" "}
-                    <em className="text-primary-foreground/70">
-                      "Who can do the job?"
-                    </em>
-                  </p>
-                  <div className="text-2xl md:text-3xl font-bold text-secondary py-4">
-                    "Who will succeed and contribute to objectives?"
-                  </div>
-                  <p>
-                    This perspective allows us to assess candidates not only on
-                    skills and experience, but also on competencies, cultural
-                    alignment, and performance expectations.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-        </AnimatedSection>
-
-        {/* We Serve Two Audiences - Two Column */}
-        <AnimatedSection>
-          <section className="relative py-16 overflow-hidden border-b">
-            <div className="container-premium">
-              <div>
-                {/* Section Header */}
-                <div className="text-center mb-12">
-                  <div className="flex items-center justify-center gap-2 mb-6">
-                    <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
-                    <span className="text-sm font-bold tracking-widest text-primary">
-                      WHO WE SERVE
-                    </span>
-                    <div className="w-12 h-0.5 bg-gradient-to-r from-secondary to-primary rounded-full" />
-                  </div>
-                  <div className="text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] mb-4">
-                    <span className="text-foreground">Supporting </span>
-                    <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                      Organisations & Professionals
-                    </span>
-                  </div>
-                  <span className="text-lg text-muted-foreground block">
-                    Our services bridge the gap between talent and opportunity.
-                  </span>
-                </div>
-
-                {/* Two Columns - No Heavy Cards */}
-                <div className="grid md:grid-cols-2 gap-8">
-                  {/* Employers */}
-                  <div className="group">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 rounded-tl-2xl rounded-br-2xl bg-gradient-to-br from-primary to-secondary p-0.5 group-hover:scale-110 transition-transform">
-                        <div className="w-full h-full bg-background rounded-tl-2xl rounded-br-2xl flex items-center justify-center">
-                          <Users className="w-6 h-6 text-primary" />
+                        <div className="rounded-xl border border-border/10 bg-background/5 p-4">
+                          <CheckCircle2 className="h-5 w-5 text-primary mb-3" />
+                          <span className="text-xs text-primary-foreground/70">
+                            HR
+                          </span>
+                        </div>
+                        <div className="rounded-xl border border-border/10 bg-background/5 p-4">
+                          <CheckCircle2 className="h-5 w-5 text-primary mb-3" />
+                          <span className="text-xs text-primary-foreground/70">
+                            Careers
+                          </span>
                         </div>
                       </div>
-                      <div className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                        For Employers
-                      </div>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed mb-6">
-                      We help organisations find the right talent, build
-                      stronger HR systems, and develop their people through
-                      recruitment, HR consulting, and training services.
-                    </p>
-                    <div className="inline-block group relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-tl-2xl rounded-br-2xl" />
-                      <Button
-                        asChild
-                        size="lg"
-                        className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-primary text-white hover:bg-transparent hover:text-primary border-primary group-hover:-translate-y-1 group-hover:-translate-x-1 transition-all duration-300"
-                      >
-                        <Link href="/employers">Learn More</Link>
-                      </Button>
-                    </div>
-                  </div>
-
-                  {/* Professionals */}
-                  <div className="group">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 rounded-tl-2xl rounded-br-2xl bg-gradient-to-br from-secondary to-primary p-0.5 group-hover:scale-110 transition-transform">
-                        <div className="w-full h-full bg-background rounded-tl-2xl rounded-br-2xl flex items-center justify-center">
-                          <TrendingUp className="w-6 h-6 text-secondary" />
-                        </div>
-                      </div>
-                      <div className="text-2xl font-bold text-foreground group-hover:text-secondary transition-colors">
-                        For Professionals
-                      </div>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed mb-6">
-                      We help professionals present themselves competitively
-                      through professional CV writing, career positioning, and
-                      job application support.
-                    </p>
-                    <div className="inline-block group relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-secondary to-primary rounded-tl-2xl rounded-br-2xl" />
-                      <Button
-                        asChild
-                        size="lg"
-                        className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-secondary text-foreground hover:bg-transparent hover:text-secondary border-secondary group-hover:-translate-y-1 group-hover:-translate-x-1 transition-all duration-300"
-                      >
-                        <Link href="/professionals">Learn More</Link>
-                      </Button>
                     </div>
                   </div>
                 </div>
@@ -352,78 +209,125 @@ export default function AboutPage() {
           </section>
         </AnimatedSection>
 
-        {/* Philosophy Quote - Primary Background */}
+        {/* WHAT WE BELIEVE */}
         <AnimatedSection>
-          <section className="relative py-16 overflow-hidden bg-primary">
+          <section className="relative py-14 lg:py-16 bg-gradient-to-b from-background via-muted/25 to-background border-y">
             <div className="container-premium">
-              <div className="text-center">
-                <div className="w-24 h-1 bg-secondary mx-auto mb-8" />
-                <div className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-8">
-                  <span className="text-primary-foreground">
-                    Talent is an investment —
+              <div className="max-w-3xl mb-9 lg:mb-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="h-px w-14 bg-gradient-to-r from-primary to-primary" />
+                  <span className="text-xs font-bold tracking-[0.2em] text-primary">
+                    WHAT WE BELIEVE
                   </span>
-                  <br />
-                  <span className="text-secondary">not an expense.</span>
                 </div>
-                <span className="text-xl md:text-2xl text-primary-foreground/80 leading-relaxed block">
-                  The right people can improve productivity, strengthen customer
-                  relationships, reduce turnover and contribute directly to
-                  organisational growth.
+
+                <span className="text-2xl md:text-3xl font-bold tracking-tight leading-tight">
+                  Our approach to talent and HR is{" "}
+                  <span className="bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
+                    grounded in core principles
+                  </span>
                 </span>
-                <div className="w-24 h-1 bg-secondary mx-auto mt-8" />
+              </div>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px overflow-hidden rounded-[1.75rem] border bg-border">
+                {beliefs.map((belief, index) => {
+                  const Icon = belief.icon;
+
+                  return (
+                    <motion.div
+                      key={belief.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.08 }}
+                      className="group bg-background p-6 lg:p-7 min-h-[225px] flex flex-col hover:bg-muted/30 transition-colors"
+                    >
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-primary/40 bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary">
+                          <Icon className="h-6 w-6" />
+                        </div>
+                        <span className="text-xs font-semibold text-muted-foreground/50">
+                          0{index + 1}
+                        </span>
+                      </div>
+
+                      <div className="mt-auto">
+                        <span className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                          {belief.title}
+                        </span>
+                        <p className="text-sm leading-6 text-muted-foreground">
+                          {belief.description}
+                        </p>
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
           </section>
         </AnimatedSection>
 
-        {/* Final CTA - Compact */}
+        {/* FINAL CTA */}
         <AnimatedSection>
-          <section className="relative py-16 overflow-hidden">
+          <section className="relative py-14 lg:py-16">
             <div className="container-premium">
-              <div className="text-center">
-                {/* Eyebrow */}
-                <div className="flex items-center justify-center gap-2 mb-6">
-                  <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
-                  <span className="text-sm font-bold tracking-widest text-primary">
-                    LET'S WORK TOGETHER
-                  </span>
-                  <div className="w-12 h-0.5 bg-gradient-to-r from-secondary to-primary rounded-full" />
-                </div>
+              <div className="relative overflow-hidden rounded-[1.5rem] border border-border bg-muted/25 px-6 py-10 md:px-9 lg:px-12">
+                <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full border border-border/20" />
+                <div className="absolute -left-24 -bottom-24 h-72 w-72 rounded-full border border-primary/10" />
 
-                {/* Heading */}
-                <div className="text-3xl md:text-4xl font-bold tracking-tight leading-[1.1] mb-6">
-                  <span className="text-foreground">Whether you need to </span>
-                  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                    hire talent, strengthen HR, or advance your career
-                  </span>
-                  <span className="text-foreground">
-                    {" "}
-                    — we're here to help.
-                  </span>
-                </div>
+                <div className="relative text-center max-w-4xl mx-auto">
+                  <div className="flex items-center justify-center gap-3 mb-4">
+                    <span className="h-px w-14 bg-gradient-to-r from-primary to-primary" />
+                    <span className="text-xs font-bold tracking-[0.2em] text-primary">
+                      LET'S WORK TOGETHER
+                    </span>
+                    <span className="h-px w-14 bg-gradient-to-r from-primary to-primary" />
+                  </div>
 
-                {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-                  <div className="inline-block group relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-tl-2xl rounded-br-2xl" />
+                  <span className="text-2xl md:text-3xl font-bold tracking-tight leading-tight">
+                    <span className="text-foreground">
+                      Whether you need to{" "}
+                    </span>
+                    <span className="bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
+                      hire talent, strengthen HR, or advance your career
+                    </span>
+                    <span className="text-foreground">
+                      {" "}
+                      - we're here to help.
+                    </span>
+                  </span>
+
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center mt-7">
+                    <div className="inline-block group relative">
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary rounded-tl-2xl rounded-br-2xl" />
+                      <Button
+                        asChild
+                        size="lg"
+                        className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-primary text-primary-foreground hover:bg-transparent hover:text-primary border-primary group-hover:-translate-y-1 group-hover:-translate-x-1 transition-all duration-300 px-7"
+                      >
+                        <Link href="/contact">
+                          Get in Touch
+                          <ArrowUpRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </div>
+
                     <Button
                       asChild
                       size="lg"
-                      className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-primary text-white hover:bg-transparent hover:text-primary border-primary group-hover:-translate-y-1 group-hover:-translate-x-1 transition-all duration-300"
+                      variant="outline"
+                      className="px-7"
                     >
-                      <Link href="/contact">Get in Touch</Link>
+                      <Link href="/">Explore Our Services</Link>
                     </Button>
                   </div>
-
-                  <Button asChild size="lg" variant="outline">
-                    <Link href="/">Explore Our Services</Link>
-                  </Button>
                 </div>
               </div>
             </div>
           </section>
         </AnimatedSection>
       </main>
+
       <Footer />
     </>
   );
