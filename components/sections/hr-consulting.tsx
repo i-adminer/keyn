@@ -48,10 +48,10 @@ const categories = [
 
 export function HRConsulting() {
   return (
-    <section className="relative py-12 bg-primary border-b">
-      <div className="container-premium relative z-10">
+    <section className="relative bg-primary border-b py-5">
+      <div className="container-premium relative z-10 ">
         {/* Hero row: copy + image */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-5">
           {/* Left: Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -77,7 +77,7 @@ export function HRConsulting() {
 
             {/* Description */}
             <span className="text-base text-primary-foreground/75 leading-relaxed mb-6 block">
-              We step in as your HR function — building the policies, contracts
+              We step in as your HR function building the policies, contracts
               and processes that keep people management steady as you scale,
               without the overhead of hiring one.
             </span>
@@ -106,9 +106,9 @@ export function HRConsulting() {
             className="relative"
           >
             {/* Image without any container or shape */}
-            <div className="relative aspect-[3/4] lg:aspect-[4/5]">
+            <div className="relative aspect-square">
               <Image
-                src="/images/hr.png"
+                src="/images/hr2.png"
                 alt="HR consultant reviewing workplace documentation with a client"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
@@ -167,17 +167,6 @@ export function HRConsulting() {
             );
           })}
         </div>
-
-        {/* Bottom Decorative Element */}
-        <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          whileInView={{ opacity: 1, scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="mt-10 flex justify-center"
-        >
-          <div className="w-96 h-0.5 bg-gradient-to-r from-transparent via-primary-foreground/50 to-transparent rounded-full" />
-        </motion.div>
       </div>
     </section>
   );
