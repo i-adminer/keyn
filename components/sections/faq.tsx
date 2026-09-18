@@ -54,19 +54,17 @@ export function FAQ() {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden border-t bg-green-700">
-      {/* Background Image */}
-      <div className="absolute inset-0 bg-red-600">
-        <div className="bg-cyan-300 z-0">
-          <Image
-            src="/images/bgfq.png"
-            alt=""
-            fill
-            className="object-contain h-full w-full "
-            quality={100}
-            priority
-          />
-        </div>
+    <section className="relative py-20 overflow-hidden border-t">
+      {/* Background Image - Bottom Half */}
+      <div className="absolute inset-x-0 bottom-0 h-2/3 z-0">
+        <Image
+          src="/images/bgfq.png"
+          alt=""
+          fill
+          className="object-cover object-bottom"
+          quality={100}
+          priority
+        />
       </div>
 
       <div className="container-premium relative z-10">
@@ -80,17 +78,17 @@ export function FAQ() {
         >
           {/* Eyebrow */}
           <div className="flex items-center justify-center gap-2 mb-6">
-            <div className="w-12 h-0.5 bg-linear-to-r from-primary to-secondary rounded-full" />
+            <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
             <span className="text-sm font-bold tracking-widest text-primary">
               FAQ
             </span>
-            <div className="w-12 h-0.5 bg-linear-to-r from-secondary to-primary rounded-full" />
+            <div className="w-12 h-0.5 bg-gradient-to-r from-secondary to-primary rounded-full" />
           </div>
 
           {/* Heading */}
           <div className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] mb-6">
             <span className="text-foreground">Frequently Asked </span>
-            <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Questions
             </span>
           </div>
@@ -114,8 +112,8 @@ export function FAQ() {
               className="mb-4"
             >
               <div className="group relative">
-                {/* Background linear */}
-                <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-secondary/5 rounded-tl-2xl rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Background gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-tl-2xl rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 {/* Accordion Item */}
                 <div className="relative bg-card border border-border rounded-tl-2xl rounded-br-2xl overflow-hidden">

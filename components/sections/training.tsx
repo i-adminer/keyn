@@ -22,7 +22,7 @@ const areas = [
 
 export function Training() {
   return (
-    <section className="relative py-20 overflow-hidden bg-gradient-to-b from-background via-muted/30 to-background border-b">
+    <section className="relative py-20 overflow-hidden bg-linear-to-b from-background via-muted/30 to-background border-b">
       <div className="container-premium">
         {/* Section Header */}
         <motion.div
@@ -34,7 +34,7 @@ export function Training() {
         >
           {/* Eyebrow */}
           <div className="flex items-center gap-2 mb-6">
-            <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
+            <div className="w-12 h-0.5 bg-linear-to-r from-primary to-secondary rounded-full" />
             <span className="text-sm font-bold tracking-widest text-primary">
               TRAINING & DEVELOPMENT
             </span>
@@ -43,7 +43,7 @@ export function Training() {
           {/* Heading */}
           <div className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] mb-6">
             <span className="text-foreground">Develop People. </span>
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
               Strengthen Performance.
             </span>
           </div>
@@ -77,7 +77,7 @@ export function Training() {
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   className="flex items-start gap-3 group"
                 >
-                  <div className="w-5 h-5 rounded-sm bg-gradient-to-br from-primary to-secondary p-0.5 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
+                  <div className="w-5 h-5 rounded-sm bg-linear-to-br from-primary to-secondary p-0.5 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
                     <div className="w-full h-full bg-card rounded-sm flex items-center justify-center">
                       <Check className="w-3 h-3 text-primary" />
                     </div>
@@ -96,7 +96,7 @@ export function Training() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="relative w-full h-full flex justify-center items-center"
           >
             <div className="relative">
               <Image
@@ -107,14 +107,14 @@ export function Training() {
                 className="w-full h-auto object-contain"
                 quality={90}
               />
-              
+
               {/* CTA Button - Bottom Left of Image */}
-              <div className="absolute bottom-6 left-6 inline-block group">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-tl-2xl rounded-br-2xl" />
+              <div className="absolute bottom-0 left-0 inline-block group">
+                <div className="absolute inset-0 bg-linear-to-br from-primary to-secondary rounded-tl-2xl rounded-br-2xl" />
                 <Button
                   asChild
                   size="lg"
-                  className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-primary text-white hover:bg-transparent hover:text-primary border-primary group-hover:-translate-y-1 group-hover:-translate-x-1 transition-all duration-300"
+                  className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-primary text-white border-primary group-hover:-translate-y-0.5 group-hover:-translate-x-0.5 transition-all duration-300"
                 >
                   <Link href="/contact?service=training">Discuss Training</Link>
                 </Button>
@@ -131,7 +131,7 @@ export function Training() {
           transition={{ duration: 1, delay: 0.5 }}
           className="flex justify-center"
         >
-          <div className="w-96 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full" />
+          <div className="w-96 h-0.5 bg-linear-to-r from-transparent via-primary to-transparent rounded-full" />
         </motion.div>
       </div>
     </section>
