@@ -48,7 +48,7 @@ const categories = [
 
 export function HRConsulting() {
   return (
-    <section className="relative py-16 overflow-hidden bg-primary border-b">
+    <section className="relative py-16 bg-primary border-b">
       <div className="container-premium relative z-10">
         {/* Hero row: copy + image */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
@@ -93,30 +93,24 @@ export function HRConsulting() {
             </div>
           </motion.div>
 
-          {/* Right: Large Image */}
+          {/* Right: Large Image - No card, no overflow */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative group"
+            className="relative"
           >
-            {/* Gradient Background Layer */}
-            <div className="absolute inset-0 bg-gradient-to-br from-secondary to-primary-foreground rounded-tl-3xl rounded-br-3xl" />
-            
-            {/* Image Container */}
-            <div className="relative aspect-[3/4] lg:aspect-[4/5] rounded-tl-3xl rounded-br-3xl overflow-hidden group-hover:-translate-y-1 group-hover:-translate-x-1 transition-all duration-300">
+            {/* Image without any container or shape */}
+            <div className="relative aspect-[3/4] lg:aspect-[4/5]">
               <Image
                 src="/images/hr.png"
                 alt="HR consultant reviewing workplace documentation with a client"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover"
+                className="object-contain"
                 quality={100}
               />
-              
-              {/* Corner Accent */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-secondary/30 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           </motion.div>
         </div>
