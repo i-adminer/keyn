@@ -88,21 +88,9 @@ export function Training() {
                 </motion.div>
               ))}
             </div>
-
-            {/* CTA Button */}
-            <div className="inline-block group relative mt-8">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-tl-2xl rounded-br-2xl" />
-              <Button
-                asChild
-                size="lg"
-                className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-primary text-white hover:bg-transparent hover:text-primary border-primary group-hover:-translate-y-1 group-hover:-translate-x-1 transition-all duration-300"
-              >
-                <Link href="/contact?service=training">Discuss Training</Link>
-              </Button>
-            </div>
           </motion.div>
 
-          {/* Right: Image */}
+          {/* Right: Image with Button */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -112,13 +100,25 @@ export function Training() {
           >
             <div className="relative">
               <Image
-                src="/images/training.png"
+                src="/images/meet.png"
                 alt="Training & Development"
                 width={800}
                 height={600}
                 className="w-full h-auto object-contain"
                 quality={90}
               />
+              
+              {/* CTA Button - Bottom Left of Image */}
+              <div className="absolute bottom-6 left-6 inline-block group">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-tl-2xl rounded-br-2xl" />
+                <Button
+                  asChild
+                  size="lg"
+                  className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-primary text-white hover:bg-transparent hover:text-primary border-primary group-hover:-translate-y-1 group-hover:-translate-x-1 transition-all duration-300"
+                >
+                  <Link href="/contact?service=training">Discuss Training</Link>
+                </Button>
+              </div>
             </div>
           </motion.div>
         </div>
