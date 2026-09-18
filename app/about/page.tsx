@@ -41,23 +41,21 @@ export default function AboutPage() {
     <>
       <Navigation />
       <main className="flex-1">
-        {/* Background Image - Top 40% */}
-        <div className="fixed top-0 left-0 right-0 h-[40vh] z-0">
-          <Image
-            src="/images/bgweb.jpeg"
-            alt="Background"
-            fill
-            className="object-cover"
-            quality={100}
-            priority
-          />
-          {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-background" />
-        </div>
-
-        {/* Hero */}
+        {/* Hero with Background */}
         <AnimatedSection>
-          <section className="relative pt-32 pb-16 overflow-hidden min-h-[40vh] flex items-center justify-center z-10">
+          <section className="relative pt-32 pb-16 overflow-hidden min-h-[40vh] flex items-center justify-center">
+            {/* Background Image - Top 40% */}
+            <div className="absolute top-0 left-0 right-0 h-[40vh] z-0">
+              <Image
+                src="/images/bgweb.jpeg"
+                alt="Background"
+                fill
+                className="object-cover opacity-50"
+                quality={100}
+                priority
+              />
+            </div>
+
             <div className="container-premium relative z-10">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
