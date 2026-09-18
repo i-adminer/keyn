@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
 
 const navigation = {
   services: [
@@ -19,7 +22,12 @@ const navigation = {
 
 export function Footer() {
   return (
-    <footer className="relative bg-[#011a32] overflow-hidden">
+    <motion.footer
+      initial={{ opacity: 0, scale: 0.1 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+      className="relative bg-[#011a32] overflow-hidden"
+    >
       {/* Gradient Accent */}
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent" />
 
@@ -145,6 +153,6 @@ export function Footer() {
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

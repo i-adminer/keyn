@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { AnimatedSection } from "../ui/animated-section";
 
 const faqs = [
   {
@@ -54,6 +55,7 @@ export function FAQ() {
   };
 
   return (
+    <AnimatedSection>
     <section className="relative py-20 overflow-hidden border-t bg-card">
       {/* Background Image - Bottom Half */}
       <div className="absolute inset-x-0 bottom-0 h-2/3 z-0">
@@ -172,7 +174,7 @@ export function FAQ() {
             </Button>
           </div>
         </motion.div>
-      </div>
-    </section>
+      </div>    </section>
+    </AnimatedSection>
   );
 }

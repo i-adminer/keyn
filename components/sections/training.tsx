@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { Check } from "lucide-react";
+import { AnimatedSection } from "../ui/animated-section";
 
 const areas = [
   "Supervisory skills",
@@ -22,6 +23,7 @@ const areas = [
 
 export function Training() {
   return (
+    <AnimatedSection>
     <section className="relative py-20 overflow-hidden bg-linear-to-b from-background via-muted/30 to-background border-b">
       <div className="container-premium">
         {/* Section Header */}
@@ -133,7 +135,7 @@ export function Training() {
         >
           <div className="w-96 h-0.5 bg-linear-to-r from-transparent via-primary to-transparent rounded-full" />
         </motion.div>
-      </div>
-    </section>
+      </div>    </section>
+    </AnimatedSection>
   );
 }

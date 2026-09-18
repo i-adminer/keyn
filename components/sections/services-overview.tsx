@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Search, Shield, PenTool, BarChart } from "lucide-react";
+import { AnimatedSection } from "../ui/animated-section";
 
 const services = [
   {
@@ -38,6 +39,7 @@ const services = [
 
 export function ServicesOverview() {
   return (
+    <AnimatedSection>
     <section className="relative py-20 overflow-hidden bg-linear-to-b from-background via-card/30 to-background border-b">
       <div className="container-premium">
         {/* Section Header */}
@@ -147,7 +149,7 @@ export function ServicesOverview() {
         >
           <div className="w-96 h-0.5 bg-linear-to-r from-transparent via-primary to-transparent rounded-full" />
         </motion.div>
-      </div>
-    </section>
+      </div>    </section>
+    </AnimatedSection>
   );
 }

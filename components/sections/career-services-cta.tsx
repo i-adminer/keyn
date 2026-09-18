@@ -4,9 +4,11 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { AnimatedSection } from "../ui/animated-section";
 
 export function CareerServicesCTA() {
   return (
+    <AnimatedSection>
     <section className="relative py-16 overflow-hidden bg-primary">
       <div className="container-premium">
         <motion.div
@@ -88,7 +90,7 @@ export function CareerServicesCTA() {
             </Button>
           </div>
         </motion.div>
-      </div>
-    </section>
+      </div>    </section>
+    </AnimatedSection>
   );
 }

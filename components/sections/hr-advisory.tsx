@@ -2,9 +2,11 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { AnimatedSection } from "../ui/animated-section";
 
 export function HRAdvisory() {
   return (
+    <AnimatedSection>
     <section className="relative py-20 overflow-hidden bg-gradient-to-b from-background via-muted/30 to-background border-b">
       <div className="container-premium">
         {/* Section Header */}
@@ -125,7 +127,7 @@ export function HRAdvisory() {
             </div>
           </motion.div>
         </div>
-      </div>
-    </section>
+      </div>    </section>
+    </AnimatedSection>
   );
 }

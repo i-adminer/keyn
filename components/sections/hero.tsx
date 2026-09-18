@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { useTheme } from "next-themes";
 import { LandingNavigation } from "../layout/landing-navigation";
-import { TypeAnimation } from 'react-type-animation';
+import { TypeAnimation } from "react-type-animation";
 
 const services = ["RECRUITMENT", "HR CONSULTING", "CAREER SERVICES"];
 
@@ -22,7 +22,10 @@ export function Hero() {
     currentTheme === "dark" ? "/images/hero.png" : "/images/herol.png";
 
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0, scale: 0.1 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
       ref={containerRef}
       className="relative h-screen w-full flex items-center overflow-hidden"
     >
@@ -69,11 +72,11 @@ export function Hero() {
               <span className="text-outline">
                 <TypeAnimation
                   sequence={[
-                    'Better Outcomes.',
+                    "Better Outcomes.",
                     2000,
-                    'Perfect Solutions.',
+                    "Perfect Solutions.",
                     2000,
-                    'Exceptional Results.',
+                    "Exceptional Results.",
                     2000,
                   ]}
                   wrapper="span"
@@ -175,6 +178,6 @@ export function Hero() {
           </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

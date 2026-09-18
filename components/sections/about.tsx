@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Button } from "../ui/button";
+import { AnimatedSection } from "../ui/animated-section";
 
 const highlights = [
   {
@@ -38,7 +39,8 @@ export function AboutSection() {
     currentTheme === "dark" ? "/images/aboutd.png" : "/images/about.png";
 
   return (
-    <section className="relative py-16 overflow-hidden border-b">
+    <AnimatedSection>
+      <section className="relative py-16 overflow-hidden border-b">
       {/* Background Image */}
       <div className="absolute inset-0 hidden">
         <Image
@@ -206,5 +208,6 @@ export function AboutSection() {
         />
       </div>
     </section>
+    </AnimatedSection>
   );
 }

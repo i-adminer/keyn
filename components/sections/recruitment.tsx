@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Check } from "lucide-react";
+import { AnimatedSection } from "../ui/animated-section";
 
 const services = [
   "Executive & professional recruitment",
@@ -28,6 +29,7 @@ const assessmentCriteria = [
 
 export function RecruitmentSection() {
   return (
+    <AnimatedSection>
     <section className="relative py-20 overflow-hidden bg-muted border-b">
       <div className="container-premium">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -150,7 +152,7 @@ export function RecruitmentSection() {
             </div>
           </motion.div>
         </div>
-      </div>
-    </section>
+      </div>    </section>
+    </AnimatedSection>
   );
 }

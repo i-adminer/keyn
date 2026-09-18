@@ -4,9 +4,11 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { AnimatedSection } from "../ui/animated-section";
 
 export function CVCareerServices() {
   return (
+    <AnimatedSection>
     <section className="relative py-20 overflow-hidden bg-linear-to-b from-background via-card/30 to-background border-b">
       <div className="container-premium">
         {/* Section Header */}
@@ -92,7 +94,7 @@ export function CVCareerServices() {
             </div>
           </motion.div>
         </div>
-      </div>
-    </section>
+      </div>    </section>
+    </AnimatedSection>
   );
 }

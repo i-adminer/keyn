@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { AnimatedSection } from "../ui/animated-section";
 
 const steps = [
   { number: "01", title: "Understand", description: "Your requirements" },
@@ -15,6 +16,7 @@ const steps = [
 
 export function RecruitmentProcess() {
   return (
+    <AnimatedSection>
     <section className="relative py-20 overflow-hidden border-b">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
@@ -163,7 +165,7 @@ export function RecruitmentProcess() {
         >
           <div className="w-96 h-0.5 bg-linear-to-r from-transparent via-primary to-transparent rounded-full" />
         </motion.div>
-      </div>
-    </section>
+      </div>    </section>
+    </AnimatedSection>
   );
 }

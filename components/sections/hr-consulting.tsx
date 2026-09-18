@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { AnimatedSection } from "../ui/animated-section";
 import {
   ShieldCheck,
   FileSignature,
@@ -48,6 +49,7 @@ const categories = [
 
 export function HRConsulting() {
   return (
+    <AnimatedSection>
     <section className="relative bg-primary border-b py-5">
       <div className="container-premium relative z-10 ">
         {/* Hero row: copy + image */}
@@ -167,7 +169,7 @@ export function HRConsulting() {
             );
           })}
         </div>
-      </div>
-    </section>
+      </div>    </section>
+    </AnimatedSection>
   );
 }
