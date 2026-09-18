@@ -48,10 +48,10 @@ const categories = [
 
 export function HRConsulting() {
   return (
-    <section className="relative py-16 bg-primary border-b">
+    <section className="relative py-12 bg-primary border-b">
       <div className="container-premium relative z-10">
         {/* Hero row: copy + image */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10">
           {/* Left: Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -60,7 +60,7 @@ export function HRConsulting() {
             transition={{ duration: 0.8 }}
           >
             {/* Eyebrow */}
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-2 mb-4">
               <div className="w-12 h-0.5 bg-gradient-to-r from-primary-foreground/80 to-secondary rounded-full" />
               <span className="text-sm font-bold tracking-widest text-primary-foreground/90">
                 HR CONSULTING
@@ -68,13 +68,15 @@ export function HRConsulting() {
             </div>
 
             {/* Heading */}
-            <div className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] mb-6">
-              <span className="text-primary-foreground">HR support for teams that would rather </span>
+            <div className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] mb-4">
+              <span className="text-primary-foreground">
+                HR support for teams that would rather{" "}
+              </span>
               <span className="text-secondary">grow than paper-push</span>
             </div>
 
             {/* Description */}
-            <span className="text-lg text-primary-foreground/75 leading-relaxed mb-8 block">
+            <span className="text-base text-primary-foreground/75 leading-relaxed mb-6 block">
               We step in as your HR function — building the policies, contracts
               and processes that keep people management steady as you scale,
               without the overhead of hiring one.
@@ -88,7 +90,9 @@ export function HRConsulting() {
                 size="lg"
                 className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-secondary text-primary hover:bg-transparent hover:text-primary-foreground border-secondary group-hover:-translate-y-1 group-hover:-translate-x-1 transition-all duration-300"
               >
-                <Link href="/contact?service=hr-consulting">Get HR support</Link>
+                <Link href="/contact?service=hr-consulting">
+                  Get HR support
+                </Link>
               </Button>
             </div>
           </motion.div>
@@ -121,13 +125,13 @@ export function HRConsulting() {
           whileInView={{ opacity: 1, scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="mb-12 flex justify-center"
+          className="mb-8 flex justify-center"
         >
           <div className="w-full max-w-3xl h-0.5 bg-gradient-to-r from-transparent via-primary-foreground/30 to-transparent rounded-full" />
         </motion.div>
 
-        {/* Service Categories Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {/* Service Categories Grid - Compact, no hover */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
           {categories.map((category, index) => {
             const Icon = category.icon;
             return (
@@ -137,28 +141,24 @@ export function HRConsulting() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="group relative"
               >
-                {/* Gradient Background Layer */}
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary to-primary-foreground rounded-tl-2xl rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Category Card */}
-                <div className="relative flex items-start gap-4 p-5 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-tl-2xl rounded-br-2xl group-hover:border-secondary/50 group-hover:-translate-y-0.5 group-hover:-translate-x-0.5 transition-all duration-300">
+                {/* Category Card - No hover effects */}
+                <div className="flex items-start gap-3 p-4 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-tl-2xl rounded-br-2xl">
                   {/* Icon */}
                   <div className="flex-shrink-0">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-secondary to-primary-foreground p-0.5">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-secondary to-primary-foreground p-0.5">
                       <div className="w-full h-full rounded-full bg-primary flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-secondary group-hover:text-primary-foreground transition-colors duration-300" />
+                        <Icon className="w-4 h-4 text-secondary" />
                       </div>
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="flex-1">
-                    <span className="text-primary-foreground font-bold text-base mb-1 block group-hover:text-secondary transition-colors duration-300">
+                    <span className="text-primary-foreground font-bold text-sm mb-0.5 block">
                       {category.title}
                     </span>
-                    <span className="text-primary-foreground/70 text-sm leading-snug block">
+                    <span className="text-primary-foreground/70 text-xs leading-snug block">
                       {category.detail}
                     </span>
                   </div>
@@ -174,7 +174,7 @@ export function HRConsulting() {
           whileInView={{ opacity: 1, scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="mt-16 flex justify-center"
+          className="mt-10 flex justify-center"
         >
           <div className="w-96 h-0.5 bg-gradient-to-r from-transparent via-primary-foreground/50 to-transparent rounded-full" />
         </motion.div>
