@@ -13,6 +13,7 @@ import {
   Shield,
   Lightbulb,
   Users,
+  Eye,
   TrendingUp,
   ArrowUpRight,
   CheckCircle2,
@@ -262,6 +263,195 @@ export default function AboutPage() {
                     </motion.div>
                   );
                 })}
+              </div>
+            </div>
+          </section>
+        </AnimatedSection>
+
+        {/* TEAM & VALUES */}
+        <AnimatedSection>
+          <section className="relative py-14 lg:py-16 bg-gradient-to-b from-background via-muted/30 to-background">
+            <div className="container-premium">
+              {/* Team Profile */}
+              <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-14 items-center mb-16">
+                {/* Image */}
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="relative"
+                >
+                  <div className="relative aspect-square rounded-tl-3xl rounded-br-3xl overflow-hidden border border-border/50">
+                    <Image
+                      src="/images/eric.jpg"
+                      alt="Mr. Eric Otera"
+                      fill
+                      className="object-cover"
+                      quality={90}
+                    />
+                  </div>
+                  {/* Decorative corner accent */}
+                  <div className="absolute -top-4 -left-4 w-24 h-24 border-l-2 border-t-2 border-primary rounded-tl-3xl" />
+                  <div className="absolute -bottom-4 -right-4 w-24 h-24 border-r-2 border-b-2 border-secondary rounded-br-3xl" />
+                </motion.div>
+
+                {/* Profile Content */}
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="h-px w-14 bg-gradient-to-r from-primary to-secondary" />
+                    <span className="text-xs font-bold tracking-[0.2em] text-primary">
+                      LEADERSHIP
+                    </span>
+                  </div>
+
+                  <div className="mb-4">
+                    <span className="text-3xl md:text-4xl font-bold tracking-tight text-foreground block mb-2">
+                      Mr. Eric Otera
+                    </span>
+                    <span className="text-lg text-primary font-semibold">
+                      Founder & Director
+                    </span>
+                  </div>
+
+                  <div className="space-y-4 text-muted-foreground leading-relaxed">
+                    <p>
+                      Eric Otera is the founder and director of Keyn People Advisory, 
+                      bringing over 10 years of extensive human resource management and 
+                      recruitment experience to the organization. His career has been built 
+                      on a deep understanding of talent acquisition, employee relations, and 
+                      strategic HR consulting across diverse industries.
+                    </p>
+                    <p>
+                      With a proven track record in matching exceptional talent with 
+                      organizational needs, Eric has helped hundreds of companies build 
+                      high-performing teams while supporting professionals in advancing 
+                      their careers. His approach combines practical HR expertise with a 
+                      genuine commitment to understanding both employer objectives and 
+                      candidate aspirations.
+                    </p>
+                    <p>
+                      Eric's vision for Keyn People Advisory extends beyond traditional 
+                      recruitment—he believes in creating meaningful connections that drive 
+                      organizational success and individual career growth. His leadership 
+                      philosophy centers on quality over speed, practical solutions, and 
+                      viewing talent as a strategic investment rather than an expense.
+                    </p>
+                  </div>
+
+                  {/* Credentials/Stats */}
+                  <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-border/50">
+                    <div>
+                      <span className="text-2xl font-bold text-primary block">10+</span>
+                      <span className="text-xs text-muted-foreground">Years Experience</span>
+                    </div>
+                    <div>
+                      <span className="text-2xl font-bold text-primary block">500+</span>
+                      <span className="text-xs text-muted-foreground">Placements</span>
+                    </div>
+                    <div>
+                      <span className="text-2xl font-bold text-primary block">200+</span>
+                      <span className="text-xs text-muted-foreground">Companies</span>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Mission, Vision, Core Values - Compact Grid */}
+              <div className="grid md:grid-cols-3 gap-6">
+                {/* Mission */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="group relative"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-tl-xl rounded-br-xl bg-gradient-to-br from-primary to-secondary p-0.5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <div className="w-full h-full bg-background rounded-tl-xl rounded-br-xl flex items-center justify-center">
+                        <Target className="h-5 w-5 text-primary" />
+                      </div>
+                    </div>
+                    <div>
+                      <span className="text-sm font-bold text-primary mb-2 block">MISSION</span>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        To connect exceptional talent with organizations seeking to build 
+                        high-performing teams, while empowering professionals to achieve 
+                        their career goals through expert HR support and career services.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Vision */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  className="group relative"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-tl-xl rounded-br-xl bg-gradient-to-br from-secondary to-primary p-0.5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <div className="w-full h-full bg-background rounded-tl-xl rounded-br-xl flex items-center justify-center">
+                        <Eye className="h-5 w-5 text-secondary" />
+                      </div>
+                    </div>
+                    <div>
+                      <span className="text-sm font-bold text-secondary mb-2 block">VISION</span>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        To be the trusted HR partner of choice in Kenya and beyond, 
+                        recognized for our practical approach, quality service, and 
+                        commitment to viewing talent as a strategic investment that drives 
+                        organizational growth and individual success.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Core Values */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="group relative"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-tl-xl rounded-br-xl bg-gradient-to-br from-primary to-secondary p-0.5 flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <div className="w-full h-full bg-background rounded-tl-xl rounded-br-xl flex items-center justify-center">
+                        <Heart className="h-5 w-5 text-primary" />
+                      </div>
+                    </div>
+                    <div>
+                      <span className="text-sm font-bold text-primary mb-2 block">CORE VALUES</span>
+                      <div className="space-y-2 text-sm text-muted-foreground">
+                        <div className="flex items-center gap-2">
+                          <span className="h-1 w-1 rounded-full bg-primary" />
+                          <span>Quality Over Speed</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="h-1 w-1 rounded-full bg-primary" />
+                          <span>Practical Solutions</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="h-1 w-1 rounded-full bg-primary" />
+                          <span>Professional Integrity</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="h-1 w-1 rounded-full bg-primary" />
+                          <span>Client-Centered Approach</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             </div>
           </section>
