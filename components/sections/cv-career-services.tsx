@@ -14,15 +14,14 @@ export function CVCareerServices() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12 max-w-4xl mx-auto"
+          className="mb-12 max-w-4xl"
         >
           {/* Eyebrow */}
-          <div className="flex items-center justify-center gap-2 mb-6">
+          <div className="flex items-center gap-2 mb-6">
             <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
             <span className="text-sm font-bold tracking-widest text-primary">
               CV & CAREER SERVICES
             </span>
-            <div className="w-12 h-0.5 bg-gradient-to-r from-secondary to-primary rounded-full" />
           </div>
 
           {/* Heading */}
