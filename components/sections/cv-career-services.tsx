@@ -26,7 +26,9 @@ export function CVCareerServices() {
 
           {/* Heading */}
           <div className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] mb-6">
-            <span className="text-foreground">Your CV Is More Than a Document. </span>
+            <span className="text-foreground">
+              Your CV Is More Than a Document.{" "}
+            </span>
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               It Is Your Career Marketing Tool
             </span>
@@ -40,14 +42,16 @@ export function CVCareerServices() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-muted-foreground leading-relaxed mb-8"
           >
-            Keyn helps professionals at all career levels—from graduates and entry-level 
-            professionals to experienced managers, senior executives, career changers, and 
-            international applicants—create clear, professional, and results-focused CVs 
-            that stand out in competitive job markets. Our services include professional CV 
-            writing, CV redesign, ATS-friendly optimization, executive CVs for senior 
-            leadership positions, LinkedIn profile optimization, and compelling cover letters 
-            tailored to your target role, all crafted by experienced HR professionals who 
-            understand what employers are looking for.
+            Keyn helps professionals at all career levels from graduates and
+            entry-level professionals to experienced managers, senior
+            executives, career changers, and international applicants create
+            clear, professional, and results focused CVs that stand out in
+            competitive job markets. Our services include professional CV
+            writing, CV redesign, ATS-friendly optimization, executive CVs for
+            senior leadership positions, LinkedIn profile optimization, and
+            compelling cover letters tailored to your target role, all crafted
+            by experienced HR professionals who understand what employers are
+            looking for.
           </motion.p>
 
           {/* CTA Button */}
