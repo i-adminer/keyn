@@ -92,17 +92,6 @@ export function CVCareerServices() {
             </div>
           </motion.div>
         </div>
-
-        {/* Bottom Decorative Element */}
-        <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          whileInView={{ opacity: 1, scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="mt-12 flex justify-center"
-        >
-          <div className="w-96 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full" />
-        </motion.div>
       </div>
     </section>
   );
