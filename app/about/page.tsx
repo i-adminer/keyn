@@ -50,15 +50,15 @@ export default function AboutPage() {
       <main className="flex-1">
         {/* Hero with Background */}
         <AnimatedSection>
-          <section className="relative pt-32 pb-16 overflow-hidden min-h-[40vh] flex items-center justify-center">
+          <section className="relative pt-32 pb-16 overflow-hidden min-h-[40vh] ">
             {/* Background Image - Starts below navbar */}
             <div className="absolute top-24 left-0 right-0 bottom-0 z-0">
-              <div className="relative w-full h-full opacity-50">
+              <div className="relative w-full h-full ">
                 <Image
                   src="/images/bgweb.jpeg"
                   alt="Background"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-bottom"
                   quality={100}
                   priority
                 />
@@ -70,15 +70,14 @@ export default function AboutPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="max-w-4xl mx-auto text-center"
+                className="max-w-4xl"
               >
                 {/* Eyebrow */}
-                <div className="flex items-center justify-center gap-2 mb-6">
+                <div className="flex items-center gap-2 mb-6">
                   <div className="w-12 h-0.5 bg-gradient-to-r from-secondary to-primary-foreground rounded-full" />
                   <span className="text-sm font-bold tracking-widest text-secondary">
                     ABOUT KEYN PEOPLE ADVISORY
                   </span>
-                  <div className="w-12 h-0.5 bg-gradient-to-r from-primary-foreground to-secondary rounded-full" />
                 </div>
 
                 {/* Heading */}
@@ -91,7 +90,7 @@ export default function AboutPage() {
                 </div>
 
                 {/* Description */}
-                <span className="text-xl md:text-2xl text-white/90 leading-relaxed block">
+                <span className="text-xl md:text-2xl text-white/90 leading-relaxed  hidden">
                   We combine recruitment expertise with practical HR experience
                   to deliver talent and people solutions for organisations and
                   professionals.
@@ -105,7 +104,7 @@ export default function AboutPage() {
         <AnimatedSection>
           <section className="relative py-16 overflow-hidden border-b">
             <div className="container-premium">
-              <div className="max-w-4xl mx-auto">
+              <div className="max-w-4xl">
                 {/* Eyebrow */}
                 <div className="flex items-center gap-2 mb-6">
                   <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
@@ -160,7 +159,7 @@ export default function AboutPage() {
         <AnimatedSection>
           <section className="relative py-16 overflow-hidden bg-gradient-to-b from-background via-muted/30 to-background border-b">
             <div className="container-premium">
-              <div className="max-w-5xl mx-auto">
+              <div className="max-w-5xl">
                 {/* Section Header */}
                 <div className="text-center mb-12">
                   <div className="flex items-center justify-center gap-2 mb-6">
@@ -222,7 +221,7 @@ export default function AboutPage() {
         <AnimatedSection>
           <section className="relative py-16 overflow-hidden bg-primary">
             <div className="container-premium">
-              <div className="max-w-4xl mx-auto text-center">
+              <div className="max-w-4xl text-center">
                 {/* Eyebrow */}
                 <div className="flex items-center justify-center gap-2 mb-6">
                   <div className="w-12 h-0.5 bg-gradient-to-r from-secondary to-primary-foreground rounded-full" />
@@ -267,7 +266,7 @@ export default function AboutPage() {
         <AnimatedSection>
           <section className="relative py-16 overflow-hidden border-b">
             <div className="container-premium">
-              <div className="max-w-5xl mx-auto">
+              <div className="max-w-5xl">
                 {/* Section Header */}
                 <div className="text-center mb-12">
                   <div className="flex items-center justify-center gap-2 mb-6">
@@ -357,7 +356,7 @@ export default function AboutPage() {
         <AnimatedSection>
           <section className="relative py-16 overflow-hidden bg-primary">
             <div className="container-premium">
-              <div className="max-w-4xl mx-auto text-center">
+              <div className="max-w-4xl text-center">
                 <div className="w-24 h-1 bg-secondary mx-auto mb-8" />
                 <div className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-8">
                   <span className="text-primary-foreground">
@@ -381,7 +380,7 @@ export default function AboutPage() {
         <AnimatedSection>
           <section className="relative py-16 overflow-hidden">
             <div className="container-premium">
-              <div className="max-w-4xl mx-auto text-center">
+              <div className="max-w-4xl text-center">
                 {/* Eyebrow */}
                 <div className="flex items-center justify-center gap-2 mb-6">
                   <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />

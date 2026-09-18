@@ -62,13 +62,13 @@ export function Navigation() {
       ? resolvedTheme
       : theme
     : "light";
-  const logoSrc = currentTheme === "dark" ? "/logo.png" : "/logo.jpeg";
+  const logoSrc = currentTheme === "dark" ? "/logo.png" : "/logod.png";
 
   return (
     <>
       <nav
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/70",
           " backdrop-blur-md text-foreground shadow-md border-b border-border",
         )}
       >
