@@ -53,15 +53,16 @@ export function FAQ() {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden bg-gradient-to-b from-background via-muted/30 to-background border-t">
+    <section className="relative py-20 overflow-hidden border-t">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/bg-faq.png"
           alt=""
           fill
-          className="object-cover opacity-30"
-          quality={90}
+          className="object-cover w-full h-full"
+          quality={100}
+          priority
         />
       </div>
 
