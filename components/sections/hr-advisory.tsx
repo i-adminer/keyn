@@ -34,8 +34,9 @@ export function HRAdvisory() {
 
           {/* Description */}
           <span className="text-lg text-muted-foreground leading-relaxed block">
-            We provide independent HR advisory support to business owners, managers
-            and organisations dealing with people-management challenges.
+            We provide independent HR advisory support to business owners,
+            managers and organisations dealing with people-management
+            challenges.
           </span>
         </motion.div>
 
@@ -77,65 +78,54 @@ export function HRAdvisory() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
-                className="text-base text-muted-foreground leading-relaxed"
+                className="text-base text-muted-foreground leading-relaxed text-justify "
               >
-                We guide you through employee performance concerns, workplace 
-                disciplinary processes, and employee grievances with practical, 
-                objective advice that considers both organizational needs and 
+                We guide you through employee performance concerns, workplace
+                disciplinary processes, and employee grievances with practical,
+                objective advice that considers both organizational needs and
                 fair treatment.
               </motion.p>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="text-base text-muted-foreground leading-relaxed"
+                className="text-base text-muted-foreground leading-relaxed text-justify"
               >
-                Our support extends to employment documentation, HR policy 
-                interpretation, and employee exits, ensuring your processes 
-                remain structured, compliant, and professionally managed at 
+                Our support extends to employment documentation, HR policy
+                interpretation, and employee exits, ensuring your processes
+                remain structured, compliant, and professionally managed at
                 every stage.
               </motion.p>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.2 }}
-                className="text-base text-muted-foreground leading-relaxed"
+                className="text-base text-muted-foreground leading-relaxed text-justify"
               >
-                Whether you're implementing performance improvement processes, 
-                navigating workforce restructuring, or seeking HR compliance 
-                clarity, we provide actionable guidance grounded in employment 
+                Whether you're implementing performance improvement processes,
+                navigating workforce restructuring, or seeking HR compliance
+                clarity, we provide actionable guidance grounded in employment
                 regulations and workplace best practice.
               </motion.p>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.3 }}
-                className="text-base text-muted-foreground leading-relaxed"
+                className="text-base text-muted-foreground leading-relaxed text-justify"
               >
-                From recruitment decisions and employee relations to broader 
-                HR strategy, we act as your independent advisor when people 
+                From recruitment decisions and employee relations to broader HR
+                strategy, we act as your independent advisor when people
                 decisions require more than templates and guesswork.
               </motion.p>
             </div>
           </motion.div>
         </div>
-
-        {/* Bottom Decorative Element */}
-        <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          whileInView={{ opacity: 1, scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="mt-16 flex justify-center"
-        >
-          <div className="w-96 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full" />
-        </motion.div>
       </div>
     </section>
   );
