@@ -30,7 +30,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
               <Image
-                src="/logos/logo-dark.png"
+                src="/logos/logo-light.png"
                 alt="KEYN"
                 width={180}
                 height={48}
