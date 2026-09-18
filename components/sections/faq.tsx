@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -53,7 +54,18 @@ export function FAQ() {
 
   return (
     <section className="relative py-20 overflow-hidden bg-gradient-to-b from-background via-muted/30 to-background border-t">
-      <div className="container-premium">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/bg-faq.png"
+          alt=""
+          fill
+          className="object-cover opacity-30"
+          quality={90}
+        />
+      </div>
+
+      <div className="container-premium relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

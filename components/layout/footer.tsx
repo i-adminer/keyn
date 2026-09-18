@@ -44,9 +44,9 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-secondary mb-4">
+            <span className="text-xs font-bold uppercase tracking-widest text-secondary mb-4 block">
               Services
-            </h3>
+            </span>
             <ul className="space-y-2">
               {navigation.services.map((item) => (
                 <li key={item.name}>
@@ -64,9 +64,9 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-secondary mb-4">
+            <span className="text-xs font-bold uppercase tracking-widest text-secondary mb-4 block">
               Company
-            </h3>
+            </span>
             <ul className="space-y-2">
               {navigation.company.map((item) => (
                 <li key={item.name}>
@@ -84,9 +84,9 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-secondary mb-4">
+            <span className="text-xs font-bold uppercase tracking-widest text-secondary mb-4 block">
               Connect
-            </h3>
+            </span>
             <ul className="space-y-3">
               <li>
                 <a
