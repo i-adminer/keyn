@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export function CVCareerServices() {
   return (
@@ -64,6 +65,26 @@ export function CVCareerServices() {
             >
               <Link href="/cv-career-services">Build My CV</Link>
             </Button>
+          </div>
+        </motion.div>
+
+        {/* Full Width CV Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-16"
+        >
+          <div className="relative w-full">
+            <Image
+              src="/images/cv.png"
+              alt="Professional CV Examples"
+              width={2000}
+              height={800}
+              className="w-full h-auto object-contain"
+              quality={100}
+            />
           </div>
         </motion.div>
 
