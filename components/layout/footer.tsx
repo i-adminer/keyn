@@ -1,104 +1,60 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Mail, Phone, MapPin } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const navigation = {
-  company: [
-    { name: "About", href: "/about" },
-    { name: "Contact", href: "/contact" },
-  ],
   services: [
     { name: "Recruitment", href: "/recruitment" },
     { name: "HR Consulting", href: "/hr-consulting" },
     { name: "CV & Career Services", href: "/cv-career-services" },
-    { name: "Training & Development", href: "/training" },
+    { name: "Training", href: "/training" },
   ],
-  pathways: [
-    { name: "For Employers", href: "/contact?type=employer" },
-    { name: "For Professionals", href: "/contact?type=professional" },
+  company: [
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
+    { name: "Privacy", href: "/privacy" },
+    { name: "Terms", href: "/terms" },
   ],
-  legal: [
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms of Service", href: "/terms" },
-  ],
-}
+};
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground border-t border-border">
+    <footer className="relative bg-primary overflow-hidden">
+      {/* Gradient Accent */}
+      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-secondary to-transparent" />
+
       <div className="container-premium">
-        {/* Main Footer Content */}
-        <div className="py-16 lg:py-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
-          {/* Brand Column */}
-          <div className="lg:col-span-4">
-            <Link href="/" className="inline-block mb-6">
+        {/* Main Content */}
+        <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {/* Brand */}
+          <div className="lg:col-span-1">
+            <Link href="/" className="inline-block mb-4">
               <Image
                 src="/logos/logo-dark.png"
-                alt="KEYN PEOPLE ADVISORY"
-                width={220}
-                height={60}
-                className="h-12 w-auto"
+                alt="KEYN"
+                width={180}
+                height={48}
+                className="h-10 w-auto"
               />
             </Link>
-            <p className="text-primary-foreground/80 leading-relaxed mb-6 max-w-sm">
-              Recruitment | HR Consulting | Career & CV Services | Training
+            <p className="text-sm text-primary-foreground/70 leading-relaxed">
+              Recruitment · HR Consulting · Career Services · Training
             </p>
-            <div className="text-sm text-primary-foreground/70 space-y-2">
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 flex-shrink-0" />
-                <span>Nairobi, Kenya</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 flex-shrink-0" />
-                <a
-                  href="mailto:info@keynpeople.com"
-                  className="hover:text-secondary transition-colors"
-                >
-                  info@keynpeople.com
-                </a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 flex-shrink-0" />
-                <a
-                  href="tel:+254700000000"
-                  className="hover:text-secondary transition-colors"
-                >
-                  +254 700 000 000
-                </a>
-              </div>
-            </div>
           </div>
 
-          {/* Navigation Columns */}
-          <div className="lg:col-span-2">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-secondary mb-4">
-              Company
-            </h3>
-            <ul className="space-y-3">
-              {navigation.company.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="lg:col-span-3">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-secondary mb-4">
+          {/* Services */}
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-secondary mb-4">
               Services
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {navigation.services.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                    className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors inline-flex items-center group"
                   >
+                    <span className="w-0 group-hover:w-2 h-px bg-secondary transition-all duration-300 mr-0 group-hover:mr-2" />
                     {item.name}
                   </Link>
                 </li>
@@ -106,53 +62,86 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="lg:col-span-3">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-secondary mb-4">
-              Quick Links
+          {/* Company */}
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-secondary mb-4">
+              Company
             </h3>
-            <ul className="space-y-3">
-              {navigation.pathways.map((item) => (
+            <ul className="space-y-2">
+              {navigation.company.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                    className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors inline-flex items-center group"
                   >
+                    <span className="w-0 group-hover:w-2 h-px bg-secondary transition-all duration-300 mr-0 group-hover:mr-2" />
                     {item.name}
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-secondary mb-4">
+              Connect
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="mailto:info@keynpeople.com"
+                  className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors flex items-center gap-2 group"
+                >
+                  <Mail className="w-4 h-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                  <span>info@keynpeople.com</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+254700000000"
+                  className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors flex items-center gap-2 group"
+                >
+                  <Phone className="w-4 h-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                  <span>+254 700 000 000</span>
+                </a>
+              </li>
+              <li>
+                <div className="text-sm text-primary-foreground/80 flex items-center gap-2">
+                  <MapPin className="w-4 h-4 flex-shrink-0" />
+                  <span>Nairobi, Kenya</span>
+                </div>
+              </li>
+              <li className="pt-2">
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-secondary transition-colors group"
+                  aria-label="LinkedIn"
+                >
+                  <svg className="w-4 h-4 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                  <span>Follow us</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-8 border-t border-primary-foreground/20 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-primary-foreground/70">
-            © {new Date().getFullYear()} Keyn People Advisory. All rights
-            reserved.
-          </p>
-          <div className="flex items-center gap-6">
-            {navigation.legal.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-              >
-                {item.name}
-              </Link>
-            ))}
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-primary-foreground/70 hover:text-secondary transition-colors"
-              aria-label="LinkedIn"
-            >
-              LinkedIn
-            </a>
+        <div className="py-6 border-t border-primary-foreground/10">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
+            <p className="text-xs text-primary-foreground/60">
+              © {new Date().getFullYear()} Keyn People Advisory. All rights reserved.
+            </p>
+            <p className="text-xs text-primary-foreground/50">
+              Built with precision · Designed for impact
+            </p>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
