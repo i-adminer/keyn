@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { Section, SectionHeader } from "@/components/ui/section"
-import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { Check, Users2, Building2, GraduationCap } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
+import { Check } from "lucide-react";
 
 const areas = [
   "Supervisory skills",
@@ -18,53 +18,55 @@ const areas = [
   "Leadership development",
   "Employee onboarding",
   "Career development",
-]
-
-const programTypes = [
-  {
-    icon: Building2,
-    title: "In-house workshops",
-    description: "Delivered at your organisation's premises",
-  },
-  {
-    icon: Users2,
-    title: "Customised programmes",
-    description: "Designed to address your specific training needs",
-  },
-  {
-    icon: GraduationCap,
-    title: "Targeted employee development",
-    description: "Focused sessions for specific teams or individuals",
-  },
-]
+];
 
 export function Training() {
   return (
-    <Section background="default" className="section-spacing">
-      <div className="max-w-5xl mx-auto">
-        <SectionHeader
-          label="TRAINING & DEVELOPMENT"
-          title={
-            <>
-              Develop People.
-              <br />
-              <span className="text-primary">Strengthen Performance.</span>
-            </>
-          }
-          className="mb-16"
-        />
+    <section className="relative py-20 overflow-hidden bg-gradient-to-b from-background via-muted/30 to-background border-b">
+      <div className="container-premium">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 max-w-4xl"
+        >
+          {/* Eyebrow */}
+          <div className="flex items-center gap-2 mb-6">
+            <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
+            <span className="text-sm font-bold tracking-widest text-primary">
+              TRAINING & DEVELOPMENT
+            </span>
+          </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-12">
-          {/* Training Areas */}
+          {/* Heading */}
+          <div className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] mb-6">
+            <span className="text-foreground">Develop People. </span>
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Strengthen Performance.
+            </span>
+          </div>
+
+          {/* Description */}
+          <span className="text-lg text-muted-foreground leading-relaxed block">
+            Training programmes can be tailored to your organisation's specific
+            needs and delivered on-site or virtually.
+          </span>
+        </motion.div>
+
+        {/* Two Column Layout: Content + Image */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-12">
+          {/* Left: Training Areas */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl font-bold text-foreground mb-6">
-              Training areas
-            </h3>
+            <div className="text-2xl font-bold tracking-tight mb-6">
+              <span className="text-foreground">Training Areas</span>
+            </div>
             <div className="space-y-3">
               {areas.map((area, index) => (
                 <motion.div
@@ -73,73 +75,65 @@ export function Training() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="flex items-start gap-3"
+                  className="flex items-start gap-3 group"
                 >
-                  <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-                  <span className="text-foreground">{area}</span>
+                  <div className="w-5 h-5 rounded-sm bg-gradient-to-br from-primary to-secondary p-0.5 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
+                    <div className="w-full h-full bg-card rounded-sm flex items-center justify-center">
+                      <Check className="w-3 h-3 text-primary" />
+                    </div>
+                  </div>
+                  <span className="text-foreground group-hover:text-primary transition-colors">
+                    {area}
+                  </span>
                 </motion.div>
               ))}
             </div>
+
+            {/* CTA Button */}
+            <div className="inline-block group relative mt-8">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-tl-2xl rounded-br-2xl" />
+              <Button
+                asChild
+                size="lg"
+                className="relative rounded-tl-2xl rounded-br-2xl rounded-tr-none rounded-bl-none bg-primary text-white hover:bg-transparent hover:text-primary border-primary group-hover:-translate-y-1 group-hover:-translate-x-1 transition-all duration-300"
+              >
+                <Link href="/contact?service=training">Discuss Training</Link>
+              </Button>
+            </div>
           </motion.div>
 
-          {/* Programme Types */}
+          {/* Right: Image */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="relative"
           >
-            <h3 className="text-2xl font-bold text-foreground mb-6">
-              Programme formats
-            </h3>
-            <div className="space-y-6">
-              {programTypes.map((type, index) => {
-                const Icon = type.icon
-                return (
-                  <motion.div
-                    key={type.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="bg-muted p-6 rounded-lg border border-border hover:border-secondary/80 hover:shadow-sm transition-all"
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-6 h-6 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-bold text-foreground mb-1">
-                          {type.title}
-                        </h4>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {type.description}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                )
-              })}
+            <div className="relative">
+              <Image
+                src="/images/training.png"
+                alt="Training & Development"
+                width={800}
+                height={600}
+                className="w-full h-auto object-contain"
+                quality={90}
+              />
             </div>
           </motion.div>
         </div>
 
+        {/* Bottom Decorative Element */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scaleX: 0 }}
+          whileInView={{ opacity: 1, scaleX: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center bg-primary text-primary-foreground p-8 lg:p-10 rounded-lg"
+          transition={{ duration: 1, delay: 0.5 }}
+          className="flex justify-center"
         >
-          <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-            Training programmes can be tailored to your organisation's specific
-            needs and delivered on-site or virtually.
-          </p>
-          <Button asChild size="lg" variant="accent">
-            <Link href="/contact?service=training">Discuss Training</Link>
-          </Button>
+          <div className="w-96 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent rounded-full" />
         </motion.div>
       </div>
-    </Section>
-  )
+    </section>
+  );
 }

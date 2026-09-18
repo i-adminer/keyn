@@ -29,7 +29,8 @@ const faqs = [
       "Timeline varies based on role complexity and seniority. Entry to mid-level positions typically take 2-4 weeks, while senior and executive roles may take 6-8 weeks. We provide transparent timelines and regular updates throughout the process.",
   },
   {
-    question: "Can I get HR consulting support without hiring you for recruitment?",
+    question:
+      "Can I get HR consulting support without hiring you for recruitment?",
     answer:
       "Absolutely! Our HR Consulting services are completely independent. Whether you need help with employee relations, performance management, compliance, or strategic HR planning, we offer flexible consulting packages tailored to your needs.",
   },
@@ -53,17 +54,19 @@ export function FAQ() {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden border-t">
+    <section className="relative py-20 overflow-hidden border-t bg-green-700">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/bg-faq.png"
-          alt=""
-          fill
-          className="object-cover w-full h-full"
-          quality={100}
-          priority
-        />
+      <div className="absolute inset-0 bg-red-600">
+        <div className="bg-cyan-300 z-0">
+          <Image
+            src="/images/bgfq.png"
+            alt=""
+            fill
+            className="object-contain h-full w-full "
+            quality={100}
+            priority
+          />
+        </div>
       </div>
 
       <div className="container-premium relative z-10">
@@ -77,17 +80,17 @@ export function FAQ() {
         >
           {/* Eyebrow */}
           <div className="flex items-center justify-center gap-2 mb-6">
-            <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
+            <div className="w-12 h-0.5 bg-linear-to-r from-primary to-secondary rounded-full" />
             <span className="text-sm font-bold tracking-widest text-primary">
               FAQ
             </span>
-            <div className="w-12 h-0.5 bg-gradient-to-r from-secondary to-primary rounded-full" />
+            <div className="w-12 h-0.5 bg-linear-to-r from-secondary to-primary rounded-full" />
           </div>
 
           {/* Heading */}
           <div className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-[1.1] mb-6">
             <span className="text-foreground">Frequently Asked </span>
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
               Questions
             </span>
           </div>
@@ -111,8 +114,8 @@ export function FAQ() {
               className="mb-4"
             >
               <div className="group relative">
-                {/* Background gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-tl-2xl rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Background linear */}
+                <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-secondary/5 rounded-tl-2xl rounded-br-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 {/* Accordion Item */}
                 <div className="relative bg-card border border-border rounded-tl-2xl rounded-br-2xl overflow-hidden">
@@ -125,7 +128,7 @@ export function FAQ() {
                       {faq.question}
                     </span>
                     <ChevronDown
-                      className={`w-5 h-5 text-primary flex-shrink-0 transition-transform duration-300 ${
+                      className={`w-5 h-5 text-primary shrink-0 transition-transform duration-300 ${
                         openIndex === index ? "rotate-180" : ""
                       }`}
                     />
@@ -161,7 +164,7 @@ export function FAQ() {
             Have more questions? We're here to help.
           </p>
           <div className="inline-block group relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-tl-2xl rounded-br-2xl" />
+            <div className="absolute inset-0 bg-linear-to-br from-primary to-secondary rounded-tl-2xl rounded-br-2xl" />
             <Button
               asChild
               size="lg"
