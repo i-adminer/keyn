@@ -41,10 +41,24 @@ export default function AboutPage() {
     <>
       <Navigation />
       <main className="flex-1">
+        {/* Background Image - Top 40% */}
+        <div className="fixed top-0 left-0 right-0 h-[40vh] z-0">
+          <Image
+            src="/images/bgweb.jpeg"
+            alt="Background"
+            fill
+            className="object-cover"
+            quality={100}
+            priority
+          />
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-background" />
+        </div>
+
         {/* Hero */}
         <AnimatedSection>
-          <section className="relative pt-32 pb-16 overflow-hidden bg-gradient-to-b from-muted/50 to-background">
-            <div className="container-premium">
+          <section className="relative pt-32 pb-16 overflow-hidden min-h-[40vh] flex items-center justify-center z-10">
+            <div className="container-premium relative z-10">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -53,26 +67,26 @@ export default function AboutPage() {
               >
                 {/* Eyebrow */}
                 <div className="flex items-center justify-center gap-2 mb-6">
-                  <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
-                  <span className="text-sm font-bold tracking-widest text-primary">
+                  <div className="w-12 h-0.5 bg-gradient-to-r from-secondary to-primary-foreground rounded-full" />
+                  <span className="text-sm font-bold tracking-widest text-secondary">
                     ABOUT KEYN PEOPLE ADVISORY
                   </span>
-                  <div className="w-12 h-0.5 bg-gradient-to-r from-secondary to-primary rounded-full" />
+                  <div className="w-12 h-0.5 bg-gradient-to-r from-primary-foreground to-secondary rounded-full" />
                 </div>
 
                 {/* Heading */}
                 <div className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] mb-8">
-                  <span className="text-foreground">Your People. </span>
+                  <span className="text-white">Your People. </span>
                   <br />
-                  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  <span className="text-secondary">
                     Our Expertise.
                   </span>
                   <br />
-                  <span className="text-foreground">Better Outcomes.</span>
+                  <span className="text-white">Better Outcomes.</span>
                 </div>
 
                 {/* Description */}
-                <span className="text-xl md:text-2xl text-muted-foreground leading-relaxed block">
+                <span className="text-xl md:text-2xl text-white/90 leading-relaxed block">
                   We combine recruitment expertise with practical HR experience to
                   deliver talent and people solutions for organisations and
                   professionals.
