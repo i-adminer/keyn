@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 export function FloatingWhatsApp() {
   const phoneNumber = "254711627462"; // Without the + sign for WhatsApp URL
-  const message = "Welcome to Keyn People Advisory! 👋 How can we help you today?";
-  
+  const message = "Welcome to Keyn People Advisory! How can we help you today?";
+
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
@@ -22,10 +22,10 @@ export function FloatingWhatsApp() {
       whileTap={{ scale: 0.9 }}
     >
       <MessageCircle className="w-7 h-7" />
-      
+
       {/* Pulse animation */}
       <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20" />
-      
+
       {/* Tooltip */}
       <span className="absolute right-full mr-3 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
         Chat with us on WhatsApp

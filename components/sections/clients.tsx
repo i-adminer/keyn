@@ -52,10 +52,9 @@ export function ClientsSection() {
                   }}
                 >
                   {duplicatedClients.map((client, index) => (
-                    <motion.div
+                    <div
                       key={`${client.name}-${index}`}
-                      whileHover={{ scale: 1.1 }}
-                      className="shrink-0 transition-all duration-300 grayscale hover:grayscale-0 opacity-60 hover:opacity-100"
+                      className="shrink-0"
                     >
                       <Image
                         src={client.logo}
@@ -65,7 +64,7 @@ export function ClientsSection() {
                         className="h-12 w-auto object-contain"
                         priority={false}
                       />
-                    </motion.div>
+                    </div>
                   ))}
                 </motion.div>
               </div>
