@@ -162,7 +162,7 @@ export function AboutSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="space-y-4 h-full flex justify-center items-center flex-col w-96"
+              className="space-y-4 h-full flex justify-center items-center flex-col w-full max-w-md"
             >
               {highlights.map((highlight, index) => {
                 return (
