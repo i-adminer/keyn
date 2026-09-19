@@ -147,25 +147,25 @@ export default function ContactPage() {
                   className="lg:col-span-2 flex flex-col gap-4"
                 >
                   {/* Info Card */}
-                  <div className="rounded-xl p-6 sm:p-7 border border-primary/30 bg-linear-to-br from-primary to-primary/80">
-                    <span className="text-white font-bold text-lg mb-5 block">
+                  <div className="rounded-xl p-5 sm:p-6 border border-primary/30 bg-linear-to-br from-primary to-primary/80">
+                    <span className="text-white font-bold text-base mb-4 block">
                       Contact Information
                     </span>
-                    <div className="flex flex-col gap-5">
+                    <div className="flex flex-col gap-3.5">
                       {contactInfo.map(({ icon: Icon, label, value, href }) => (
                         <a
                           key={label}
                           href={href}
-                          className="flex items-start gap-3 group"
+                          className="flex items-start gap-2.5 group"
                         >
-                          <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-colors bg-secondary/20 border border-secondary/30">
-                            <Icon size={15} className="text-secondary" />
+                          <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors bg-secondary/20 border border-secondary/30">
+                            <Icon size={14} className="text-secondary" />
                           </div>
                           <div>
-                            <p className="text-white/50 text-xs mb-0.5">{label}</p>
-                            <p className="text-white text-sm font-medium group-hover:text-secondary transition-colors">
+                            <span className="text-white/50 text-[10px] uppercase tracking-wider mb-0.5 block">{label}</span>
+                            <span className="text-white text-xs font-medium group-hover:text-secondary transition-colors leading-tight block">
                               {value}
-                            </p>
+                            </span>
                           </div>
                         </a>
                       ))}
@@ -173,7 +173,7 @@ export default function ContactPage() {
                   </div>
 
                   {/* Quick Note */}
-                  <div className="rounded-lg p-5 border border-border bg-card text-sm text-muted-foreground leading-relaxed">
+                  <div className="rounded-lg p-4 border border-border bg-card text-xs text-muted-foreground leading-relaxed">
                     <span className="text-primary font-semibold">
                       Free initial consultation.
                     </span>{" "}
