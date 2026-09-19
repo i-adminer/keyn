@@ -77,7 +77,7 @@ export function Navigation() {
             {/* Logo */}
             <Link
               href="/"
-              className="relative h-12 w-48 lg:h-14 lg:w-56 flex-shrink-0"
+              className="relative h-10 w-32 sm:h-12 sm:w-40 lg:h-14 lg:w-56 flex-shrink-0"
             >
               <Image
                 src={logoSrc}
@@ -218,9 +218,8 @@ export function Navigation() {
               </Button>
             </div>
 
-            {/* Mobile Menu Button & Theme Switcher */}
-            <div className="flex lg:hidden items-center gap-3">
-              <Theme_Switcher />
+            {/* Mobile Menu Button */}
+            <div className="flex lg:hidden items-center">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="p-2 text-foreground hover:text-primary transition-colors"
@@ -298,6 +297,12 @@ export function Navigation() {
                     {item.name}
                   </Link>
                 ))}
+
+                {/* Theme Switcher in Mobile Menu */}
+                <div className="px-4 py-3 flex items-center justify-between">
+                  <span className="text-base font-medium text-foreground">Theme</span>
+                  <Theme_Switcher />
+                </div>
 
                 <div className="pt-4 px-4">
                   <Button
