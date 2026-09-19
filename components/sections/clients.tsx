@@ -22,23 +22,23 @@ const duplicatedClients = [...clients, ...clients];
 export function ClientsSection() {
   return (
     <AnimatedSection>
-      <section className="py-16 bg-background overflow-hidden border-b">
+      <section className="py-12 md:py-16 bg-background overflow-hidden border-b">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
-            <span className="text-center text-muted-foreground mb-12 text-sm uppercase tracking-wider font-extrabold block">
+            <span className="text-center text-muted-foreground mb-8 md:mb-12 text-xs md:text-sm uppercase tracking-wider font-extrabold block">
               Our diversified clients have ended up at
             </span>
 
             {/* Infinite Marquee Scrolling */}
             <div className="relative">
               {/* Gradient Fades on edges */}
-              <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-linear-to-r from-background to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-linear-to-l from-background to-transparent z-10 pointer-events-none" />
+              <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-linear-to-r from-background to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-linear-to-l from-background to-transparent z-10 pointer-events-none" />
 
               {/* Scrolling Container */}
               <div className="overflow-hidden">
                 <motion.div
-                  className="flex gap-8 md:gap-12"
+                  className="flex gap-6 md:gap-12"
                   animate={{
                     x: [0, "-50%"],
                   }}
@@ -46,7 +46,7 @@ export function ClientsSection() {
                     x: {
                       repeat: Infinity,
                       repeatType: "loop",
-                      duration: 25,
+                      duration: 15, // Faster: 25 -> 15
                       ease: "linear",
                     },
                   }}
@@ -61,7 +61,7 @@ export function ClientsSection() {
                         alt={`${client.name} logo`}
                         width={120}
                         height={60}
-                        className="h-12 w-auto object-contain"
+                        className="h-10 md:h-12 w-auto object-contain"
                         priority={false}
                       />
                     </div>
