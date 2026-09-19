@@ -16,6 +16,7 @@ export async function sendContactEmail(formData: ContactFormData) {
     const smtpEmail = process.env.SMTP_EMAIL;
     const smtpPassword = process.env.SMTP_APP_PASSWORD;
     const recipientEmail = process.env.CONTACT_FORM_RECIPIENT;
+    const ccEmail = process.env.CONTACT_FORM_CC; // Optional CC
 
     if (!smtpEmail || !smtpPassword || !recipientEmail) {
       throw new Error("Email configuration is missing. Please check environment variables.");
@@ -36,6 +37,7 @@ export async function sendContactEmail(formData: ContactFormData) {
     const mailOptions = {
       from: smtpEmail,
       to: recipientEmail,
+      cc: ccEmail, // Add CC if provided
       replyTo: formData.email,
       subject: `New Contact Form Submission - ${formData.service}`,
       html: `
