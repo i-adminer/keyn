@@ -153,18 +153,20 @@ export default function TrainingPage() {
 
                 <div className="space-y-4 text-lg leading-8 text-muted-foreground max-w-3xl">
                   <p>
-                    Employee development is essential for building capable teams and
-                    maintaining competitive performance. Whether you need to strengthen
-                    supervisory capabilities, improve workplace communication, or develop
-                    people management skills across your organisation, professional
-                    training can accelerate growth and performance.
+                    Employee development is essential for building capable teams
+                    and maintaining competitive performance. Whether you need to
+                    strengthen supervisory capabilities, improve workplace
+                    communication, or develop people management skills across
+                    your organisation, professional training can accelerate
+                    growth and performance.
                   </p>
                   <p>
-                    Keyn People Advisory provides practical training and development
-                    programmes focused on building the skills that directly impact
-                    workplace performance. Our training is delivered by experienced HR
-                    practitioners who understand real-world workplace challenges and
-                    provide actionable guidance participants can apply immediately.
+                    Keyn People Advisory provides practical training and
+                    development programmes focused on building the skills that
+                    directly impact workplace performance. Our training is
+                    delivered by experienced HR practitioners who understand
+                    real-world workplace challenges and provide actionable
+                    guidance participants can apply immediately.
                   </p>
                 </div>
               </div>
@@ -205,7 +207,9 @@ export default function TrainingPage() {
                     <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary shrink-0 mt-0.5">
                       <Check className="h-4 w-4" />
                     </div>
-                    <span className="text-foreground font-medium text-sm">{area}</span>
+                    <span className="text-foreground font-medium text-sm">
+                      {area}
+                    </span>
                   </motion.div>
                 ))}
               </div>
@@ -268,7 +272,10 @@ export default function TrainingPage() {
 
                         <div className="space-y-2">
                           {format.benefits.map((benefit) => (
-                            <div key={benefit} className="flex items-start gap-2">
+                            <div
+                              key={benefit}
+                              className="flex items-start gap-2"
+                            >
                               <div className="flex h-4 w-4 items-center justify-center rounded-full bg-primary/10 text-primary shrink-0 mt-0.5">
                                 <Check className="h-3 w-3" />
                               </div>
@@ -319,12 +326,12 @@ export default function TrainingPage() {
 
                   <div className="space-y-4 text-lg text-primary-foreground/80 leading-relaxed max-w-2xl mx-auto">
                     <p>
-                      We don't just present theory — we work with participants to apply
-                      concepts to their actual work situations.
+                      We don't just present theory we work with participants to
+                      apply concepts to their actual work situations.
                     </p>
                     <p className="text-xl text-white font-medium">
-                      Training programmes can be tailored to your organisation's specific
-                      needs and delivered on-site or virtually.
+                      Training programmes can be tailored to your organisation's
+                      specific needs and delivered on-site or virtually.
                     </p>
                   </div>
                 </motion.div>
@@ -398,12 +405,16 @@ export default function TrainingPage() {
 
                   <span className="text-2xl md:text-3xl font-bold tracking-tight leading-tight block mb-4">
                     <span className="text-foreground">
-                      Whether you need team training, management development, or{" "}
+                      Whether you need team training, management development,
+                      or{" "}
                     </span>
                     <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
                       specialized workplace programmes
                     </span>
-                    <span className="text-foreground"> - we're here to help.</span>
+                    <span className="text-foreground">
+                      {" "}
+                      - we're here to help.
+                    </span>
                   </span>
 
                   <div className="flex flex-col sm:flex-row gap-4 justify-center mt-7">

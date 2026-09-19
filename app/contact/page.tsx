@@ -6,7 +6,15 @@ import { Footer } from "@/components/layout/footer";
 import { AnimatedSection } from "@/components/ui/animated-section";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle, Loader2 } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  Send,
+  CheckCircle,
+  Loader2,
+} from "lucide-react";
 
 const contactInfo = [
   {
@@ -44,10 +52,14 @@ export default function ContactPage() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
   ) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -134,7 +146,8 @@ export default function ContactPage() {
                   </span>
                 </span>
                 <p className="text-muted-foreground max-w-xl mx-auto text-sm sm:text-base">
-                  Reach out for a consultation. Our team will respond within 24 hours.
+                  Reach out for a consultation. Our team will respond within 24
+                  hours.
                 </p>
               </div>
 
@@ -162,7 +175,9 @@ export default function ContactPage() {
                             <Icon size={16} className="text-secondary" />
                           </div>
                           <div>
-                            <span className="text-white/50 text-xs uppercase tracking-wider mb-1 block">{label}</span>
+                            <span className="text-white/50 text-xs uppercase tracking-wider mb-1 block">
+                              {label}
+                            </span>
                             <span className="text-white text-sm font-medium group-hover:text-secondary transition-colors leading-snug block">
                               {value}
                             </span>
@@ -177,7 +192,7 @@ export default function ContactPage() {
                     <span className="text-primary font-semibold">
                       Free initial consultation.
                     </span>{" "}
-                    We assess your needs and recommend the right services — no
+                    We assess your needs and recommend the right services no
                     obligation.
                   </div>
                 </motion.div>
@@ -194,7 +209,10 @@ export default function ContactPage() {
                       <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+                        transition={{
+                          duration: 0.5,
+                          ease: [0.25, 0.46, 0.45, 0.94],
+                        }}
                         className="flex flex-col items-center justify-center py-12 text-center gap-4"
                       >
                         <div className="w-16 h-16 rounded-full flex items-center justify-center bg-primary/15 border-2 border-primary">
@@ -204,8 +222,8 @@ export default function ContactPage() {
                           Message Sent!
                         </span>
                         <p className="text-muted-foreground text-sm max-w-xs">
-                          Thank you for reaching out. We'll get back to you within 24
-                          hours.
+                          Thank you for reaching out. We'll get back to you
+                          within 24 hours.
                         </p>
                         <button
                           onClick={() => setSubmitStatus("idle")}
@@ -215,11 +233,15 @@ export default function ContactPage() {
                         </button>
                       </motion.div>
                     ) : (
-                      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                      <form
+                        onSubmit={handleSubmit}
+                        className="flex flex-col gap-4"
+                      >
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
                             <label className="text-xs font-medium text-muted-foreground mb-1.5 block">
-                              Full Name <span className="text-secondary">*</span>
+                              Full Name{" "}
+                              <span className="text-secondary">*</span>
                             </label>
                             <input
                               type="text"
@@ -233,7 +255,8 @@ export default function ContactPage() {
                           </div>
                           <div>
                             <label className="text-xs font-medium text-muted-foreground mb-1.5 block">
-                              Email Address <span className="text-secondary">*</span>
+                              Email Address{" "}
+                              <span className="text-secondary">*</span>
                             </label>
                             <input
                               type="email"
@@ -263,7 +286,8 @@ export default function ContactPage() {
                           </div>
                           <div>
                             <label className="text-xs font-medium text-muted-foreground mb-1.5 block">
-                              Service Required <span className="text-secondary">*</span>
+                              Service Required{" "}
+                              <span className="text-secondary">*</span>
                             </label>
                             <select
                               name="service"
@@ -274,7 +298,9 @@ export default function ContactPage() {
                             >
                               <option value="">Select a service</option>
                               <option value="recruitment">Recruitment</option>
-                              <option value="hr-consulting">HR Consulting</option>
+                              <option value="hr-consulting">
+                                HR Consulting
+                              </option>
                               <option value="cv">CV & Career Services</option>
                               <option value="training">Training</option>
                               <option value="general">General Inquiry</option>

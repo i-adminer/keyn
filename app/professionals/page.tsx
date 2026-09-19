@@ -1,39 +1,44 @@
-"use client"
-import { Navigation } from "@/components/layout/navigation"
-import { Footer } from "@/components/layout/footer"
-import { Section } from "@/components/ui/section"
-import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { FileText, Award, TrendingUp, Check, ArrowRight } from "lucide-react"
-
+"use client";
+import { Navigation } from "@/components/layout/navigation";
+import { Footer } from "@/components/layout/footer";
+import { Section } from "@/components/ui/section";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { FileText, Award, TrendingUp, Check, ArrowRight } from "lucide-react";
 
 const services = [
   {
     title: "Professional CV Writing",
-    description: "Expertly crafted CVs that present your experience effectively and position you competitively.",
+    description:
+      "Expertly crafted CVs that present your experience effectively and position you competitively.",
   },
   {
     title: "CV Redesign",
-    description: "Transform your existing CV into a professional document that strengthens your application.",
+    description:
+      "Transform your existing CV into a professional document that strengthens your application.",
   },
   {
     title: "ATS-Friendly CV",
-    description: "CVs optimized for applicant tracking systems used by modern employers.",
+    description:
+      "CVs optimized for applicant tracking systems used by modern employers.",
   },
   {
     title: "Executive CV",
-    description: "Premium CVs for senior leadership that emphasize strategic impact and achievements.",
+    description:
+      "Premium CVs for senior leadership that emphasize strategic impact and achievements.",
   },
   {
     title: "LinkedIn Profile",
-    description: "Optimized professional profiles that attract opportunities and build your online brand.",
+    description:
+      "Optimized professional profiles that attract opportunities and build your online brand.",
   },
   {
     title: "Cover Letters",
-    description: "Compelling cover letters tailored to specific roles that strengthen your candidacy.",
+    description:
+      "Compelling cover letters tailored to specific roles that strengthen your candidacy.",
   },
-]
+];
 
 const benefits = [
   "Stand out in competitive job markets",
@@ -42,7 +47,7 @@ const benefits = [
   "Career positioning and personal branding",
   "Faster job application turnaround",
   "Guidance from HR professionals",
-]
+];
 
 export default function ProfessionalsPage() {
   return (
@@ -66,8 +71,8 @@ export default function ProfessionalsPage() {
               <span className="text-primary">Career Opportunity?</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-10">
-              Stand out in a competitive job market with a professional CV and stronger
-              career positioning.
+              Stand out in a competitive job market with a professional CV and
+              stronger career positioning.
             </p>
             <Button asChild size="xl" variant="primary">
               <Link href="/contact?service=cv">
@@ -92,16 +97,17 @@ export default function ProfessionalsPage() {
               </h2>
               <div className="space-y-6 text-lg leading-relaxed text-foreground">
                 <p>
-                  Your CV is often the first — and sometimes only — opportunity to make
-                  an impression on a potential employer. It needs to clearly communicate
-                  your value, highlight your achievements, and position you as the right
-                  candidate for the opportunities you're pursuing.
+                  Your CV is often the first and sometimes only opportunity to
+                  make an impression on a potential employer. It needs to
+                  clearly communicate your value, highlight your achievements,
+                  and position you as the right candidate for the opportunities
+                  you're pursuing.
                 </p>
                 <p>
-                  Keyn People Advisory provides professional CV writing and career
-                  services to help you present yourself competitively. Our CVs are
-                  written by HR professionals who understand what employers look for and
-                  how to position candidates effectively.
+                  Keyn People Advisory provides professional CV writing and
+                  career services to help you present yourself competitively.
+                  Our CVs are written by HR professionals who understand what
+                  employers look for and how to position candidates effectively.
                 </p>
               </div>
             </motion.div>
@@ -122,8 +128,8 @@ export default function ProfessionalsPage() {
                 Professional Career Services
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                We provide comprehensive CV and career document services for professionals
-                at all levels.
+                We provide comprehensive CV and career document services for
+                professionals at all levels.
               </p>
             </motion.div>
 
@@ -181,7 +187,8 @@ export default function ProfessionalsPage() {
                 Why Work With Keyn
               </h2>
               <p className="text-xl text-muted-foreground">
-                Professional CV writing from HR practitioners who understand recruitment.
+                Professional CV writing from HR practitioners who understand
+                recruitment.
               </p>
             </motion.div>
 
@@ -277,7 +284,8 @@ export default function ProfessionalsPage() {
               Ready to Build Your Professional CV?
             </h2>
             <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
-              Let's strengthen your professional profile for your next career opportunity.
+              Let's strengthen your professional profile for your next career
+              opportunity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="xl" variant="accent">
@@ -292,5 +300,5 @@ export default function ProfessionalsPage() {
       </main>
       <Footer />
     </>
-  )
+  );
 }

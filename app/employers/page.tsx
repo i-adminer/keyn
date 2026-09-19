@@ -1,33 +1,35 @@
-"use client"
-import { Navigation } from "@/components/layout/navigation"
-import { Footer } from "@/components/layout/footer"
-import { Section } from "@/components/ui/section"
-import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { Briefcase, Shield, TrendingUp, Check, ArrowRight } from "lucide-react"
-
+"use client";
+import { Navigation } from "@/components/layout/navigation";
+import { Footer } from "@/components/layout/footer";
+import { Section } from "@/components/ui/section";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { Briefcase, Shield, TrendingUp, Check, ArrowRight } from "lucide-react";
 
 const services = [
   {
     icon: Briefcase,
     title: "Recruitment & Talent Acquisition",
-    description: "Find exceptional talent through professional recruitment services — from executive search to entry-level hiring.",
+    description:
+      "Find exceptional talent through professional recruitment services from executive search to entry-level hiring.",
     link: "/recruitment",
   },
   {
     icon: Shield,
     title: "HR Consulting & Advisory",
-    description: "Strengthen your people management systems with practical HR support tailored to your organisation's needs.",
+    description:
+      "Strengthen your people management systems with practical HR support tailored to your organisation's needs.",
     link: "/hr-consulting",
   },
   {
     icon: TrendingUp,
     title: "Training & Development",
-    description: "Build team capabilities through professional training in people management, leadership, and workplace skills.",
+    description:
+      "Build team capabilities through professional training in people management, leadership, and workplace skills.",
     link: "/training",
   },
-]
+];
 
 const benefits = [
   "Access professional recruitment and HR expertise",
@@ -36,7 +38,7 @@ const benefits = [
   "Performance-oriented people management",
   "Reduced time-to-hire with qualified candidates",
   "Practical solutions aligned with business needs",
-]
+];
 
 export default function EmployersPage() {
   return (
@@ -60,8 +62,8 @@ export default function EmployersPage() {
               <span className="text-primary">the Right Talent?</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-10">
-              Tell us what you are looking for and we will help you identify, assess
-              and shortlist suitable candidates.
+              Tell us what you are looking for and we will help you identify,
+              assess and shortlist suitable candidates.
             </p>
             <Button asChild size="xl" variant="primary">
               <Link href="/contact?service=recruitment">
@@ -86,14 +88,14 @@ export default function EmployersPage() {
                 How We Support Employers
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                We provide comprehensive talent and HR solutions to help organisations
-                build stronger teams and better people practices.
+                We provide comprehensive talent and HR solutions to help
+                organisations build stronger teams and better people practices.
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-8">
               {services.map((service, index) => {
-                const Icon = service.icon
+                const Icon = service.icon;
                 return (
                   <motion.div
                     key={service.title}
@@ -120,7 +122,7 @@ export default function EmployersPage() {
                       <ArrowRight className="w-5 h-5" />
                     </Link>
                   </motion.div>
-                )
+                );
               })}
             </div>
           </div>
@@ -140,8 +142,8 @@ export default function EmployersPage() {
                 Why Employers Work With Keyn
               </h2>
               <p className="text-xl text-muted-foreground">
-                We combine recruitment expertise with practical HR experience to deliver
-                solutions that work for your organisation.
+                We combine recruitment expertise with practical HR experience to
+                deliver solutions that work for your organisation.
               </p>
             </motion.div>
 
@@ -183,17 +185,20 @@ export default function EmployersPage() {
                 {
                   number: "01",
                   title: "Tell Us What You Need",
-                  description: "Share your recruitment, HR, or training requirements through our contact form or direct consultation.",
+                  description:
+                    "Share your recruitment, HR, or training requirements through our contact form or direct consultation.",
                 },
                 {
                   number: "02",
                   title: "We Develop a Solution",
-                  description: "We design a practical approach aligned with your organisation's needs and priorities.",
+                  description:
+                    "We design a practical approach aligned with your organisation's needs and priorities.",
                 },
                 {
                   number: "03",
                   title: "We Deliver Results",
-                  description: "We execute the solution — finding candidates, building HR systems, or delivering training.",
+                  description:
+                    "We execute the solution finding candidates, building HR systems, or delivering training.",
                 },
               ].map((step, index) => (
                 <motion.div
@@ -247,5 +252,5 @@ export default function EmployersPage() {
       </main>
       <Footer />
     </>
-  )
+  );
 }

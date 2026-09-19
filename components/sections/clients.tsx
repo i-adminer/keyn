@@ -27,11 +27,13 @@ export function ClientsSection() {
             </p>
 
             <Marquee
-              pauseOnHover
-              speed={30}
-              gradient
+              play={true}
+              pauseOnHover={true}
+              speed={40}
+              gradient={true}
               gradientColor="hsl(var(--background))"
               gradientWidth={100}
+              loop={0}
             >
               {clients.map((client, index) => (
                 <div

@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import ThemeProvider from "@/providers/theme";
 import { CustomCursor } from "@/components/custom-cursor";
+import { FloatingWhatsApp } from "@/components/ui/floating-whatsapp";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <ThemeProvider>
           <CustomCursor />
           {children}
+          <FloatingWhatsApp />
         </ThemeProvider>
       </body>
     </html>
