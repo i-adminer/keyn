@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Marquee from "react-fast-marquee";
+import { motion } from "framer-motion";
 import { AnimatedSection } from "../ui/animated-section";
 
 const clients = [
@@ -16,6 +16,9 @@ const clients = [
   { name: "Coca-Cola", logo: "/images/clients/coca-cola.svg" },
 ];
 
+// Duplicate clients for seamless infinite scroll
+const duplicatedClients = [...clients, ...clients];
+
 export function ClientsSection() {
   return (
     <AnimatedSection>
@@ -26,33 +29,49 @@ export function ClientsSection() {
               Our diversified clients have ended up at
             </p>
 
-            <Marquee
-              play={true}
-              pauseOnHover={true}
-              speed={40}
-              gradient={true}
-              gradientColor="hsl(var(--background))"
-              gradientWidth={100}
-              loop={0}
-            >
-              {clients.map((client, index) => (
-                <div
-                  key={`${client.name}-${index}`}
-                  className="mx-8 md:mx-12 transition-all duration-300 grayscale hover:grayscale-0 opacity-60 hover:opacity-100"
+            {/* Infinite Marquee Scrolling */}
+            <div className="relative">
+              {/* Gradient Fades on edges */}
+              <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-linear-to-r from-background to-transparent z-10" />
+              <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-linear-to-l from-background to-transparent z-10" />
+
+              {/* Scrolling Container */}
+              <div className="overflow-hidden">
+                <motion.div
+                  className="flex gap-8 md:gap-12"
+                  animate={{
+                    x: [0, -50 + "%"],
+                  }}
+                  transition={{
+                    x: {
+                      repeat: Infinity,
+                      repeatType: "loop",
+                      duration: 25,
+                      ease: "linear",
+                    },
+                  }}
                 >
-                  <Image
-                    src={client.logo}
-                    alt={`${client.name} logo`}
-                    width={120}
-                    height={60}
-                    className="h-12 w-auto object-contain"
-                    priority={false}
-                  />
-                </div>
-              ))}
-            </Marquee>
+                  {duplicatedClients.map((client, index) => (
+                    <motion.div
+                      key={`${client.name}-${index}`}
+                      whileHover={{ scale: 1.1 }}
+                      className="shrink-0 transition-all duration-300 grayscale hover:grayscale-0 opacity-60 hover:opacity-100"
+                    >
+                      <Image
+                        src={client.logo}
+                        alt={`${client.name} logo`}
+                        width={120}
+                        height={60}
+                        className="h-12 w-auto object-contain"
+                        priority={false}
+                      />
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
+            </div>
           </div>
-        </div>{" "}
+        </div>
       </section>
     </AnimatedSection>
   );
