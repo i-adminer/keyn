@@ -123,7 +123,7 @@ export function Footer() {
               </li>
               <li className="pt-2">
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/keyn-peopleadvisory-6a1608438/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-secondary transition-colors group"

@@ -14,7 +14,9 @@ import {
   Send,
   CheckCircle,
   Loader2,
+  AlertCircle,
 } from "lucide-react";
+import { sendContactEmail } from "@/app/actions/contact";
 
 const contactInfo = [
   {
@@ -55,6 +57,7 @@ export default function ContactPage() {
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "success" | "error"
   >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -67,23 +70,34 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage("");
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const result = await sendContactEmail(formData);
+
+      if (result.success) {
+        setSubmitStatus("success");
+        // Reset form after 5 seconds
+        setTimeout(() => {
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            service: "",
+            message: "",
+          });
+          setSubmitStatus("idle");
+        }, 5000);
+      } else {
+        setSubmitStatus("error");
+        setErrorMessage(result.message || "Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+      setErrorMessage("An unexpected error occurred. Please try again.");
+    } finally {
       setIsSubmitting(false);
-      setSubmitStatus("success");
-      // Reset after 5 seconds
-      setTimeout(() => {
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          service: "",
-          message: "",
-        });
-        setSubmitStatus("idle");
-      }, 5000);
-    }, 2000);
+    }
   };
 
   const inputClass =
@@ -230,6 +244,35 @@ export default function ContactPage() {
                           className="text-sm underline text-muted-foreground hover:text-foreground transition-colors mt-2"
                         >
                           Send another message
+                        </button>
+                      </motion.div>
+                    ) : submitStatus === "error" ? (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{
+                          duration: 0.5,
+                          ease: [0.25, 0.46, 0.45, 0.94],
+                        }}
+                        className="flex flex-col items-center justify-center py-12 text-center gap-4"
+                      >
+                        <div className="w-16 h-16 rounded-full flex items-center justify-center bg-red-500/15 border-2 border-red-500">
+                          <AlertCircle size={28} className="text-red-500" />
+                        </div>
+                        <span className="text-xl font-bold text-foreground">
+                          Failed to Send
+                        </span>
+                        <p className="text-muted-foreground text-sm max-w-xs">
+                          {errorMessage}
+                        </p>
+                        <button
+                          onClick={() => {
+                            setSubmitStatus("idle");
+                            setErrorMessage("");
+                          }}
+                          className="text-sm underline text-muted-foreground hover:text-foreground transition-colors mt-2"
+                        >
+                          Try again
                         </button>
                       </motion.div>
                     ) : (
