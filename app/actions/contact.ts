@@ -21,9 +21,11 @@ export async function sendContactEmail(formData: ContactFormData) {
       throw new Error("Email configuration is missing. Please check environment variables.");
     }
 
-    // Create transporter
+    // Create transporter with Zoho SMTP
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.zoho.com",
+      port: 465,
+      secure: true, // use SSL
       auth: {
         user: smtpEmail,
         pass: smtpPassword,
