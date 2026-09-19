@@ -54,7 +54,7 @@ export function ClientsSection() {
                   {duplicatedClients.map((client, index) => (
                     <div
                       key={`${client.name}-${index}`}
-                      className="shrink-0"
+                      className="shrink-0 transition-all duration-300 grayscale hover:grayscale-0 opacity-60 hover:opacity-100"
                     >
                       <Image
                         src={client.logo}
