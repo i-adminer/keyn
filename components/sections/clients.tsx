@@ -25,22 +25,22 @@ export function ClientsSection() {
       <section className="py-16 bg-background overflow-hidden border-b">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
-            <p className="text-center text-muted-foreground mb-12 text-sm uppercase tracking-wider font-extrabold">
+            <span className="text-center text-muted-foreground mb-12 text-sm uppercase tracking-wider font-extrabold block">
               Our diversified clients have ended up at
-            </p>
+            </span>
 
             {/* Infinite Marquee Scrolling */}
             <div className="relative">
               {/* Gradient Fades on edges */}
-              <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-linear-to-r from-background to-transparent z-10" />
-              <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-linear-to-l from-background to-transparent z-10" />
+              <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-linear-to-r from-background to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-linear-to-l from-background to-transparent z-10 pointer-events-none" />
 
               {/* Scrolling Container */}
               <div className="overflow-hidden">
                 <motion.div
                   className="flex gap-8 md:gap-12"
                   animate={{
-                    x: [0, -50 + "%"],
+                    x: [0, "-50%"],
                   }}
                   transition={{
                     x: {
