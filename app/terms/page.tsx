@@ -199,7 +199,7 @@ export default function TermsPage() {
               <strong>Email:</strong> info@keynpeopleadvisory.co.ke
             </p>
             <p className="text-foreground leading-relaxed mb-2">
-              <strong>Phone:</strong> +254 700 000 000
+              <strong>Phone:</strong> +254 782 461268
             </p>
             <p className="text-foreground leading-relaxed mb-6">
               <strong>Location:</strong> Nairobi, Kenya

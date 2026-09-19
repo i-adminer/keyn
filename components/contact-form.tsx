@@ -132,7 +132,7 @@ export function ContactForm() {
               value={formData.phone}
               onChange={handleChange}
               className="w-full px-4 py-2.5 border border-input rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all bg-background text-foreground"
-              placeholder="+254 700 000 000"
+              placeholder="+254 782 461268"
             />
           </div>
 

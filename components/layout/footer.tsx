@@ -112,7 +112,7 @@ export function Footer() {
                   className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors flex items-center gap-2 group"
                 >
                   <Phone className="w-4 h-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                  <span>+254 700 000 000</span>
+                  <span>+254 782 461268</span>
                 </a>
               </li>
               <li>

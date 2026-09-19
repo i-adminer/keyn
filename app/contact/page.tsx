@@ -22,7 +22,7 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+254 700 000 000",
+    value: "+254 782 461268",
     href: "tel:+254700000000",
   },
   {
@@ -321,7 +321,7 @@ export default function ContactPage() {
                             <input
                               type="tel"
                               name="phone"
-                              placeholder="+254 700 000 000"
+                              placeholder="+254 782 461268"
                               className={inputClass}
                               value={formData.phone}
                               onChange={handleChange}
