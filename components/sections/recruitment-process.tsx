@@ -163,7 +163,7 @@ export function RecruitmentProcess() {
           transition={{ duration: 1, delay: 0.5 }}
           className="mt-16 flex justify-center"
         >
-          <div className="w-96 h-0.5 bg-linear-to-r from-transparent via-primary to-transparent rounded-full" />
+          <div className="w-full max-w-96 h-0.5 bg-linear-to-r from-transparent via-primary to-transparent rounded-full" />
         </motion.div>
       </div>    </section>
     </AnimatedSection>

@@ -140,7 +140,7 @@ export function ValueStrip() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mt-12 md:mt-16 flex justify-center"
           >
-            <div className="w-96 h-0.5 bg-linear-to-r from-transparent via-primary to-transparent rounded-full" />
+            <div className="w-full max-w-96 h-0.5 bg-linear-to-r from-transparent via-primary to-transparent rounded-full" />
           </motion.div>
         </div>{" "}
       </section>
