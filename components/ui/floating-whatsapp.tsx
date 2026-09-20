@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function FloatingWhatsApp() {
-  const phoneNumber = "254711627462"; // Without the + sign for WhatsApp URL
+  const phoneNumber = "254782461268"; // Without the + sign for WhatsApp URL
   const message = "Welcome to Keyn People Advisory! How can we help you today?";
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
