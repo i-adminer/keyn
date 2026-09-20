@@ -375,9 +375,7 @@ export default function AboutPage() {
                         MISSION
                       </span>
                       <span className="text-sm text-muted-foreground leading-relaxed">
-                        To connect exceptional talent with organizations that
-                        need high-performing teams, and help professionals move
-                        their careers forward through expert HR support.
+                        Empower <strong className="text-foreground">young talent</strong> with career guidance and <strong className="text-foreground">global opportunities</strong>, while helping organizations hire the <strong className="text-foreground">right talent efficiently</strong>.
                       </span>
                     </div>
                   </div>
@@ -402,9 +400,7 @@ export default function AboutPage() {
                         VISION
                       </span>
                       <span className="text-sm text-muted-foreground leading-relaxed">
-                        To be the HR partner of choice in Kenya and beyond known
-                        for practical solutions, quality service, and treating
-                        talent as a strategic investment.
+                        A future where every young person has a <strong className="text-foreground">global career pathway</strong> and every organization secures the <strong className="text-foreground">right talent, faster</strong>.
                       </span>
                     </div>
                   </div>

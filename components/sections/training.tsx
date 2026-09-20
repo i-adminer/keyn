@@ -8,10 +8,11 @@ import { Check } from "lucide-react";
 import { AnimatedSection } from "../ui/animated-section";
 
 const areas = [
+  "Needs analysis & training plans",
+  "Performance management",
   "Supervisory skills",
   "People management",
   "Recruitment and interviewing",
-  "Performance management",
   "Workplace communication",
   "Employee relations",
   "HR fundamentals for managers",
