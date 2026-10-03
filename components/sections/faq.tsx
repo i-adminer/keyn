@@ -12,7 +12,7 @@ const faqs = [
   {
     question: "What services does Keyn People Advisory offer?",
     answer:
-      "We offer three core services: Recruitment (talent acquisition and executive search), HR Consulting (employee relations, performance management, workplace compliance), and CV & Career Services (professional CV writing, LinkedIn optimization, career coaching).",
+      "We offer three core services: Recruitment (talent acquisition and executive search), HR Consulting (employee relations, performance management, workplace compliance), and CV & Career Services (professional CV writing, LinkedIn optimization, career coaching & mentoring for young adults and adolescents).",
   },
   {
     question: "How is Keyn different from traditional recruitment agencies?",
@@ -43,7 +43,7 @@ const faqs = [
   {
     question: "Do you offer services for individual job seekers?",
     answer:
-      "Yes! Our CV & Career Services are designed for professionals at all levels—from graduates to senior executives. We help with professional CV writing, LinkedIn optimization, cover letters, and career coaching to strengthen your professional profile.",
+      "Yes! Our CV & Career Services are designed for professionals at all levels—from adolescents and young adults seeking career guidance, to graduates and senior executives. We help with professional CV writing, LinkedIn optimization, cover letters, and personalized career coaching & mentoring to strengthen your professional profile.",
   },
 ];
 

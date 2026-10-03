@@ -44,6 +44,12 @@ const services = [
       "CVs optimized for Applicant Tracking Systems used by many employers to screen applications.",
   },
   {
+    icon: Target,
+    title: "Career Coaching & Mentoring",
+    description:
+      "Personalized career guidance and mentoring for young adults and adolescents to help navigate career planning and professional growth.",
+  },
+  {
     icon: Sparkles,
     title: "Executive CV",
     description:
@@ -64,6 +70,7 @@ const services = [
 ];
 
 const audiences = [
+  "Adolescents & Young Adults",
   "Graduates",
   "Entry-level professionals",
   "Experienced professionals",

@@ -53,7 +53,7 @@ const services = [
   {
     icon: Rocket,
     title: "CAREER COACHING",
-    description: "Accelerate your growth",
+    description: "Mentoring for young adults & adolescents",
   },
 ];
 
