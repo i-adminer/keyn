@@ -13,9 +13,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Keyn People Advisory | Recruitment, HR Consulting & Career Services",
+  metadataBase: new URL("https://keynpeopleadvisory.co.ke"),
+  title: {
+    default: "Keyn People Advisory | Recruitment, HR Consulting & Career Services",
+    template: "%s | Keyn People Advisory",
+  },
   description:
-    "Keyn People Advisory provides professional recruitment, HR consulting, career development and CV services for organisations and professionals.",
+    "Keyn People Advisory provides professional recruitment, HR consulting, career development and CV services for organisations and professionals in Kenya and beyond.",
   keywords: [
     "recruitment Kenya",
     "HR consulting",
@@ -24,17 +28,42 @@ export const metadata: Metadata = {
     "career services",
     "professional recruitment",
     "HR advisory",
+    "executive search Kenya",
+    "career development",
+    "training and development",
+    "performance management",
+    "LinkedIn profile optimization",
+    "ATS-friendly CV",
+    "HR outsourcing Kenya",
+    "employee relations",
+    "talent management",
   ],
   authors: [{ name: "Keyn People Advisory" }],
+  creator: "Keyn People Advisory",
+  publisher: "Keyn People Advisory",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_KE",
+    alternateLocale: ["en_US", "en_GB"],
     url: "https://keynpeopleadvisory.co.ke",
     title:
       "Keyn People Advisory | Recruitment, HR Consulting & Career Services",
     description:
-      "Professional recruitment, HR consulting, career development and CV services for organisations and professionals.",
+      "Empower young talent with career guidance and global opportunities. Professional recruitment, HR consulting, career development and CV services for organisations and professionals.",
     siteName: "Keyn People Advisory",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Keyn People Advisory - Talent, Careers, Opportunity",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -42,7 +71,26 @@ export const metadata: Metadata = {
       "Keyn People Advisory | Recruitment, HR Consulting & Career Services",
     description:
       "Professional recruitment, HR consulting, career development and CV services for organisations and professionals.",
+    images: ["/images/og-image.png"],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    // Add your verification codes when available
+    // google: "your-google-verification-code",
+    // yandex: "your-yandex-verification-code",
+    // bing: "your-bing-verification-code",
+  },
+  category: "business",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
